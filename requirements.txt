@@ -33,5 +33,6 @@ numpy
 plotly
 requests
 tqdm
+yfinance
 # Optional (recommended for speed / numerical ops)
 numba
