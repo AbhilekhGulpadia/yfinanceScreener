@@ -1,0 +1,37 @@
+# requirements.txt for Streamlit Kite Screener app
+# --------------------------------------------------
+# Instructions:
+# 1) Create and activate a virtual environment (macOS / Linux):
+#      python3 -m venv .venv
+#      source .venv/bin/activate
+#
+# 2) Install packages from this file:
+#      pip install -r requirements.txt
+#
+# 3) KiteConnect special notes:
+#    - Install kiteconnect using pip (included below). If you have issues, upgrade pip first:
+#        python -m pip install --upgrade pip
+#        python -m pip install kiteconnect
+#
+#    - Kite Connect requires you to obtain an API key & API secret from Zerodha (Kite developer console).
+#      Then you must generate a request token via the login flow and exchange it for an access token.
+#      Typical steps (run in your terminal / browser):
+#        1. Open the login URL provided by KiteConnect using your API key (see KiteConnect docs).
+#        2. After authorizing, you'll receive a request_token in the redirect URL.
+#        3. Exchange the request_token + api_secret for an access_token using KiteConnect methods.
+#
+#    - If you automate token generation, be mindful of security and never commit API secrets or tokens to git.
+#
+# 4) Run the Streamlit app:
+#      python -m streamlit run /mnt/data/app.py
+#
+# Packages
+streamlit
+kiteconnect
+pandas
+numpy
+plotly
+requests
+tqdm
+# Optional (recommended for speed / numerical ops)
+numba
