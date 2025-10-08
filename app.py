@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -27,7 +28,7 @@ def rsi_wilder(series: pd.Series, period: int = 14) -> pd.Series:
     rsi = 100 - (100 / (1 + rs))
     return rsi.fillna(0.0)
 
-def macd(series: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9):
+def macd_lines(series: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9):
     ema_fast = ema(series, fast)
     ema_slow = ema(series, slow)
     macd_line = ema_fast - ema_slow
@@ -128,81 +129,116 @@ def normalize_symbols(df: pd.DataFrame) -> pd.Series:
     return df.iloc[:,0].astype(str).str.strip()
 
 # -----------------------------
-# Analysis helpers
+# Analysis helpers with controls
 # -----------------------------
-def last_cross_days(close: pd.Series, baseline: pd.Series) -> tuple[int, bool]:
-    """
-    Returns (days_since_cross, has_cross) where cross is bullish: close > baseline and previous <= baseline.
-    If never crossed, returns (10**9, False).
-    """
-    cond = (close > baseline) & (close.shift(1) <= baseline.shift(1))
-    # find last True
-    idx = cond[::-1].idxmax() if cond.any() else None
-    if idx is None or not cond.any():
+def compute_cross_flags(close: pd.Series, baseline: pd.Series, direction: str):
+    if direction == "Bullish":
+        crossed = (close > baseline) & (close.shift(1) <= baseline.shift(1))
+    elif direction == "Bearish":
+        crossed = (close < baseline) & (close.shift(1) >= baseline.shift(1))
+    else:  # Both
+        crossed = ((close > baseline) & (close.shift(1) <= baseline.shift(1))) |                   ((close < baseline) & (close.shift(1) >= baseline.shift(1)))
+    return crossed.fillna(False)
+
+def last_cross_recency(close: pd.Series, baseline: pd.Series, direction: str):
+    crossed = compute_cross_flags(close, baseline, direction)
+    if not crossed.any():
         return 10**9, False
-    # days since last true = number of rows after idx
-    last_pos = cond.index.get_loc(idx)
-    days_since = len(cond) - 1 - last_pos
+    idx = crossed[::-1].idxmax()
+    pos = crossed.index.get_loc(idx)
+    days_since = len(crossed) - 1 - pos
     return int(days_since), True
 
-def last_bullish_macd_days(macd_line: pd.Series, signal_line: pd.Series) -> tuple[int, bool]:
-    cond = (macd_line > signal_line) & (macd_line.shift(1) <= signal_line.shift(1))
-    idx = cond[::-1].idxmax() if cond.any() else None
-    if idx is None or not cond.any():
+def last_bullish_macd_recency(macd_line: pd.Series, signal_line: pd.Series):
+    crossed = (macd_line > signal_line) & (macd_line.shift(1) <= signal_line.shift(1))
+    if not crossed.any():
         return 10**9, False
-    last_pos = cond.index.get_loc(idx)
-    days_since = len(cond) - 1 - last_pos
+    idx = crossed[::-1].idxmax()
+    pos = crossed.index.get_loc(idx)
+    days_since = len(crossed) - 1 - pos
     return int(days_since), True
 
-def rank_symbols(ohlcv: pd.DataFrame) -> pd.DataFrame:
-    # Work per symbol
-    out_rows = []
+def rank_symbols(ohlcv: pd.DataFrame,
+                 ema_kind: str,
+                 ema_spans: list[int],
+                 ema_direction: str,
+                 macd_fast: int, macd_slow: int, macd_signal: int,
+                 rsi_period: int,
+                 lookback_sessions: int,
+                 rsi_filter_range: tuple[int,int] | None):
+    rows = []
     for sym, df in ohlcv.groupby("symbol"):
         df = df.sort_values("date").reset_index(drop=True)
-        if len(df) < 50:
-            continue  # skip too-short histories
+        if len(df) < max(ema_spans + [macd_slow, rsi_period, 50]):
+            continue
 
-        df["dema200"] = dema(df["close"], 200)
-        df["rsi14"] = rsi_wilder(df["close"], 14)
-        macd_line, signal_line, _ = macd(df["close"])
+        if ema_kind == "DEMA":
+            ema_map = {n: dema(df["close"], n) for n in ema_spans}
+        else:
+            ema_map = {n: ema(df["close"], n) for n in ema_spans}
+        rsi_series = rsi_wilder(df["close"], rsi_period)
+        macd_line, signal_line, _ = macd_lines(df["close"], fast=macd_fast, slow=macd_slow, signal=macd_signal)
 
-        d200_days, has200 = last_cross_days(df["close"], df["dema200"])
-        macd_days, has_macd = last_bullish_macd_days(macd_line, signal_line)
+        ema_results = {}
+        for n in ema_spans:
+            days_since, has_cross = last_cross_recency(df["close"], ema_map[n], ema_direction)
+            ema_results[n] = (days_since, has_cross)
+
+        macd_days, macd_has = last_bullish_macd_recency(macd_line, signal_line)
 
         latest = df.iloc[-1]
-        rsi_val = float(latest["rsi14"]) if pd.notna(latest["rsi14"]) else np.inf
+        rsi_val = float(rsi_series.iloc[-1]) if pd.notna(rsi_series.iloc[-1]) else np.inf
 
-        out_rows.append({
+        passes_rsi = True
+        if rsi_filter_range is not None:
+            lo, hi = rsi_filter_range
+            passes_rsi = (lo <= rsi_val <= hi)
+
+        def within_window(days, has):
+            return has and (days <= lookback_sessions)
+
+        sort_key = []
+        for n in ema_spans:
+            d, h = ema_results[n]
+            sort_key.extend([within_window(d, h), d])
+        sort_key.extend([within_window(macd_days, macd_has), macd_days, rsi_val])
+
+        rows.append({
             "symbol": sym,
             "last_date": latest["date"],
             "close": float(latest["close"]),
-            "rsi14": rsi_val,
-            "has_200_dema_cross": has200,
-            "days_since_200_dema_cross": d200_days,
-            "has_macd_bull_cross": has_macd,
+            "rsi": rsi_val,
+            **{f"has_{n}_{ema_kind.lower()}_cross": within_window(*ema_results[n]) for n in ema_spans},
+            **{f"days_since_{n}_{ema_kind.lower()}_cross": ema_results[n][0] for n in ema_spans},
+            "has_macd_bull_cross": within_window(macd_days, macd_has),
             "days_since_macd_bull_cross": macd_days,
+            "passes_rsi_filter": passes_rsi,
+            "_sort_key": tuple(sort_key)
         })
 
-    rankdf = pd.DataFrame(out_rows)
+    rankdf = pd.DataFrame(rows)
     if rankdf.empty:
         return rankdf
 
-    # Sort by strict priority:
-    # 200 DEMA cross (has desc, days asc) >
-    # MACD recent cross (has desc, days asc) >
-    # RSI low (asc)
-    rankdf = rankdf.sort_values(
-        by=[
-            "has_200_dema_cross", "days_since_200_dema_cross",
-            "has_macd_bull_cross", "days_since_macd_bull_cross",
-            "rsi14"
-        ],
-        ascending=[False, True, False, True, True]
-    ).reset_index(drop=True)
+    if rsi_filter_range is not None:
+        rankdf = rankdf[rankdf["passes_rsi_filter"]]
 
-    # Provide a simple "rank" number
+    def key_to_cols(tup):
+        arr = []
+        for v in tup:
+            if isinstance(v, (bool, np.bool_)):
+                arr.append(0 if v else 1)
+            else:
+                arr.append(v)
+        return arr
+
+    keys = rankdf["_sort_key"].apply(key_to_cols).tolist()
+    kdf = pd.DataFrame(keys, index=rankdf.index)
+    rankdf = pd.concat([rankdf, kdf.add_prefix("k_")], axis=1)
+    rank_cols = [c for c in rankdf.columns if c.startswith("k_")]
+    rankdf = rankdf.sort_values(by=rank_cols + ["rsi"], ascending=[True]*len(rank_cols) + [True]).reset_index(drop=True)
     rankdf.insert(0, "rank", range(1, len(rankdf)+1))
-    return rankdf
+    return rankdf.drop(columns=["_sort_key"] + rank_cols)
 
 # -----------------------------
 # UI
@@ -226,13 +262,6 @@ with tab_dl:
             st.error("Please upload a CSV of yfinance symbols first.")
         else:
             syms_df = pd.read_csv(uploaded)
-            # Normalize symbols
-            def normalize_symbols(df: pd.DataFrame) -> pd.Series:
-                for preferred in ["yfinance_symbol","symbol","ticker","Ticker","YF","yf"]:
-                    if preferred in df.columns:
-                        return df[preferred].astype(str).str.strip()
-                return df.iloc[:,0].astype(str).str.strip()
-
             symbols = normalize_symbols(syms_df).dropna()
             symbols = symbols.apply(lambda s: s if "." in s or "^" in s else s + ".NS")
             symbols = symbols[symbols.str.len() > 0].drop_duplicates().tolist()
@@ -265,8 +294,7 @@ with tab_dl:
                     st.error("No data downloaded. Try different dates/interval.")
 
 with tab_an:
-    st.subheader("Ranking — EMA Crossovers > MACD Bullish Cross (recent) > Low RSI")
-    # Data source selection
+    st.subheader("Ranking — configurable EMA crossovers, MACD, RSI")
     source = st.radio("Choose data source", ["Use data from Downloader tab (session)", "Upload a combined OHLCV CSV"], index=0)
     df_input = None
     if source == "Use data from Downloader tab (session)":
@@ -279,15 +307,40 @@ with tab_an:
             df_input = pd.read_csv(up_csv, parse_dates=["date"])
 
     if df_input is not None and not df_input.empty:
-        # Light validation and typing
+        st.markdown("#### Analysis Parameters")
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            ema_kind = st.selectbox("EMA type", ["DEMA", "EMA"], index=0, help="Choose DEMA (double EMA) or EMA (single).")
+            ema_spans_input = st.text_input("EMA spans (priority order, comma-separated)", value="200,44,21",
+                                            help="Enter spans like 200,44,21. First is highest priority.")
+            ema_direction = st.selectbox("Crossover direction", ["Bullish", "Bearish", "Both"], index=0)
+        with c2:
+            macd_fast = st.number_input("MACD fast", min_value=2, max_value=50, value=12, step=1)
+            macd_slow = st.number_input("MACD slow", min_value=5, max_value=100, value=26, step=1)
+            macd_signal = st.number_input("MACD signal", min_value=2, max_value=50, value=9, step=1)
+        with c3:
+            rsi_period = st.number_input("RSI period", min_value=2, max_value=100, value=14, step=1)
+            lookback_sessions = st.number_input("Lookback sessions (bars)", min_value=1, max_value=252, value=5, step=1,
+                                                help="Only crossovers within this many most recent bars are considered 'present'.")
+            use_rsi_range = st.checkbox("Apply RSI range filter", value=False)
+            rsi_range = st.slider("RSI range", min_value=0, max_value=100, value=(0, 100)) if use_rsi_range else None
+
+        try:
+            ema_spans = [int(x.strip()) for x in ema_spans_input.split(",") if x.strip()]
+            ema_spans = [n for n in ema_spans if n > 0]
+            if not ema_spans:
+                st.error("Please provide at least one valid EMA span."); st.stop()
+        except Exception:
+            st.error("Invalid EMA spans. Use comma-separated integers like 200,44,21"); st.stop()
+
         need_cols = {"symbol","date","close"}
-        if not need_cols.issubset(set(df_input.columns)):
+        df = df_input.copy()
+        if not need_cols.issubset(set(df.columns)):
             st.error("CSV is missing required columns. Needs at least: symbol, date, close.")
         else:
-            df = df_input.copy()
             if not np.issubdtype(df["date"].dtype, np.datetime64):
                 df["date"] = pd.to_datetime(df["date"])
-            # Optional date filter
+
             col1, col2 = st.columns(2)
             with col1:
                 min_date = pd.to_datetime(df["date"].min()).date()
@@ -300,21 +353,31 @@ with tab_an:
             df = df.loc[filt].sort_values(["symbol","date"])
 
             with st.spinner("Computing indicators and ranking..."):
-                ranking = rank_symbols(df)
+                ranking = rank_symbols(
+                    df,
+                    ema_kind=ema_kind,
+                    ema_spans=ema_spans,
+                    ema_direction=ema_direction,
+                    macd_fast=int(macd_fast), macd_slow=int(macd_slow), macd_signal=int(macd_signal),
+                    rsi_period=int(rsi_period),
+                    lookback_sessions=int(lookback_sessions),
+                    rsi_filter_range=(rsi_range if use_rsi_range else None)
+                )
 
             if ranking.empty:
-                st.warning("No symbols qualified for ranking (not enough history or no crossovers in the window). Try widening the date range.")
+                st.warning("No symbols qualified for ranking. Increase lookback or widen the date range.")
             else:
                 st.success(f"Ranked {len(ranking)} symbols.")
-                st.dataframe(ranking.head(200), use_container_width=True, height=560)
+                st.dataframe(ranking.head(300), use_container_width=True, height=560)
                 csv_rank = ranking.to_csv(index=False).encode("utf-8")
                 st.download_button("Download Ranking CSV", data=csv_rank, file_name="analysis_ranking.csv", mime="text/csv")
 
-            with st.expander("Ranking Logic (for reference)"):
-                st.markdown("""
-                        - **Priority 1:** Most recent **Price > 200 DEMA** bullish cross (presence first, then fewer days since cross).
-                        - **Priority 2:** **MACD bullish cross** (presence, then recency; any recent cross ranks above none).
-                        - **Priority 3:** **RSI(14)** — lower RSI ranks higher when all else equal.
-                """)
+            with st.expander("Ranking Logic (current settings)"):
+                st.markdown(
+                    f"- **EMA type:** {ema_kind} | **Direction:** {ema_direction} | **Spans (priority):** {ema_spans}\n"
+                    f"- **Lookback sessions:** {lookback_sessions}\n"
+                    f"- **MACD:** fast {macd_fast}, slow {macd_slow}, signal {macd_signal}\n"
+                    f"- **RSI period:** {rsi_period}" + (f" | **RSI range filter:** {rsi_range}" if use_rsi_range else "")
+                )
     else:
         st.info("Upload/Download data to proceed with Analysis.")
