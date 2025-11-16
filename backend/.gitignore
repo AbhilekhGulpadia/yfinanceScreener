@@ -10,6 +10,11 @@ ENV/
 .venv
 *.egg-info/
 
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
 # IDEs
 .vscode/
 .idea/
