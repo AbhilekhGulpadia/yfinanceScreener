@@ -9,7 +9,9 @@ function InitializationProgress() {
   const [current, setCurrent] = useState(0);
   const [total, setTotal] = useState(0);
   const [currentSymbol, setCurrentSymbol] = useState('');
-  const [isInitializing, setIsInitializing] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [recordsAdded, setRecordsAdded] = useState(0);
+  const [recordsCleaned, setRecordsCleaned] = useState(0);
 
   useEffect(() => {
     // Connect to Socket.IO
@@ -19,6 +21,7 @@ function InitializationProgress() {
       console.log('Connected to WebSocket');
     });
 
+    // Listen for both initialization and refresh progress
     socket.on('initialization_progress', (data) => {
       setProgress(data.progress || 0);
       setStatus(data.status || 'processing');
@@ -28,7 +31,22 @@ function InitializationProgress() {
       setCurrentSymbol(data.symbol || '');
 
       if (data.status === 'completed') {
-        setIsInitializing(false);
+        setIsRefreshing(false);
+      }
+    });
+
+    socket.on('refresh_progress', (data) => {
+      setProgress(data.progress || 0);
+      setStatus(data.status || 'processing');
+      setMessage(data.message || '');
+      setCurrent(data.current || 0);
+      setTotal(data.total || 0);
+      setCurrentSymbol(data.symbol || '');
+      setRecordsAdded(data.records_added || 0);
+      setRecordsCleaned(data.records_cleaned || 0);
+
+      if (data.status === 'completed') {
+        setIsRefreshing(false);
       }
     });
 
@@ -41,28 +59,30 @@ function InitializationProgress() {
     };
   }, []);
 
-  const startInitialization = async () => {
-    setIsInitializing(true);
+  const startRefresh = async () => {
+    setIsRefreshing(true);
     setProgress(0);
     setStatus('starting');
-    setMessage('Starting initialization...');
+    setMessage('Starting data refresh...');
+    setRecordsAdded(0);
+    setRecordsCleaned(0);
 
     try {
-      const response = await fetch('/api/ohlcv/initialize-all', {
+      const response = await fetch('/api/ohlcv/refresh', {
         method: 'POST',
       });
 
       if (!response.ok) {
-        throw new Error('Failed to start initialization');
+        throw new Error('Failed to start refresh');
       }
 
       const result = await response.json();
       console.log(result.message);
     } catch (error) {
-      console.error('Error starting initialization:', error);
+      console.error('Error starting refresh:', error);
       setStatus('error');
-      setMessage('Failed to start initialization: ' + error.message);
-      setIsInitializing(false);
+      setMessage('Failed to start refresh: ' + error.message);
+      setIsRefreshing(false);
     }
   };
 
@@ -80,24 +100,60 @@ function InitializationProgress() {
     }
   };
 
+  const startFullInitialization = async () => {
+    setIsRefreshing(true);
+    setProgress(0);
+    setStatus('starting');
+    setMessage('Starting full 5-year initialization...');
+    setRecordsAdded(0);
+    setRecordsCleaned(0);
+
+    try {
+      const response = await fetch('/api/ohlcv/initialize-all', {
+        method: 'POST',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to start initialization');
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+    } catch (error) {
+      console.error('Error starting initialization:', error);
+      setStatus('error');
+      setMessage('Failed to start initialization: ' + error.message);
+      setIsRefreshing(false);
+    }
+  };
+
   return (
     <div className="initialization-container">
       <div className="initialization-header">
-        <h2>Historical Data Initialization</h2>
-        <p>Load 5 years of historical OHLCV data for all Nifty 500 stocks</p>
+        <h2>Data Management</h2>
+        <p>Initialize or refresh OHLCV data for all Nifty 500 stocks</p>
       </div>
 
-      {!isInitializing && status !== 'processing' && status !== 'started' && (
-        <button
-          className="btn-initialize"
-          onClick={startInitialization}
-          disabled={isInitializing}
-        >
-          Start Initialization (5 Years of Data)
-        </button>
+      {!isRefreshing && status !== 'processing' && status !== 'started' && (
+        <div className="button-group">
+          <button
+            className="btn-initialize btn-primary"
+            onClick={startFullInitialization}
+            disabled={isRefreshing}
+          >
+            Initialize 5 Years Historical Data
+          </button>
+          <button
+            className="btn-initialize btn-secondary"
+            onClick={startRefresh}
+            disabled={isRefreshing}
+          >
+            Refresh Latest Data Only
+          </button>
+        </div>
       )}
 
-      {(isInitializing || status === 'processing' || status === 'started') && (
+      {(isRefreshing || status === 'processing' || status === 'started') && (
         <div className="progress-section">
           <div className="progress-info">
             <div className="progress-stats">
@@ -136,7 +192,7 @@ function InitializationProgress() {
       {status === 'completed' && (
         <div className="completion-message">
           <div className="completion-icon">✓</div>
-          <h3>Initialization Complete!</h3>
+          <h3>Refresh Complete!</h3>
           <p>{message}</p>
         </div>
       )}
@@ -144,11 +200,11 @@ function InitializationProgress() {
       {status === 'error' && (
         <div className="error-message">
           <div className="error-icon">✗</div>
-          <h3>Initialization Failed</h3>
+          <h3>Refresh Failed</h3>
           <p>{message}</p>
           <button
             className="btn-retry"
-            onClick={startInitialization}
+            onClick={startRefresh}
           >
             Retry
           </button>
@@ -156,12 +212,13 @@ function InitializationProgress() {
       )}
 
       <div className="initialization-info">
-        <h4>What does initialization do?</h4>
+        <h4>What does refresh do?</h4>
         <ul>
-          <li>Fetches 5 years of historical OHLCV data for all Nifty 500 stocks</li>
+          <li>Fetches the latest OHLCV data (previous day) for all Nifty 500 stocks</li>
+          <li>Automatically removes records older than 5 years to keep database size manageable</li>
           <li>Data is collected at 15-minute intervals</li>
-          <li>After initialization, data auto-updates every 15 minutes</li>
-          <li>This process may take 30-60 minutes depending on your internet connection</li>
+          <li>Background auto-updates occur every 15 minutes</li>
+          <li>This process typically takes 5-10 minutes</li>
         </ul>
       </div>
     </div>

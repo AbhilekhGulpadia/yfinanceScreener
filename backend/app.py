@@ -4,7 +4,8 @@ from flask_socketio import SocketIO, emit
 from config import Config
 from models import db, Stock, Portfolio, Transaction, WatchList, OHLCV
 import yfinance as yf
-from datetime import datetime, timedelta
+import pandas as pd
+from datetime import datetime, timedelta, timezone
 from apscheduler.schedulers.background import BackgroundScheduler
 from nifty500 import (
     get_all_symbols, get_all_stocks, get_symbol_without_suffix, 
@@ -79,7 +80,7 @@ def fetch_ohlcv_data():
                     existing.low = float(latest_data['Low'])
                     existing.close = float(latest_data['Close'])
                     existing.volume = int(latest_data['Volume'])
-                    existing.last_updated = datetime.utcnow()
+                    existing.last_updated = datetime.now(timezone.utc)
                 else:
                     # Create new record
                     ohlcv = OHLCV(
@@ -632,7 +633,7 @@ def fetch_historical():
 def get_ohlcv_stats(symbol):
     """Get statistics for a specific symbol"""
     # Get data for last 24 hours
-    yesterday = datetime.utcnow() - timedelta(days=1)
+    yesterday = datetime.now(timezone.utc) - timedelta(days=1)
     data = OHLCV.query.filter(
         OHLCV.symbol == symbol,
         OHLCV.timestamp >= yesterday
@@ -675,47 +676,205 @@ def trigger_initialize_all():
         'info': 'Connect to WebSocket for progress updates'
     }), 202
 
+def refresh_latest_data():
+    """Refresh latest OHLCV data for all stocks and cleanup old records (>5 years)"""
+    with app.app_context():
+        symbols = get_all_symbols()
+        total = len(symbols)
+        logger.info(f"Starting refresh of latest data for {total} stocks...")
+        
+        socketio.emit('refresh_progress', {
+            'current': 0,
+            'total': total,
+            'progress': 0,
+            'status': 'started',
+            'message': f'Starting data refresh for {total} stocks...'
+        })
+        
+        success_count = 0
+        cleanup_count = 0
+        five_years_ago = datetime.now(timezone.utc) - timedelta(days=5*365)
+        
+        for idx, symbol in enumerate(symbols, 1):
+            try:
+                # Fetch latest data (previous day)
+                ticker = yf.Ticker(symbol)
+                hist = ticker.history(period='2d', interval='15m')
+                
+                if not hist.empty:
+                    # Add new records
+                    records_added = 0
+                    for timestamp, row in hist.iterrows():
+                        existing = OHLCV.query.filter_by(
+                            symbol=symbol,
+                            timestamp=timestamp.to_pydatetime()
+                        ).first()
+                        
+                        if not existing:
+                            new_ohlcv = OHLCV(
+                                symbol=symbol,
+                                timestamp=timestamp.to_pydatetime(),
+                                open=float(row['Open']),
+                                high=float(row['High']),
+                                low=float(row['Low']),
+                                close=float(row['Close']),
+                                volume=int(row['Volume'])
+                            )
+                            db.session.add(new_ohlcv)
+                            records_added += 1
+                    
+                    # Cleanup old records (older than 5 years)
+                    old_records = OHLCV.query.filter(
+                        OHLCV.symbol == symbol,
+                        OHLCV.timestamp < five_years_ago
+                    ).all()
+                    
+                    for record in old_records:
+                        db.session.delete(record)
+                        cleanup_count += 1
+                    
+                    db.session.commit()
+                    success_count += 1
+                    
+                    # Emit progress
+                    progress = int((idx / total) * 100)
+                    socketio.emit('refresh_progress', {
+                        'current': idx,
+                        'total': total,
+                        'progress': progress,
+                        'symbol': symbol,
+                        'records_added': records_added,
+                        'records_cleaned': len(old_records),
+                        'status': 'processing'
+                    })
+                    
+            except Exception as e:
+                logger.error(f"Error refreshing data for {symbol}: {str(e)}")
+                db.session.rollback()
+                continue
+        
+        # Final progress update
+        socketio.emit('refresh_progress', {
+            'current': total,
+            'total': total,
+            'progress': 100,
+            'status': 'completed',
+            'message': f'Refresh completed! {success_count}/{total} stocks updated. {cleanup_count} old records removed.'
+        })
+        
+        logger.info(f"Data refresh completed. {success_count}/{total} stocks updated. {cleanup_count} old records removed.")
+
+@app.route('/api/ohlcv/refresh', methods=['POST'])
+def trigger_refresh():
+    """Trigger refresh of latest OHLCV data and cleanup old records"""
+    # Run in background thread
+    thread = threading.Thread(target=refresh_latest_data)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({
+        'message': 'Data refresh started',
+        'info': 'Connect to WebSocket for progress updates'
+    }), 202
+
 @app.route('/api/ohlcv/sector-heatmap', methods=['GET'])
 def get_sector_heatmap():
-    """Get sector-wise performance data for heatmap"""
+    """Get sector-wise performance data for heatmap with date range filters"""
     try:
-        # Get all stocks with their latest prices
         from sqlalchemy import func
         
-        # Subquery to get max timestamp for each symbol
-        subquery = db.session.query(
+        # Get filter parameters
+        duration = request.args.get('duration', '1d')  # 1d, 1w, 1m, 3m, 6m, 1y, ytd
+        start_date = request.args.get('start_date')
+        end_date = request.args.get('end_date')
+        
+        # Calculate date range based on duration or custom dates
+        end_datetime = datetime.now(timezone.utc)
+        
+        if start_date and end_date:
+            # Use custom date range
+            try:
+                start_datetime = datetime.fromisoformat(start_date)
+                end_datetime = datetime.fromisoformat(end_date)
+            except ValueError:
+                return jsonify({'error': 'Invalid date format. Use ISO format (YYYY-MM-DD)'}), 400
+        else:
+            # Use preset duration
+            duration_map = {
+                '1d': timedelta(days=1),
+                '1w': timedelta(weeks=1),
+                '1m': timedelta(days=30),
+                '3m': timedelta(days=90),
+                '6m': timedelta(days=180),
+                '1y': timedelta(days=365),
+                'ytd': None  # Year to date - special handling
+            }
+            
+            if duration == 'ytd':
+                # Year to date
+                start_datetime = datetime(end_datetime.year, 1, 1)
+            elif duration in duration_map:
+                start_datetime = end_datetime - duration_map[duration]
+            else:
+                return jsonify({'error': 'Invalid duration. Use: 1d, 1w, 1m, 3m, 6m, 1y, ytd'}), 400
+        
+        # Get latest data point for each symbol (within end_datetime)
+        latest_subquery = db.session.query(
             OHLCV.symbol,
             func.max(OHLCV.timestamp).label('max_timestamp')
+        ).filter(
+            OHLCV.timestamp <= end_datetime
         ).group_by(OHLCV.symbol).subquery()
         
-        # Join to get full records with latest prices
         latest_data = db.session.query(OHLCV).join(
-            subquery,
-            (OHLCV.symbol == subquery.c.symbol) & (OHLCV.timestamp == subquery.c.max_timestamp)
+            latest_subquery,
+            (OHLCV.symbol == latest_subquery.c.symbol) & 
+            (OHLCV.timestamp == latest_subquery.c.max_timestamp)
         ).all()
         
-        # Get data from 24 hours ago for comparison
-        yesterday = datetime.utcnow() - timedelta(days=1)
+        # Get earliest data point for each symbol (within date range)
+        earliest_subquery = db.session.query(
+            OHLCV.symbol,
+            func.min(OHLCV.timestamp).label('min_timestamp')
+        ).filter(
+            OHLCV.timestamp >= start_datetime,
+            OHLCV.timestamp <= end_datetime
+        ).group_by(OHLCV.symbol).subquery()
         
-        # Create mapping of symbol to latest price and previous price
+        earliest_data = db.session.query(OHLCV).join(
+            earliest_subquery,
+            (OHLCV.symbol == earliest_subquery.c.symbol) & 
+            (OHLCV.timestamp == earliest_subquery.c.min_timestamp)
+        ).all()
+        
+        # Create mapping for latest prices
+        latest_prices = {item.symbol: item for item in latest_data}
+        earliest_prices = {item.symbol: item for item in earliest_data}
+        
+        # Calculate price changes
         stock_data = {}
-        for item in latest_data:
-            # Get price from 24 hours ago
-            prev_data = OHLCV.query.filter(
-                OHLCV.symbol == item.symbol,
-                OHLCV.timestamp >= yesterday,
-                OHLCV.timestamp < item.timestamp
-            ).order_by(OHLCV.timestamp.asc()).first()
-            
-            prev_price = prev_data.close if prev_data else item.close
-            price_change = ((item.close - prev_price) / prev_price * 100) if prev_price != 0 else 0
-            
-            stock_data[item.symbol] = {
-                'current_price': item.close,
-                'previous_price': prev_price,
-                'price_change_percent': price_change,
-                'volume': item.volume
-            }
+        for symbol in latest_prices:
+            if symbol in earliest_prices:
+                latest = latest_prices[symbol]
+                earliest = earliest_prices[symbol]
+                
+                price_change = ((latest.close - earliest.open) / earliest.open * 100) if earliest.open != 0 else 0
+                
+                # Calculate total volume for the period
+                volume_query = db.session.query(func.sum(OHLCV.volume)).filter(
+                    OHLCV.symbol == symbol,
+                    OHLCV.timestamp >= start_datetime,
+                    OHLCV.timestamp <= end_datetime
+                ).scalar()
+                
+                stock_data[symbol] = {
+                    'current_price': latest.close,
+                    'start_price': earliest.open,
+                    'price_change_percent': price_change,
+                    'volume': volume_query or 0,
+                    'high': latest.high,
+                    'low': latest.low
+                }
         
         # Group by sector
         all_stocks = get_all_stocks()
@@ -740,30 +899,41 @@ def get_sector_heatmap():
                     'name': stock['name'],
                     'price_change': stock_data[symbol]['price_change_percent'],
                     'current_price': stock_data[symbol]['current_price'],
-                    'volume': stock_data[symbol]['volume']
+                    'start_price': stock_data[symbol]['start_price'],
+                    'volume': stock_data[symbol]['volume'],
+                    'high': stock_data[symbol]['high'],
+                    'low': stock_data[symbol]['low']
                 })
         
-        # Calculate sector averages
+        # Calculate sector averages and sort stocks by performance
         heatmap_data = []
         for sector, data in sector_performance.items():
             if data['stocks']:
                 avg_change = sum(s['price_change'] for s in data['stocks']) / len(data['stocks'])
                 total_volume = sum(s['volume'] for s in data['stocks'])
                 
+                # Sort stocks by price change (top performers)
+                sorted_stocks = sorted(data['stocks'], key=lambda x: x['price_change'], reverse=True)
+                
                 heatmap_data.append({
                     'sector': sector,
                     'stock_count': len(data['stocks']),
                     'avg_price_change': round(avg_change, 2),
                     'total_volume': total_volume,
-                    'stocks': data['stocks'][:5]  # Top 5 stocks for tooltip
+                    'stocks': sorted_stocks[:5]  # Top 5 performers
                 })
         
-        # Sort by average price change
+        # Sort sectors by average price change
         heatmap_data.sort(key=lambda x: x['avg_price_change'], reverse=True)
         
         return jsonify({
             'heatmap_data': heatmap_data,
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'filter': {
+                'duration': duration,
+                'start_date': start_datetime.isoformat(),
+                'end_date': end_datetime.isoformat()
+            }
         })
         
     except Exception as e:
@@ -941,6 +1111,223 @@ def initialize_stocks_from_nifty500():
         
     except Exception as e:
         db.session.rollback()
+        return jsonify({'error': str(e)}), 500
+
+# ===== TECHNICAL ANALYSIS ENDPOINTS =====
+
+@app.route('/api/analysis/stocks', methods=['GET'])
+def get_analysis_data():
+    """Get technical analysis data for all stocks with indicators based on 1 year of data"""
+    try:
+        import pandas_ta as ta
+        
+        # Use minimum 1 year of historical data for analysis
+        end_datetime = datetime.now(timezone.utc)
+        start_datetime = end_datetime - timedelta(days=365)  # 1 year of data
+        
+        # Get all stocks
+        stocks = get_all_stocks()
+        analysis_data = []
+        
+        for stock in stocks:
+            symbol = stock['symbol']
+            
+            # Get OHLCV data for the symbol (1 year)
+            ohlcv_records = OHLCV.query.filter(
+                OHLCV.symbol == symbol,
+                OHLCV.timestamp >= start_datetime,
+                OHLCV.timestamp <= end_datetime
+            ).order_by(OHLCV.timestamp.asc()).all()
+            
+            if len(ohlcv_records) < 30:  # Need minimum 30 data points for basic indicators
+                continue
+            
+            # Convert to DataFrame
+            df = pd.DataFrame([{
+                'timestamp': r.timestamp,
+                'open': r.open,
+                'high': r.high,
+                'low': r.low,
+                'close': r.close,
+                'volume': r.volume
+            } for r in ohlcv_records])
+            
+            if df.empty:
+                continue
+            
+            try:
+                # Calculate indicators
+                df['rsi'] = ta.rsi(df['close'], length=14)
+                df['ema_21'] = ta.ema(df['close'], length=21)
+                df['ema_44'] = ta.ema(df['close'], length=44)
+                df['ema_200'] = ta.ema(df['close'], length=200)
+                
+                # Calculate MACD
+                macd = ta.macd(df['close'], fast=12, slow=26, signal=9)
+                if macd is not None and not macd.empty:
+                    df['macd'] = macd[f'MACD_12_26_9']
+                    df['macd_signal'] = macd[f'MACDs_12_26_9']
+                    df['macd_hist'] = macd[f'MACDh_12_26_9']
+                
+                # Get latest values
+                latest = df.iloc[-1]
+                prev = df.iloc[-2] if len(df) > 1 else latest
+                
+                # Determine MACD crossover
+                macd_crossover = 'Neutral'
+                if pd.notna(latest['macd']) and pd.notna(latest['macd_signal']):
+                    if pd.notna(prev['macd']) and pd.notna(prev['macd_signal']):
+                        if latest['macd'] > latest['macd_signal'] and prev['macd'] <= prev['macd_signal']:
+                            macd_crossover = 'Bullish'
+                        elif latest['macd'] < latest['macd_signal'] and prev['macd'] >= prev['macd_signal']:
+                            macd_crossover = 'Bearish'
+                        elif latest['macd'] > latest['macd_signal']:
+                            macd_crossover = 'Bullish'
+                        elif latest['macd'] < latest['macd_signal']:
+                            macd_crossover = 'Bearish'
+                
+                # Determine EMA crossovers (price crosses above EMA)
+                ema_21_crossover = 'No'
+                ema_44_crossover = 'No'
+                ema_200_crossover = 'No'
+                
+                if pd.notna(latest['ema_21']) and pd.notna(prev['ema_21']):
+                    if latest['close'] > latest['ema_21'] and prev['close'] <= prev['ema_21']:
+                        ema_21_crossover = 'Yes'
+                    elif latest['close'] > latest['ema_21']:
+                        ema_21_crossover = 'Above'
+                
+                if pd.notna(latest['ema_44']) and pd.notna(prev['ema_44']):
+                    if latest['close'] > latest['ema_44'] and prev['close'] <= prev['ema_44']:
+                        ema_44_crossover = 'Yes'
+                    elif latest['close'] > latest['ema_44']:
+                        ema_44_crossover = 'Above'
+                
+                if pd.notna(latest['ema_200']) and pd.notna(prev['ema_200']):
+                    if latest['close'] > latest['ema_200'] and prev['close'] <= prev['ema_200']:
+                        ema_200_crossover = 'Yes'
+                    elif latest['close'] > latest['ema_200']:
+                        ema_200_crossover = 'Above'
+                
+                analysis_data.append({
+                    'symbol': symbol,
+                    'name': stock['name'],
+                    'sector': stock.get('sector', 'N/A'),
+                    'rsi': round(float(latest['rsi']), 2) if pd.notna(latest['rsi']) else None,
+                    'macd_crossover': macd_crossover,
+                    'ema_21_crossover': ema_21_crossover,
+                    'ema_44_crossover': ema_44_crossover,
+                    'ema_200_crossover': ema_200_crossover,
+                    'current_price': float(latest['close'])
+                })
+                
+            except Exception as e:
+                logging.error(f"Error calculating indicators for {symbol}: {str(e)}")
+                continue
+        
+        logging.info(f"Analysis completed: {len(analysis_data)} stocks processed out of {len(stocks)} total stocks")
+        
+        return jsonify({
+            'analysis_data': analysis_data,
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'total_stocks': len(analysis_data),
+            'total_in_universe': len(stocks)
+        })
+        
+    except Exception as e:
+        logging.error(f"Error in get_analysis_data: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/analysis/chart/<symbol>', methods=['GET'])
+def get_chart_data(symbol):
+    """Get detailed chart data with indicators for a specific stock (all available data)"""
+    try:
+        import pandas_ta as ta
+        
+        # Get all OHLCV data for the symbol
+        ohlcv_records = OHLCV.query.filter(
+            OHLCV.symbol == symbol
+        ).order_by(OHLCV.timestamp.asc()).all()
+        
+        if not ohlcv_records:
+            return jsonify({'error': 'No data found for this symbol'}), 404
+        
+        # Convert to DataFrame
+        df = pd.DataFrame([{
+            'timestamp': r.timestamp,
+            'open': r.open,
+            'high': r.high,
+            'low': r.low,
+            'close': r.close,
+            'volume': r.volume
+        } for r in ohlcv_records])
+        
+        # Set timestamp as index for resampling
+        df['timestamp'] = pd.to_datetime(df['timestamp'])
+        df.set_index('timestamp', inplace=True)
+        
+        # Resample to daily intervals (1D)
+        # Open: first value of the day
+        # High: max value of the day
+        # Low: min value of the day
+        # Close: last value of the day
+        # Volume: sum of the day
+        df_daily = df.resample('1D').agg({
+            'open': 'first',
+            'high': 'max',
+            'low': 'min',
+            'close': 'last',
+            'volume': 'sum'
+        }).dropna()
+        
+        # Reset index to get timestamp as column
+        df_daily.reset_index(inplace=True)
+        
+        # Calculate indicators on daily data
+        df_daily['rsi'] = ta.rsi(df_daily['close'], length=14)
+        df_daily['ema_21'] = ta.ema(df_daily['close'], length=21)
+        df_daily['ema_44'] = ta.ema(df_daily['close'], length=44)
+        df_daily['ema_200'] = ta.ema(df_daily['close'], length=200)
+        
+        # Calculate MACD
+        macd = ta.macd(df_daily['close'], fast=12, slow=26, signal=9)
+        if macd is not None and not macd.empty:
+            df_daily['macd'] = macd[f'MACD_12_26_9']
+            df_daily['macd_signal'] = macd[f'MACDs_12_26_9']
+            df_daily['macd_hist'] = macd[f'MACDh_12_26_9']
+        
+        # Convert to JSON-serializable format
+        chart_data = []
+        for _, row in df_daily.iterrows():
+            chart_data.append({
+                'timestamp': row['timestamp'].isoformat(),
+                'open': float(row['open']),
+                'high': float(row['high']),
+                'low': float(row['low']),
+                'close': float(row['close']),
+                'volume': int(row['volume']),
+                'rsi': float(row['rsi']) if pd.notna(row['rsi']) else None,
+                'ema_21': float(row['ema_21']) if pd.notna(row['ema_21']) else None,
+                'ema_44': float(row['ema_44']) if pd.notna(row['ema_44']) else None,
+                'ema_200': float(row['ema_200']) if pd.notna(row['ema_200']) else None,
+                'macd': float(row['macd']) if pd.notna(row.get('macd')) else None,
+                'macd_signal': float(row['macd_signal']) if pd.notna(row.get('macd_signal')) else None,
+                'macd_hist': float(row['macd_hist']) if pd.notna(row.get('macd_hist')) else None
+            })
+        
+        # Get stock info
+        stock_info = get_stock_by_symbol(symbol)
+        
+        return jsonify({
+            'symbol': symbol,
+            'name': stock_info['name'] if stock_info else symbol,
+            'sector': stock_info.get('sector', 'N/A') if stock_info else 'N/A',
+            'chart_data': chart_data,
+            'timestamp': datetime.now(timezone.utc).isoformat()
+        })
+        
+    except Exception as e:
+        logging.error(f"Error in get_chart_data for {symbol}: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
