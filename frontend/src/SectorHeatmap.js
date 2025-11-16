@@ -6,16 +6,36 @@ function SectorHeatmap() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
+  const [filterInfo, setFilterInfo] = useState(null);
+  
+  // Filter states
+  const [duration, setDuration] = useState('1d');
+  const [customMode, setCustomMode] = useState(false);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
-  const fetchHeatmapData = async () => {
+  const fetchHeatmapData = async (filterParams = {}) => {
     try {
-      const response = await fetch('/api/ohlcv/sector-heatmap');
+      setLoading(true);
+      setError(null);
+      
+      const params = new URLSearchParams();
+      
+      if (customMode && startDate && endDate) {
+        params.append('start_date', startDate);
+        params.append('end_date', endDate);
+      } else {
+        params.append('duration', filterParams.duration || duration);
+      }
+      
+      const response = await fetch(`/api/ohlcv/sector-heatmap?${params}`);
       if (!response.ok) {
         throw new Error('Failed to fetch heatmap data');
       }
       const result = await response.json();
       setHeatmapData(result.heatmap_data);
       setLastUpdate(new Date(result.timestamp).toLocaleString());
+      setFilterInfo(result.filter);
       setLoading(false);
     } catch (err) {
       setError(err.message);
@@ -26,9 +46,27 @@ function SectorHeatmap() {
   useEffect(() => {
     fetchHeatmapData();
     // Refresh every 5 minutes
-    const interval = setInterval(fetchHeatmapData, 5 * 60 * 1000);
+    const interval = setInterval(() => fetchHeatmapData(), 5 * 60 * 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [duration, customMode, startDate, endDate]);
+
+  const handleDurationChange = (newDuration) => {
+    setDuration(newDuration);
+    setCustomMode(false);
+  };
+
+  const handleCustomDateApply = () => {
+    if (startDate && endDate) {
+      setCustomMode(true);
+      fetchHeatmapData();
+    } else {
+      alert('Please select both start and end dates');
+    }
+  };
+
+  const handleRefresh = () => {
+    fetchHeatmapData();
+  };
 
   const getColorForChange = (change) => {
     if (change > 3) return '#006400'; // Dark green
@@ -45,7 +83,6 @@ function SectorHeatmap() {
     return Math.abs(change) > 1 ? '#ffffff' : '#000000';
   };
 
-  if (loading) return <div className="heatmap-loading">Loading sector heatmap...</div>;
   if (error) return <div className="heatmap-error">Error: {error}</div>;
 
   return (
@@ -54,7 +91,99 @@ function SectorHeatmap() {
         <h2>Sector Performance Heatmap</h2>
         {lastUpdate && <p className="last-update">Last Updated: {lastUpdate}</p>}
       </div>
+
+      {/* Filter Controls */}
+      <div className="filter-section">
+        <div className="filter-group">
+          <label>Duration:</label>
+          <div className="duration-buttons">
+            <button
+              className={`duration-btn ${!customMode && duration === '1d' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('1d')}
+            >
+              1 Day
+            </button>
+            <button
+              className={`duration-btn ${!customMode && duration === '1w' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('1w')}
+            >
+              1 Week
+            </button>
+            <button
+              className={`duration-btn ${!customMode && duration === '1m' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('1m')}
+            >
+              1 Month
+            </button>
+            <button
+              className={`duration-btn ${!customMode && duration === '3m' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('3m')}
+            >
+              3 Months
+            </button>
+            <button
+              className={`duration-btn ${!customMode && duration === '6m' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('6m')}
+            >
+              6 Months
+            </button>
+            <button
+              className={`duration-btn ${!customMode && duration === '1y' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('1y')}
+            >
+              1 Year
+            </button>
+            <button
+              className={`duration-btn ${!customMode && duration === 'ytd' ? 'active' : ''}`}
+              onClick={() => handleDurationChange('ytd')}
+            >
+              YTD
+            </button>
+          </div>
+        </div>
+
+        <div className="filter-group custom-date-group">
+          <label>Custom Date Range:</label>
+          <div className="custom-date-inputs">
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="date-input"
+            />
+            <span className="date-separator">to</span>
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="date-input"
+            />
+            <button
+              className="apply-btn"
+              onClick={handleCustomDateApply}
+              disabled={!startDate || !endDate}
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+
+        <div className="filter-actions">
+          <button className="refresh-btn" onClick={handleRefresh}>
+            🔄 Refresh
+          </button>
+          {filterInfo && (
+            <span className="filter-info-text">
+              Showing: {new Date(filterInfo.start_date).toLocaleDateString()} to{' '}
+              {new Date(filterInfo.end_date).toLocaleDateString()}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {loading && <div className="heatmap-loading">Loading sector heatmap...</div>}
       
+      {!loading && (
       <div className="heatmap-grid">
         {heatmapData.map((sector) => (
           <div
@@ -98,6 +227,7 @@ function SectorHeatmap() {
           </div>
         ))}
       </div>
+      )}
       
       <div className="heatmap-legend">
         <div className="legend-title">Performance Scale:</div>

@@ -1,0 +1,166 @@
+.candlestick-chart-container {
+  padding: 20px;
+  background: rgba(26, 26, 46, 0.95);
+  border-radius: 10px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.chart-header h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #fff;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a8b2d1;
+}
+
+.legend-color {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.chart-canvas {
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.chart-loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #a8b2d1;
+}
+
+.indicator-chart {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.indicator-chart h4 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chart-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* RSI Chart Specific */
+.rsi-chart .rsi-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rsi-label {
+  position: absolute;
+  right: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rsi-label.oversold {
+  bottom: 20%;
+  color: #26a69a;
+}
+
+.rsi-label.midline {
+  top: 50%;
+  transform: translateY(-50%);
+  color: #78909c;
+}
+
+.rsi-label.overbought {
+  top: 20%;
+  color: #ef5350;
+}
+
+/* MACD Chart Specific */
+.macd-legend {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.macd-legend .legend-item {
+  font-size: 12px;
+}
+
+.macd-legend .legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .chart-legend {
+    gap: 10px;
+  }
+
+  .legend-item {
+    font-size: 11px;
+  }
+
+  .legend-color {
+    width: 16px;
+  }
+
+  .indicator-chart {
+    padding: 15px;
+  }
+
+  .chart-wrapper {
+    height: 120px;
+  }
+}

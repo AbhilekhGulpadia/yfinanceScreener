@@ -1,7 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timezone
 
 db = SQLAlchemy()
+
+def get_utc_now():
+    """Helper function to get current UTC time"""
+    return datetime.now(timezone.utc)
 
 class Stock(db.Model):
     """Stock information table"""
@@ -13,7 +17,7 @@ class Stock(db.Model):
     sector = db.Column(db.String(50))
     current_price = db.Column(db.Float)
     market_cap = db.Column(db.Float)
-    last_updated = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    last_updated = db.Column(db.DateTime, default=get_utc_now, onupdate=get_utc_now)
     
     # Relationships
     transactions = db.relationship('Transaction', backref='stock', lazy=True, cascade='all, delete-orphan')
@@ -39,7 +43,7 @@ class Portfolio(db.Model):
     description = db.Column(db.Text)
     total_value = db.Column(db.Float, default=0.0)
     cash_balance = db.Column(db.Float, default=0.0)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=get_utc_now)
     
     # Relationships
     transactions = db.relationship('Transaction', backref='portfolio', lazy=True, cascade='all, delete-orphan')
@@ -65,7 +69,7 @@ class Transaction(db.Model):
     quantity = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
     total_amount = db.Column(db.Float, nullable=False)
-    transaction_date = db.Column(db.DateTime, default=datetime.utcnow)
+    transaction_date = db.Column(db.DateTime, default=get_utc_now)
     notes = db.Column(db.Text)
     
     def to_dict(self):
@@ -90,7 +94,7 @@ class WatchList(db.Model):
     stock_id = db.Column(db.Integer, db.ForeignKey('stocks.id'), nullable=False)
     target_price = db.Column(db.Float)
     notes = db.Column(db.Text)
-    added_at = db.Column(db.DateTime, default=datetime.utcnow)
+    added_at = db.Column(db.DateTime, default=get_utc_now)
     
     def to_dict(self):
         return {
@@ -116,7 +120,7 @@ class OHLCV(db.Model):
     low = db.Column(db.Float, nullable=False)
     close = db.Column(db.Float, nullable=False)
     volume = db.Column(db.BigInteger, nullable=False)
-    last_updated = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    last_updated = db.Column(db.DateTime, default=get_utc_now, onupdate=get_utc_now)
     
     # Create composite unique constraint to prevent duplicate entries
     __table_args__ = (

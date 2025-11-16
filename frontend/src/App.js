@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import SectorHeatmap from './SectorHeatmap';
 import InitializationProgress from './InitializationProgress';
+import Analysis from './Analysis';
 
 function App() {
   const [activeTab, setActiveTab] = useState('heatmap');
@@ -21,15 +22,22 @@ function App() {
           Sector Heatmap
         </button>
         <button
+          className={`nav-button ${activeTab === 'analysis' ? 'active' : ''}`}
+          onClick={() => setActiveTab('analysis')}
+        >
+          Analysis
+        </button>
+        <button
           className={`nav-button ${activeTab === 'initialize' ? 'active' : ''}`}
           onClick={() => setActiveTab('initialize')}
         >
-          Initialize Data
+          Refresh Data
         </button>
       </nav>
 
       <main className="App-main">
         {activeTab === 'heatmap' && <SectorHeatmap />}
+        {activeTab === 'analysis' && <Analysis />}
         {activeTab === 'initialize' && <InitializationProgress />}
       </main>
 

@@ -5,5 +5,6 @@ sqlalchemy
 yfinance
 APScheduler
 pandas
+pandas-ta
 flask-socketio
 python-socketio
