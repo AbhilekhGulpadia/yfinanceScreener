@@ -8,3 +8,6 @@ pandas
 pandas-ta
 flask-socketio
 python-socketio
+kiteconnect
+pyopenssl
+openpyxl

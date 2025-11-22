@@ -12,6 +12,10 @@ class Config:
     # Disable SQLAlchemy modification tracking (saves resources)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
+    # Kite Connect Credentials
+    KITE_API_KEY = 'iyi9a2huwplqqzvg'
+    KITE_API_SECRET = 'zd5b9dc6shmnwxjuquydj0rgjalkp526'
+    
     # Secret key for sessions (change in production)
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
     
