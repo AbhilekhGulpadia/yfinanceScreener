@@ -1,7 +1,5 @@
-from flask_sqlalchemy import SQLAlchemy
+from extensions import db
 from datetime import datetime, timezone
-
-db = SQLAlchemy()
 
 def get_utc_now():
     """Helper function to get current UTC time"""

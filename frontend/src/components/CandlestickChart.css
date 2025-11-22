@@ -34,6 +34,100 @@
   color: #a8b2d1;
 }
 
+.chart-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-info {
+  margin-bottom: 20px;
+}
+
+.chart-data-range {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.chart-section {
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  color: #d1d4dc;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.chart-separator {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+  margin: 30px 0;
+  border-radius: 2px;
+}
+
+.chart-placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  border: 2px dashed #2a2e39;
+}
+
+.chart-placeholder p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.chart-loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #d1d4dc;
+}
+
+.spinner {
+  border: 4px solid #2a2e39;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.chart-error {
+  text-align: center;
+  padding: 60px 20px;
+  color: #ef5350;
+  background-color: rgba(239, 83, 80, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(239, 83, 80, 0.3);
+}
+
+.chart-error p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
 .legend-color {
   width: 20px;
   height: 3px;

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { triggerRefresh } from '../services/api';
+import DataDownload from './DataDownload';
 import './SectorHeatmap.css';
 
 function SectorHeatmap() {
@@ -7,7 +9,8 @@ function SectorHeatmap() {
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
   const [filterInfo, setFilterInfo] = useState(null);
-  
+  const [expandedSector, setExpandedSector] = useState(null);
+
   // Filter states
   const [duration, setDuration] = useState('1d');
   const [customMode, setCustomMode] = useState(false);
@@ -18,16 +21,16 @@ function SectorHeatmap() {
     try {
       setLoading(true);
       setError(null);
-      
+
       const params = new URLSearchParams();
-      
+
       if (customMode && startDate && endDate) {
         params.append('start_date', startDate);
         params.append('end_date', endDate);
       } else {
         params.append('duration', filterParams.duration || duration);
       }
-      
+
       const response = await fetch(`/api/ohlcv/sector-heatmap?${params}`);
       if (!response.ok) {
         throw new Error('Failed to fetch heatmap data');
@@ -64,8 +67,33 @@ function SectorHeatmap() {
     }
   };
 
-  const handleRefresh = () => {
-    fetchHeatmapData();
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [refreshMessage, setRefreshMessage] = useState('');
+
+  // Import triggerRefresh from api service
+  // Note: We need to update imports at the top of the file first
+
+  const handleRefresh = async () => {
+    try {
+      setIsRefreshing(true);
+      setRefreshMessage('Starting data refresh...');
+
+      // Trigger backend refresh
+      await triggerRefresh();
+
+      setRefreshMessage('Refresh started in background. Data will update shortly.');
+
+      // Poll for updates or just wait a bit and re-fetch heatmap
+      setTimeout(() => {
+        fetchHeatmapData();
+        setIsRefreshing(false);
+        setRefreshMessage('');
+      }, 5000);
+
+    } catch (err) {
+      setError('Failed to trigger refresh: ' + err.message);
+      setIsRefreshing(false);
+    }
   };
 
   const getColorForChange = (change) => {
@@ -86,10 +114,15 @@ function SectorHeatmap() {
   if (error) return <div className="heatmap-error">Error: {error}</div>;
 
   return (
-    <div className="heatmap-container">
-      <div className="heatmap-header">
-        <h2>Sector Performance Heatmap</h2>
-        {lastUpdate && <p className="last-update">Last Updated: {lastUpdate}</p>}
+    <div className="heatmap-container" onClick={() => setExpandedSector(null)}>
+      <div className="heatmap-header" onClick={(e) => e.stopPropagation()}>
+        <div className="header-left">
+          <h2>Sector Heatmap</h2>
+          {lastUpdate && <p className="last-update">Last updated: {lastUpdate}</p>}
+        </div>
+        <div className="header-right">
+          <DataDownload />
+        </div>
       </div>
 
       {/* Filter Controls */}
@@ -181,54 +214,79 @@ function SectorHeatmap() {
         </div>
       </div>
 
+      {refreshMessage && (
+        <div className="refresh-message" style={{
+          padding: '10px',
+          marginBottom: '15px',
+          backgroundColor: '#e8f4f8',
+          color: '#0056b3',
+          borderRadius: '4px',
+          textAlign: 'center'
+        }}>
+          {refreshMessage}
+        </div>
+      )}
+
       {loading && <div className="heatmap-loading">Loading sector heatmap...</div>}
-      
+
       {!loading && (
-      <div className="heatmap-grid">
-        {heatmapData.map((sector) => (
-          <div
-            key={sector.sector}
-            className="heatmap-cell"
-            style={{
-              backgroundColor: getColorForChange(sector.avg_price_change),
-              color: getTextColor(sector.avg_price_change)
-            }}
-            title={`${sector.sector}\n${sector.stock_count} stocks\nAvg Change: ${sector.avg_price_change}%`}
-          >
-            <div className="sector-name">{sector.sector}</div>
-            <div className="sector-change">
-              {sector.avg_price_change > 0 ? '+' : ''}
-              {sector.avg_price_change}%
-            </div>
-            <div className="sector-stocks">{sector.stock_count} stocks</div>
-            
-            {sector.stocks && sector.stocks.length > 0 && (
-              <div className="sector-tooltip">
-                <strong>{sector.sector}</strong>
-                <div className="tooltip-stats">
-                  <div>Stocks: {sector.stock_count}</div>
-                  <div>Avg Change: {sector.avg_price_change}%</div>
-                  <div>Total Volume: {sector.total_volume.toLocaleString()}</div>
+        <div className="heatmap-grid">
+          {heatmapData.map((sector) => {
+            const isExpanded = expandedSector === sector.sector;
+            const stocksToShow = isExpanded ? sector.stocks.slice(0, 10) : sector.stocks.slice(0, 3);
+
+            return (
+              <div
+                key={sector.sector}
+                className={`heatmap-cell ${isExpanded ? 'expanded' : ''}`}
+                style={{
+                  backgroundColor: getColorForChange(sector.avg_price_change),
+                  color: getTextColor(sector.avg_price_change)
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExpandedSector(isExpanded ? null : sector.sector);
+                }}
+              >
+                <div className="sector-header">
+                  <div className="sector-name">{sector.sector}</div>
+                  <div className="sector-change-badge">
+                    {sector.avg_price_change > 0 ? '+' : ''}
+                    {sector.avg_price_change}%
+                  </div>
                 </div>
-                <div className="top-stocks">
-                  <strong>Top Movers:</strong>
-                  {sector.stocks.map((stock) => (
-                    <div key={stock.symbol} className="tooltip-stock">
-                      <span>{stock.name}</span>
-                      <span className={stock.price_change >= 0 ? 'positive' : 'negative'}>
-                        {stock.price_change > 0 ? '+' : ''}
-                        {stock.price_change.toFixed(2)}%
-                      </span>
+
+                <div className="sector-movers">
+                  {stocksToShow.map((stock) => (
+                    <div key={stock.symbol} className="mover-row">
+                      <div className="mover-info">
+                        <span className="mover-symbol">{stock.name.split(' ')[0]}</span>
+                        <span className="mover-percent">
+                          {stock.price_change > 0 ? '+' : ''}
+                          {stock.price_change.toFixed(1)}%
+                        </span>
+                      </div>
+                      <div className="mover-bar-container">
+                        <div
+                          className={`mover-bar ${stock.price_change >= 0 ? 'positive' : 'negative'}`}
+                          style={{
+                            width: `${Math.min(Math.abs(stock.price_change) * 5, 100)}%`
+                          }}
+                        ></div>
+                      </div>
                     </div>
                   ))}
                 </div>
+
+                <div className="sector-footer">
+                  {sector.stock_count} stocks {isExpanded ? '(showing 10)' : '(click to expand)'}
+                </div>
               </div>
-            )}
-          </div>
-        ))}
-      </div>
+            );
+          })}
+        </div>
       )}
-      
+
       <div className="heatmap-legend">
         <div className="legend-title">Performance Scale:</div>
         <div className="legend-items">

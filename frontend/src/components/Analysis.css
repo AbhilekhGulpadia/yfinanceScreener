@@ -1,8 +1,8 @@
 .analysis-container {
   padding: 20px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: #f5f7fa;
   min-height: 100vh;
-  color: #fff;
+  color: #333;
 }
 
 .analysis-header {
@@ -11,15 +11,16 @@
   align-items: center;
   margin-bottom: 30px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: white;
   border-radius: 10px;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .analysis-header h2 {
   margin: 0;
   font-size: 28px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -32,7 +33,7 @@
 
 .filter-controls label {
   font-weight: 600;
-  color: #a8b2d1;
+  color: #555;
 }
 
 .duration-buttons {
@@ -43,7 +44,7 @@
 .duration-buttons button {
   padding: 10px 20px;
   border: 2px solid #667eea;
-  background: transparent;
+  background: white;
   color: #667eea;
   border-radius: 5px;
   cursor: pointer;
@@ -62,23 +63,45 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
+.refresh-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .loading {
   text-align: center;
   padding: 40px;
   font-size: 18px;
-  color: #a8b2d1;
+  color: #666;
+  background: white;
+  border-radius: 10px;
 }
 
 .table-container {
   overflow-x: auto;
   overflow-y: auto;
   max-height: 600px;
-  background: rgba(255, 255, 255, 0.05);
+  background: white;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 30px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .analysis-table {
@@ -103,31 +126,33 @@
   user-select: none;
   white-space: nowrap;
   transition: background 0.3s ease;
+  color: white;
 }
 
 .analysis-table th:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .analysis-table tbody tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e0e0e0;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .analysis-table tbody tr:hover {
-  background: rgba(102, 126, 234, 0.1);
-  transform: scale(1.01);
+  background: rgba(102, 126, 234, 0.05);
+  transform: scale(1.005);
 }
 
 .analysis-table tbody tr.selected {
-  background: rgba(102, 126, 234, 0.2);
+  background: rgba(102, 126, 234, 0.1);
   border-left: 4px solid #667eea;
 }
 
 .analysis-table td {
   padding: 12px 10px;
   white-space: nowrap;
+  color: #333;
 }
 
 .symbol-cell {
@@ -141,12 +166,16 @@
   color: #26a69a;
   font-weight: 700;
   background: rgba(38, 166, 154, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .rsi-overbought {
   color: #ef5350;
   font-weight: 700;
   background: rgba(239, 83, 80, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .rsi-neutral {
@@ -159,16 +188,20 @@
   color: #26a69a;
   font-weight: 700;
   background: rgba(38, 166, 154, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .macd-bearish {
   color: #ef5350;
   font-weight: 700;
   background: rgba(239, 83, 80, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .macd-neutral {
-  color: #a8b2d1;
+  color: #666;
   font-weight: 600;
 }
 
@@ -187,16 +220,16 @@
 }
 
 .ema-no {
-  color: #78909c;
+  color: #999;
   font-weight: 500;
 }
 
 .chart-section {
   margin-top: 30px;
-  background: rgba(255, 255, 255, 0.05);
+  background: white;
   border-radius: 10px;
   padding: 20px;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */

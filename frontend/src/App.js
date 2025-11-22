@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import SectorHeatmap from './SectorHeatmap';
-import InitializationProgress from './InitializationProgress';
-import Analysis from './Analysis';
+import SectorHeatmap from './components/SectorHeatmap';
+import Analysis from './components/Analysis';
+import KiteConnectionManager from './components/KiteConnectionManager';
 
 function App() {
   const [activeTab, setActiveTab] = useState('heatmap');
@@ -10,8 +10,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Stock Analyzer</h1>
-        <p>Real-time Nifty 500 Analysis</p>
+        <div className="header-left">
+          <h1>Stock Analyzer</h1>
+          <p>Real-time Nifty 500 Analysis</p>
+        </div>
+        <div className="header-right">
+          <KiteConnectionManager compact={true} />
+        </div>
       </header>
 
       <nav className="App-nav">
@@ -27,22 +32,15 @@ function App() {
         >
           Analysis
         </button>
-        <button
-          className={`nav-button ${activeTab === 'initialize' ? 'active' : ''}`}
-          onClick={() => setActiveTab('initialize')}
-        >
-          Refresh Data
-        </button>
       </nav>
 
       <main className="App-main">
         {activeTab === 'heatmap' && <SectorHeatmap />}
         {activeTab === 'analysis' && <Analysis />}
-        {activeTab === 'initialize' && <InitializationProgress />}
       </main>
 
       <footer className="App-footer">
-        <p>Powered by Yahoo Finance API | Auto-updates every 15 minutes</p>
+        <p>Powered by Kite Connect API | Manual data refresh</p>
       </footer>
     </div>
   );
