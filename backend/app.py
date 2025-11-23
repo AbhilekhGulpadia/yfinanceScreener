@@ -53,5 +53,5 @@ def create_app():
 app = create_app()
 
 if __name__ == '__main__':
-    # Run with HTTPS using adhoc certificate
-    socketio.run(app, debug=True, port=5000, allow_unsafe_werkzeug=True, ssl_context='adhoc')
+    # Run with HTTP
+    socketio.run(app, debug=True, port=5000, allow_unsafe_werkzeug=True)

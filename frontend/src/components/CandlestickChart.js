@@ -19,7 +19,7 @@ function CandlestickChart({ symbol, name }) {
     setError(null);
 
     try {
-      const response = await fetch(`https://localhost:5000/api/analysis/chart/${symbol}`);
+      const response = await fetch(`http://localhost:5000/api/analysis/chart/${symbol}`);
       if (!response.ok) {
         throw new Error('Failed to fetch chart data');
       }

@@ -1,0 +1,1227 @@
+[2025-11-23 23:51:47] 🔍 Checking prerequisites...
+[2025-11-23 23:51:47] ✓ All prerequisites met
+[2025-11-23 23:51:47] \n📦 Setting up backend...
+[2025-11-23 23:51:47] Installing backend dependencies...
+[2025-11-23 23:51:48] ✓ Backend dependencies installed
+[2025-11-23 23:51:48] \n🚀 Starting backend server...
+[2025-11-23 23:51:48] ✓ Backend server started (PID: 14855)
+[2025-11-23 23:51:48]    Backend running at: https://localhost:5000
+[2025-11-23 23:51:48] ⏳ Waiting for backend to initialize...
+INFO:services.scheduler:Scheduler initialized (manual trigger only)
+INFO:apscheduler.scheduler:Scheduler started
+WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+Database tables created successfully!
+ * Serving Flask app 'app'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:services.scheduler:Scheduler initialized (manual trigger only)
+INFO:apscheduler.scheduler:Scheduler started
+WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 112-357-689
+[2025-11-23 23:51:53] \n📦 Setting up frontend...
+[2025-11-23 23:51:53] ✓ Frontend dependencies already installed
+[2025-11-23 23:51:53] \n🚀 Starting frontend server...
+[2025-11-23 23:51:53] ✓ Frontend server started (PID: 14874)
+[2025-11-23 23:51:53]    Frontend running at: http://localhost:3000
+[2025-11-23 23:51:53] ⏳ Waiting for frontend to initialize...
+
+> stock-analyzer-frontend@0.1.0 start
+> react-scripts start
+
+(node:14896) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:14896) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled with warnings.
+
+[eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+(node:14896) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "[33mGET /main.4fa227e43f9f71282bde.hot-update.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "[33mGET /main.4fa227e43f9f71282bde.hot-update.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:57] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:58] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:51:58] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+[2025-11-23 23:52:03] \n🌐 Launching Chrome browser...
+[2025-11-23 23:52:03] ✓ Chrome launched
+[2025-11-23 23:52:03] \n✨ Stock Analyzer is ready!
+[2025-11-23 23:52:03] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-11-23 23:52:03] Backend:  https://localhost:5000
+[2025-11-23 23:52:03] Frontend: http://localhost:3000
+[2025-11-23 23:52:03] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-11-23 23:52:03] \n📝 Logs are being written to: /Users/abhilekh/Documents/stockAnalyzer-1/startup.log
+[2025-11-23 23:52:03] Press Ctrl+C to stop all servers and exit
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:03] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:03] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:32] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:32] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:32] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:32] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:32] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:32] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:46] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:46] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:52:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:16] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:53:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:16] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:54:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:16] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:40] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:40] "GET /socket.io/?EIO=4&transport=polling&t=1tgvub5q HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:40] "POST /socket.io/?EIO=4&transport=polling&t=1tgw6sju&sid=Qg6Rg_hzPY6XFsWZAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:40] "GET /socket.io/?EIO=4&transport=polling&t=1tgw7th7&sid=Qg6Rg_hzPY6XFsWZAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:40] "GET /socket.io/?EIO=4&transport=polling&t=1tgwgj0m&sid=Qg6Rg_hzPY6XFsWZAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:43] "GET /socket.io/?EIO=4&transport=websocket&sid=Qg6Rg_hzPY6XFsWZAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:46] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:55:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:09] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:09] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:10] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:10] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:12] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:12] "GET /socket.io/?EIO=4&transport=polling&t=1u56a0y4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:12] "POST /socket.io/?EIO=4&transport=polling&t=1u56hml6&sid=9GGj6e5jAGrq_9jbAAAC HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:12] "GET /socket.io/?EIO=4&transport=polling&t=1u56ibhb&sid=9GGj6e5jAGrq_9jbAAAC HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:12] "GET /socket.io/?EIO=4&transport=polling&t=1u56tljx&sid=9GGj6e5jAGrq_9jbAAAC HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:15] "GET /socket.io/?EIO=4&transport=websocket&sid=9GGj6e5jAGrq_9jbAAAC HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 0 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:17] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 0 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:17] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:17] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:17] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:19] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:19] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:57] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:56:58] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:03] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:57:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:58:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Nov/2025 23:59:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.kite_client:KiteConnect initialized
+INFO:services.kite_client:Loaded access token from file
+INFO:services.kite_client:Fetched 8623 instruments from Kite
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:15] "GET /api/kite/callback?action=login&type=login&status=success&request_token=ifUcGQI3IGotNhMIPNOQvQjGi1c1cLDH HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:00:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:19] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:57] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:01:58] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:03] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:33] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:57] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:02:58] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/abhilekh/Documents/stockAnalyzer-1/backend/routes/kite_auth.py', reloading
+Database tables created successfully!
+INFO:apscheduler.scheduler:Scheduler has been shut down
+INFO:werkzeug: * Restarting with stat
+INFO:services.scheduler:Scheduler initialized (manual trigger only)
+INFO:apscheduler.scheduler:Scheduler started
+WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 112-357-689
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:03] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:19] "GET /api/kite/status HTTP/1.1" 200 -
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:24] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:03:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:56] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:56] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:56] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:56] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:56] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:04:56] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:04] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:04] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 0 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:08] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 0 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:09] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:09] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:09] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:10] "GET /socket.io/?EIO=4&transport=polling&t=25ohoy5o HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:10] "POST /socket.io/?EIO=4&transport=polling&t=25oi5gum&sid=vv2r-4HdoAOqSAzvAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:10] "GET /socket.io/?EIO=4&transport=polling&t=25oi5m32&sid=vv2r-4HdoAOqSAzvAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:14] "GET /socket.io/?EIO=4&transport=websocket&sid=vv2r-4HdoAOqSAzvAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:34] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:05:53] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:23] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:23] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:23] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:38] "GET /socket.io/?EIO=4&transport=polling&t=27k7naz4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:38] "POST /socket.io/?EIO=4&transport=polling&t=27k7yh4m&sid=J8n_gfDlzh_w0aUmAAAC HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:38] "GET /socket.io/?EIO=4&transport=polling&t=27k807ft&sid=J8n_gfDlzh_w0aUmAAAC HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:39] "GET /socket.io/?EIO=4&transport=websocket&sid=J8n_gfDlzh_w0aUmAAAC HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:06:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.kite_client:KiteConnect initialized
+INFO:services.kite_client:Loaded access token from file
+INFO:services.kite_client:Fetched 8623 instruments from Kite
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "[32mGET /api/kite/callback?type=login&status=success&request_token=soA08iF937BS6RxXwVtsNsgd8xSxtcOe&action=login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:19] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:22] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:22] "GET /socket.io/?EIO=4&transport=polling&t=28icuox1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:22] "POST /socket.io/?EIO=4&transport=polling&t=28idarae&sid=glM1AB4qnGAMmOnQAAAE HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:22] "GET /socket.io/?EIO=4&transport=polling&t=28idafyh&sid=glM1AB4qnGAMmOnQAAAE HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:22] "GET /socket.io/?EIO=4&transport=polling&t=28idfhqm&sid=glM1AB4qnGAMmOnQAAAE HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Starting 5-year data download for 431 stocks...
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:24] "[35m[1mPOST /api/ohlcv/refresh HTTP/1.1[0m" 202 -
+INFO:services.data_fetcher:Clearing existing OHLCV data...
+INFO:services.data_fetcher:Existing data cleared
+INFO:services.data_fetcher:Added 1238 records for TCS.NS
+INFO:services.data_fetcher:Added 1238 records for INFY.NS
+INFO:services.data_fetcher:Added 1238 records for HCLTECH.NS
+INFO:services.data_fetcher:Added 1238 records for WIPRO.NS
+INFO:services.data_fetcher:Added 1238 records for TECHM.NS
+INFO:services.data_fetcher:Added 1238 records for LTIM.NS
+INFO:services.data_fetcher:Added 1238 records for NAUKRI.NS
+INFO:services.data_fetcher:Added 1238 records for NEWGEN.NS
+INFO:services.data_fetcher:Added 1238 records for TECHNOE.NS
+INFO:services.data_fetcher:Added 1238 records for PERSISTENT.NS
+INFO:services.data_fetcher:Added 1238 records for MPHASIS.NS
+INFO:services.data_fetcher:Added 1238 records for CYIENT.NS
+INFO:services.data_fetcher:Added 1238 records for DIXON.NS
+INFO:services.data_fetcher:Added 577 records for NETWEB.NS
+INFO:services.data_fetcher:Added 719 records for KFINTECH.NS
+INFO:services.data_fetcher:Added 1238 records for CAMS.NS
+ERROR:services.data_fetcher:Error downloading data for ZENSAR.NS: Instrument token not found for ZENSAR
+INFO:services.data_fetcher:Added 1238 records for SONATSOFTW.NS
+INFO:services.data_fetcher:Added 1238 records for COFORGE.NS
+INFO:services.data_fetcher:Added 1238 records for INTELLECT.NS
+INFO:services.data_fetcher:Added 1238 records for KPITTECH.NS
+INFO:services.data_fetcher:Added 1227 records for RSSOFTWARE.NS
+INFO:services.data_fetcher:Added 1238 records for SAKSOFT.NS
+INFO:services.data_fetcher:Added 1238 records for RAMCOIND.NS
+INFO:services.data_fetcher:Added 1238 records for ROUTE.NS
+INFO:services.data_fetcher:Added 1238 records for HAPPSTMNDS.NS
+ERROR:services.data_fetcher:Error downloading data for ZOMATO.NS: Instrument token not found for ZOMATO
+INFO:services.data_fetcher:Added 996 records for PAYTM.NS
+INFO:services.data_fetcher:Added 1238 records for OFSS.NS
+ERROR:services.data_fetcher:Error downloading data for MINDTREE.NS: Instrument token not found for MINDTREE
+INFO:services.data_fetcher:Added 1238 records for HDFCBANK.NS
+INFO:services.data_fetcher:Added 1238 records for ICICIBANK.NS
+INFO:services.data_fetcher:Added 1238 records for SBIN.NS
+INFO:services.data_fetcher:Added 1238 records for KOTAKBANK.NS
+INFO:services.data_fetcher:Added 1238 records for AXISBANK.NS
+INFO:services.data_fetcher:Added 1238 records for INDUSINDBK.NS
+INFO:services.data_fetcher:Added 1238 records for FEDERALBNK.NS
+INFO:services.data_fetcher:Added 1238 records for BANDHANBNK.NS
+INFO:services.data_fetcher:Added 1238 records for IDFCFIRSTB.NS
+INFO:services.data_fetcher:Added 1238 records for PNB.NS
+INFO:services.data_fetcher:Added 1238 records for BANKBARODA.NS
+INFO:services.data_fetcher:Added 1238 records for UNIONBANK.NS
+INFO:services.data_fetcher:Added 1238 records for CANBK.NS
+INFO:services.data_fetcher:Added 1238 records for RBLBANK.NS
+INFO:services.data_fetcher:Added 1238 records for YESBANK.NS
+INFO:services.data_fetcher:Added 1238 records for AUBANK.NS
+ERROR:services.data_fetcher:Error downloading data for EQUITAS.NS: Instrument token not found for EQUITAS
+INFO:services.data_fetcher:Added 505 records for ESAFSFB.NS
+INFO:services.data_fetcher:Added 1238 records for UJJIVANSFB.NS
+INFO:services.data_fetcher:Added 1155 records for SURYODAY.NS
+INFO:services.data_fetcher:Added 1238 records for SOUTHBANK.NS
+ERROR:services.data_fetcher:Error downloading data for KARURBANK.NS: Instrument token not found for KARURBANK
+ERROR:services.data_fetcher:Error downloading data for CITYUNION.NS: Instrument token not found for CITYUNION
+INFO:services.data_fetcher:Added 1238 records for DCBBANK.NS
+ERROR:services.data_fetcher:Error downloading data for TMBBANK.NS: Instrument token not found for TMBBANK
+ERROR:services.data_fetcher:Error downloading data for CSBANK.NS: Instrument token not found for CSBANK
+ERROR:services.data_fetcher:Error downloading data for JKBANK.NS: Instrument token not found for JKBANK
+INFO:services.data_fetcher:Added 1238 records for DHANBANK.NS
+ERROR:services.data_fetcher:Error downloading data for NKBANK.NS: Instrument token not found for NKBANK
+INFO:services.data_fetcher:Added 1238 records for BAJFINANCE.NS
+INFO:services.data_fetcher:Added 1238 records for BAJAJFINSV.NS
+INFO:services.data_fetcher:Added 1238 records for MUTHOOTFIN.NS
+INFO:services.data_fetcher:Added 1238 records for MANAPPURAM.NS
+INFO:services.data_fetcher:Added 295 records for BAJAJHFL.NS
+INFO:services.data_fetcher:Added 1238 records for CREDITACC.NS
+INFO:services.data_fetcher:Added 1055 records for APTUS.NS
+INFO:services.data_fetcher:Added 1238 records for CANFINHOME.NS
+INFO:services.data_fetcher:Added 1191 records for HOMEFIRST.NS
+INFO:services.data_fetcher:Added 1238 records for SUNDARMFIN.NS
+INFO:services.data_fetcher:Added 564 records for SBFC.NS
+INFO:services.data_fetcher:Added 747 records for FIVESTAR.NS
+INFO:services.data_fetcher:Added 1238 records for CHOLAFIN.NS
+ERROR:services.data_fetcher:Error downloading data for MMFIN.NS: Instrument token not found for MMFIN
+INFO:services.data_fetcher:Added 1238 records for LICHSGFIN.NS
+INFO:services.data_fetcher:Added 1238 records for PNBHOUSING.NS
+INFO:services.data_fetcher:Added 1238 records for IIFL.NS
+INFO:services.data_fetcher:Added 1238 records for SHRIRAMFIN.NS
+ERROR:services.data_fetcher:Error downloading data for SRTRANSFIN.NS: Instrument token not found for SRTRANSFIN
+ERROR:services.data_fetcher:Error downloading data for PEL.NS: Instrument token not found for PEL
+INFO:services.data_fetcher:Added 1238 records for HDFCAMC.NS
+INFO:services.data_fetcher:Added 1238 records for CRISIL.NS
+INFO:services.data_fetcher:Added 1238 records for AAVAS.NS
+INFO:services.data_fetcher:Added 1063 records for UGROCAP.NS
+ERROR:services.data_fetcher:Error downloading data for CAPFIRST.NS: Instrument token not found for CAPFIRST
+ERROR:services.data_fetcher:Error downloading data for REPCO.NS: Instrument token not found for REPCO
+INFO:services.data_fetcher:Added 1238 records for INDOSTAR.NS
+INFO:services.data_fetcher:Added 1079 records for GRINFRA.NS
+ERROR:services.data_fetcher:Error downloading data for ARSS.NS: Instrument token not found for ARSS
+INFO:services.data_fetcher:Added 1238 records for PAISALO.NS
+INFO:services.data_fetcher:Added 1235 records for MAHSCOOTER.NS
+INFO:services.data_fetcher:Added 1238 records for CAPLIPOINT.NS
+ERROR:services.data_fetcher:Error downloading data for HDFC.NS: Instrument token not found for HDFC
+INFO:services.data_fetcher:Added 1238 records for ICICIGI.NS
+INFO:services.data_fetcher:Added 1238 records for HDFCLIFE.NS
+INFO:services.data_fetcher:Added 875 records for LICI.NS
+INFO:services.data_fetcher:Added 1238 records for ICICIPRULI.NS
+INFO:services.data_fetcher:Added 1238 records for SBILIFE.NS
+ERROR:services.data_fetcher:Error downloading data for MAXLIFE.NS: Instrument token not found for MAXLIFE
+INFO:services.data_fetcher:Added 981 records for STARHEALTH.NS
+INFO:services.data_fetcher:Added 1238 records for SUNPHARMA.NS
+INFO:services.data_fetcher:Added 1238 records for DRREDDY.NS
+INFO:services.data_fetcher:Added 1238 records for CIPLA.NS
+INFO:services.data_fetcher:Added 1238 records for DIVISLAB.NS
+INFO:services.data_fetcher:Added 1238 records for BIOCON.NS
+INFO:services.data_fetcher:Added 1238 records for LUPIN.NS
+INFO:services.data_fetcher:Added 1238 records for PFIZER.NS
+INFO:services.data_fetcher:Added 1238 records for GLAND.NS
+INFO:services.data_fetcher:Added 1238 records for NEULANDLAB.NS
+INFO:services.data_fetcher:Added 1238 records for NATCOPHARM.NS
+INFO:services.data_fetcher:Added 323 records for AKUMS.NS
+INFO:services.data_fetcher:Added 1238 records for LALPATHLAB.NS
+INFO:services.data_fetcher:Added 1238 records for SYNGENE.NS
+INFO:services.data_fetcher:Added 1238 records for APOLLOHOSP.NS
+INFO:services.data_fetcher:Added 1238 records for FORTIS.NS
+INFO:services.data_fetcher:Added 1238 records for MAXHEALTH.NS
+INFO:services.data_fetcher:Added 1094 records for KIMS.NS
+INFO:services.data_fetcher:Added 750 records for MEDANTA.NS
+INFO:services.data_fetcher:Added 1238 records for TORNTPHARM.NS
+INFO:services.data_fetcher:Added 1238 records for GLENMARK.NS
+INFO:services.data_fetcher:Added 1238 records for ABBOTINDIA.NS
+ERROR:services.data_fetcher:Error downloading data for CADILAHC.NS: Instrument token not found for CADILAHC
+INFO:services.data_fetcher:Added 1238 records for ALKEM.NS
+INFO:services.data_fetcher:Added 1238 records for GRANULES.NS
+INFO:services.data_fetcher:Added 1238 records for APLLTD.NS
+ERROR:services.data_fetcher:Error downloading data for STRIDES.NS: Instrument token not found for STRIDES
+INFO:services.data_fetcher:Added 1238 records for AUROPHARMA.NS
+INFO:services.data_fetcher:Added 1238 records for METROPOLIS.NS
+INFO:services.data_fetcher:Added 1238 records for THYROCARE.NS
+INFO:services.data_fetcher:Added 1060 records for KRSNAA.NS
+INFO:services.data_fetcher:Added 880 records for RAINBOW.NS
+INFO:services.data_fetcher:Added 972 records for MEDPLUS.NS
+ERROR:services.data_fetcher:Error downloading data for ASTER.NS: Instrument token not found for ASTER
+INFO:services.data_fetcher:Added 1238 records for COHANCE.NS
+INFO:services.data_fetcher:Added 1238 records for POLYMED.NS
+INFO:services.data_fetcher:Added 1238 records for SUVEN.NS
+INFO:services.data_fetcher:Added 1238 records for SEQUENT.NS
+ERROR:services.data_fetcher:Error downloading data for DISHMAN.NS: Instrument token not found for DISHMAN
+INFO:services.data_fetcher:Added 1238 records for SOLARA.NS
+INFO:services.data_fetcher:Added 1238 records for MARKSANS.NS
+INFO:services.data_fetcher:Added 1238 records for RELIANCE.NS
+INFO:services.data_fetcher:Added 1238 records for ONGC.NS
+INFO:services.data_fetcher:Added 1238 records for BPCL.NS
+INFO:services.data_fetcher:Added 1238 records for IOC.NS
+INFO:services.data_fetcher:Added 1238 records for GAIL.NS
+INFO:services.data_fetcher:Added 1238 records for HINDPETRO.NS
+INFO:services.data_fetcher:Added 1238 records for MGL.NS
+INFO:services.data_fetcher:Added 1238 records for IGL.NS
+INFO:services.data_fetcher:Added 1238 records for ATGL.NS
+INFO:services.data_fetcher:Added 1238 records for GUJGASLTD.NS
+INFO:services.data_fetcher:Added 1238 records for MARUTI.NS
+ERROR:services.data_fetcher:Error downloading data for TATAMOTORS.NS: Instrument token not found for TATAMOTORS
+INFO:services.data_fetcher:Added 1238 records for BAJAJ-AUTO.NS
+INFO:services.data_fetcher:Added 1238 records for HEROMOTOCO.NS
+INFO:services.data_fetcher:Added 1238 records for EICHERMOT.NS
+INFO:services.data_fetcher:Added 1238 records for TVSMOTOR.NS
+INFO:services.data_fetcher:Added 1238 records for ASHOKLEY.NS
+INFO:services.data_fetcher:Added 1238 records for BALKRISIND.NS
+INFO:services.data_fetcher:Added 1238 records for MRF.NS
+INFO:services.data_fetcher:Added 1238 records for APOLLOTYRE.NS
+ERROR:services.data_fetcher:Error downloading data for CEAT.NS: Instrument token not found for CEAT
+INFO:services.data_fetcher:Added 1238 records for ENDURANCE.NS
+INFO:services.data_fetcher:Added 1238 records for ESCORTS.NS
+INFO:services.data_fetcher:Added 1162 records for FORCEMOT.NS
+ERROR:services.data_fetcher:Error downloading data for MAHINDRA.NS: Instrument token not found for MAHINDRA
+INFO:services.data_fetcher:Added 1238 records for MOTHERSON.NS
+INFO:services.data_fetcher:Added 1238 records for BOSCHLTD.NS
+INFO:services.data_fetcher:Added 1238 records for BHARATFORG.NS
+INFO:services.data_fetcher:Added 1238 records for EXIDEIND.NS
+INFO:services.data_fetcher:Added 1238 records for UNOMINDA.NS
+INFO:services.data_fetcher:Added 1238 records for SUNDRMFAST.NS
+INFO:services.data_fetcher:Added 1238 records for APLAPOLLO.NS
+INFO:services.data_fetcher:Added 1238 records for ZFCVINDIA.NS
+INFO:services.data_fetcher:Added 1238 records for TIINDIA.NS
+INFO:services.data_fetcher:Added 1238 records for ASAHIINDIA.NS
+ERROR:services.data_fetcher:Error downloading data for OLAELEC.NS: Instrument token not found for OLAELEC
+INFO:services.data_fetcher:Added 559 records for TVSSCS.NS
+INFO:services.data_fetcher:Added 1238 records for SUPRAJIT.NS
+INFO:services.data_fetcher:Added 1238 records for GABRIEL.NS
+ERROR:services.data_fetcher:Error downloading data for LUMAX.NS: Instrument token not found for LUMAX
+INFO:services.data_fetcher:Added 1238 records for HINDUNILVR.NS
+INFO:services.data_fetcher:Added 1238 records for ITC.NS
+INFO:services.data_fetcher:Added 1238 records for NESTLEIND.NS
+INFO:services.data_fetcher:Added 1238 records for BRITANNIA.NS
+INFO:services.data_fetcher:Added 1238 records for DABUR.NS
+INFO:services.data_fetcher:Added 1238 records for MARICO.NS
+INFO:services.data_fetcher:Added 1238 records for GODREJCP.NS
+INFO:services.data_fetcher:Added 1238 records for COLPAL.NS
+INFO:services.data_fetcher:Added 1238 records for BATAINDIA.NS
+INFO:services.data_fetcher:Added 750 records for BIKAJI.NS
+INFO:services.data_fetcher:Added 1238 records for EMAMILTD.NS
+INFO:services.data_fetcher:Added 1238 records for JYOTHYLAB.NS
+INFO:services.data_fetcher:Added 1238 records for VBL.NS
+INFO:services.data_fetcher:Added 1238 records for TATACONSUM.NS
+INFO:services.data_fetcher:Added 1238 records for UBL.NS
+INFO:services.data_fetcher:Added 1238 records for RADICO.NS
+ERROR:services.data_fetcher:Error downloading data for MCDOWELL-N.NS: Instrument token not found for MCDOWELL-N
+INFO:services.data_fetcher:Added 1238 records for CCL.NS
+INFO:services.data_fetcher:Added 1238 records for RELAXO.NS
+INFO:services.data_fetcher:Added 508 records for HONASA.NS
+INFO:services.data_fetcher:Added 1238 records for USHAMART.NS
+INFO:services.data_fetcher:Added 1238 records for JUBLFOOD.NS
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1060 records for DEVYANI.NS
+INFO:services.data_fetcher:Added 1238 records for WESTLIFE.NS
+INFO:services.data_fetcher:Added 996 records for SAPPHIRE.NS
+INFO:services.data_fetcher:Added 1238 records for LT.NS
+INFO:services.data_fetcher:Added 1238 records for GMRAIRPORT.NS
+INFO:services.data_fetcher:Added 1238 records for ADANIPORTS.NS
+INFO:services.data_fetcher:Added 1238 records for IRB.NS
+INFO:services.data_fetcher:Added 1238 records for SADBHAV.NS
+ERROR:services.data_fetcher:Error downloading data for PNC.NS: Instrument token not found for PNC
+INFO:services.data_fetcher:Added 1238 records for LTTS.NS
+INFO:services.data_fetcher:Added 1238 records for KEC.NS
+INFO:services.data_fetcher:Added 532 records for JSWINFRA.NS
+ERROR:services.data_fetcher:Error downloading data for RELINFRA.NS: Instrument token not found for RELINFRA
+INFO:services.data_fetcher:Added 1238 records for BEML.NS
+INFO:services.data_fetcher:Added 1238 records for NBCC.NS
+INFO:services.data_fetcher:Added 1238 records for HCC.NS
+INFO:services.data_fetcher:Added 1238 records for JAICORPLTD.NS
+INFO:services.data_fetcher:Added 1238 records for WELCORP.NS
+INFO:services.data_fetcher:Added 1238 records for BRIGADE.NS
+INFO:services.data_fetcher:Added 1238 records for CONCOR.NS
+ERROR:services.data_fetcher:Error downloading data for GSHIPYARD.NS: Instrument token not found for GSHIPYARD
+INFO:services.data_fetcher:Added 1238 records for GRSE.NS
+INFO:services.data_fetcher:Added 1238 records for COCHINSHIP.NS
+INFO:services.data_fetcher:Added 1238 records for DLF.NS
+INFO:services.data_fetcher:Added 1238 records for OBEROIRLTY.NS
+INFO:services.data_fetcher:Added 1238 records for GODREJPROP.NS
+INFO:services.data_fetcher:Added 1238 records for SOBHA.NS
+INFO:services.data_fetcher:Added 1238 records for PRESTIGE.NS
+INFO:services.data_fetcher:Added 1238 records for SUNTECK.NS
+INFO:services.data_fetcher:Added 1238 records for DBREALTY.NS
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:07:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PHOENIXLTD.NS
+INFO:services.data_fetcher:Added 1238 records for MAHLIFE.NS
+INFO:services.data_fetcher:Added 1142 records for LODHA.NS
+ERROR:services.data_fetcher:Error downloading data for MINDSPACE.NS: Instrument token not found for MINDSPACE
+ERROR:services.data_fetcher:Error downloading data for EMBASSY.NS: Instrument token not found for EMBASSY
+ERROR:services.data_fetcher:Error downloading data for BROOKFIELD.NS: Instrument token not found for BROOKFIELD
+ERROR:services.data_fetcher:Error downloading data for IBREALEST.NS: Instrument token not found for IBREALEST
+ERROR:services.data_fetcher:Error downloading data for PURAVANKARA.NS: Instrument token not found for PURAVANKARA
+INFO:services.data_fetcher:Added 1238 records for TATASTEEL.NS
+INFO:services.data_fetcher:Added 1238 records for JSWSTEEL.NS
+INFO:services.data_fetcher:Added 1238 records for HINDALCO.NS
+INFO:services.data_fetcher:Added 1238 records for VEDL.NS
+INFO:services.data_fetcher:Added 1238 records for NATIONALUM.NS
+INFO:services.data_fetcher:Added 1238 records for JSL.NS
+INFO:services.data_fetcher:Added 1238 records for SAIL.NS
+INFO:services.data_fetcher:Added 1238 records for JINDALSTEL.NS
+ERROR:services.data_fetcher:Error downloading data for WELSPUNIND.NS: Instrument token not found for WELSPUNIND
+INFO:services.data_fetcher:Added 1238 records for HINDZINC.NS
+INFO:services.data_fetcher:Added 1238 records for COALINDIA.NS
+INFO:services.data_fetcher:Added 1238 records for GMDCLTD.NS
+INFO:services.data_fetcher:Added 1238 records for NMDC.NS
+INFO:services.data_fetcher:Added 1238 records for MOIL.NS
+INFO:services.data_fetcher:Added 1238 records for RATNAMANI.NS
+ERROR:services.data_fetcher:Error downloading data for JSPL.NS: Instrument token not found for JSPL
+ERROR:services.data_fetcher:Error downloading data for KALYANI.NS: Instrument token not found for KALYANI
+INFO:services.data_fetcher:Added 1007 records for MANORG.NS
+INFO:services.data_fetcher:Added 1238 records for FIEMIND.NS
+INFO:services.data_fetcher:Added 1238 records for ULTRACEMCO.NS
+INFO:services.data_fetcher:Added 1238 records for GRASIM.NS
+INFO:services.data_fetcher:Added 1238 records for SHREECEM.NS
+INFO:services.data_fetcher:Added 1238 records for AMBUJACEM.NS
+INFO:services.data_fetcher:Added 1238 records for ACC.NS
+INFO:services.data_fetcher:Added 1238 records for INDIACEM.NS
+INFO:services.data_fetcher:Added 1238 records for RAMCOCEM.NS
+INFO:services.data_fetcher:Added 1238 records for JKCEMENT.NS
+INFO:services.data_fetcher:Added 1238 records for NTPC.NS
+INFO:services.data_fetcher:Added 1238 records for POWERGRID.NS
+INFO:services.data_fetcher:Added 1238 records for ADANIPOWER.NS
+INFO:services.data_fetcher:Added 1238 records for TATAPOWER.NS
+INFO:services.data_fetcher:Added 1238 records for RPOWER.NS
+INFO:services.data_fetcher:Added 1238 records for POWERINDIA.NS
+INFO:services.data_fetcher:Added 1238 records for NHPC.NS
+INFO:services.data_fetcher:Added 1238 records for SJVN.NS
+INFO:services.data_fetcher:Added 1238 records for THERMAX.NS
+INFO:services.data_fetcher:Added 1238 records for BHEL.NS
+INFO:services.data_fetcher:Added 1238 records for CESC.NS
+INFO:services.data_fetcher:Added 1238 records for TORNTPOWER.NS
+INFO:services.data_fetcher:Added 1238 records for JSWENERGY.NS
+INFO:services.data_fetcher:Added 1238 records for KEI.NS
+INFO:services.data_fetcher:Added 1238 records for ADANIGREEN.NS
+INFO:services.data_fetcher:Added 610 records for PTCIL.NS
+INFO:services.data_fetcher:Added 1238 records for SUZLON.NS
+INFO:services.data_fetcher:Added 493 records for IREDA.NS
+ERROR:services.data_fetcher:Error downloading data for ORIENTGREEN.NS: Instrument token not found for ORIENTGREEN
+ERROR:services.data_fetcher:Error downloading data for WEBSOL.NS: Instrument token not found for WEBSOL
+ERROR:services.data_fetcher:Error downloading data for RENKUKA.NS: Instrument token not found for RENKUKA
+INFO:services.data_fetcher:Added 1238 records for INOXWIND.NS
+ERROR:services.data_fetcher:Error downloading data for GOLDENERGY.NS: Instrument token not found for GOLDENERGY
+INFO:services.data_fetcher:Added 1238 records for WINDMACHIN.NS
+ERROR:services.data_fetcher:Error downloading data for PVRTL.NS: Instrument token not found for PVRTL
+INFO:services.data_fetcher:Added 1238 records for BHARTIARTL.NS
+INFO:services.data_fetcher:Added 1238 records for IDEA.NS
+INFO:services.data_fetcher:Added 1238 records for TATACOMM.NS
+INFO:services.data_fetcher:Added 1238 records for ITI.NS
+INFO:services.data_fetcher:Added 1174 records for RAILTEL.NS
+INFO:services.data_fetcher:Added 401 records for BHARTIHEXA.NS
+INFO:services.data_fetcher:Added 1238 records for GTLINFRA.NS
+INFO:services.data_fetcher:Added 1238 records for HFCL.NS
+INFO:services.data_fetcher:Added 1238 records for TITAN.NS
+INFO:services.data_fetcher:Added 1238 records for ASIANPAINT.NS
+INFO:services.data_fetcher:Added 1238 records for PIDILITIND.NS
+INFO:services.data_fetcher:Added 1155 records for KALYANKJIL.NS
+INFO:services.data_fetcher:Added 1238 records for BLUESTARCO.NS
+INFO:services.data_fetcher:Added 1238 records for HAVELLS.NS
+INFO:services.data_fetcher:Added 1238 records for CROMPTON.NS
+INFO:services.data_fetcher:Added 1238 records for VGUARD.NS
+INFO:services.data_fetcher:Added 1238 records for VOLTAS.NS
+INFO:services.data_fetcher:Added 1238 records for WHIRLPOOL.NS
+INFO:services.data_fetcher:Added 1238 records for RAJESHEXPO.NS
+INFO:services.data_fetcher:Added 1238 records for SYMPHONY.NS
+INFO:services.data_fetcher:Added 1238 records for AMBER.NS
+INFO:services.data_fetcher:Added 1238 records for ORIENTELEC.NS
+INFO:services.data_fetcher:Added 1238 records for POLYCAB.NS
+INFO:services.data_fetcher:Added 1238 records for COROMANDEL.NS
+INFO:services.data_fetcher:Added 1238 records for UPL.NS
+INFO:services.data_fetcher:Added 1238 records for DEEPAKNTR.NS
+INFO:services.data_fetcher:Added 1238 records for EIDPARRY.NS
+INFO:services.data_fetcher:Added 1238 records for DCMSHRIRAM.NS
+INFO:services.data_fetcher:Added 1238 records for GODREJAGRO.NS
+INFO:services.data_fetcher:Added 1079 records for CLEAN.NS
+INFO:services.data_fetcher:Added 1238 records for NAVINFLUOR.NS
+INFO:services.data_fetcher:Added 1238 records for PRAJIND.NS
+INFO:services.data_fetcher:Added 1238 records for BASF.NS
+INFO:services.data_fetcher:Added 1238 records for GNFC.NS
+INFO:services.data_fetcher:Added 229 records for IGIL.NS
+INFO:services.data_fetcher:Added 1238 records for RALLIS.NS
+INFO:services.data_fetcher:Added 1238 records for CHAMBLFERT.NS
+INFO:services.data_fetcher:Added 1238 records for FACT.NS
+INFO:services.data_fetcher:Added 1238 records for NOCIL.NS
+INFO:services.data_fetcher:Added 1238 records for GHCL.NS
+INFO:services.data_fetcher:Added 1238 records for PIIND.NS
+INFO:services.data_fetcher:Added 1238 records for BALRAMCHIN.NS
+ERROR:services.data_fetcher:Error downloading data for SUGARINV.NS: Instrument token not found for SUGARINV
+INFO:services.data_fetcher:Added 1238 records for TATACHEM.NS
+INFO:services.data_fetcher:Added 1238 records for ALKYLAMINE.NS
+INFO:services.data_fetcher:Added 1238 records for FINCABLES.NS
+ERROR:services.data_fetcher:Error downloading data for SUPPETRO.NS: Instrument token not found for SUPPETRO
+INFO:services.data_fetcher:Added 1238 records for CHEMCON.NS
+INFO:services.data_fetcher:Added 1238 records for PAGEIND.NS
+INFO:services.data_fetcher:Added 1238 records for TRIDENT.NS
+INFO:services.data_fetcher:Added 1238 records for RAYMOND.NS
+ERROR:services.data_fetcher:Error downloading data for SIYARAM.NS: Instrument token not found for SIYARAM
+INFO:services.data_fetcher:Added 1238 records for VARDHACRLC.NS
+INFO:services.data_fetcher:Added 881 records for CAMPUS.NS
+INFO:services.data_fetcher:Added 1238 records for AIAENG.NS
+INFO:services.data_fetcher:Added 1238 records for SHANKARA.NS
+INFO:services.data_fetcher:Added 1238 records for RTNPOWER.NS
+INFO:services.data_fetcher:Added 1238 records for GUJALKALI.NS
+INFO:services.data_fetcher:Added 1238 records for CHALET.NS
+INFO:services.data_fetcher:Added 1238 records for INDHOTEL.NS
+INFO:services.data_fetcher:Added 1238 records for EIHOTEL.NS
+INFO:services.data_fetcher:Added 1238 records for LEMONTREE.NS
+ERROR:services.data_fetcher:Error downloading data for MAHINDRACR.NS: Instrument token not found for MAHINDRACR
+INFO:services.data_fetcher:Added 1238 records for ORIENTHOT.NS
+ERROR:services.data_fetcher:Error downloading data for TAKESOLN.NS: Instrument token not found for TAKESOLN
+INFO:services.data_fetcher:Added 1164 records for MTARTECH.NS
+INFO:services.data_fetcher:Added 1238 records for DMART.NS
+INFO:services.data_fetcher:Added 1238 records for TRENT.NS
+INFO:services.data_fetcher:Added 231 records for VMM.NS
+ERROR:services.data_fetcher:Error downloading data for FRETAIL.NS: Instrument token not found for FRETAIL
+INFO:services.data_fetcher:Added 1238 records for SPENCERS.NS
+ERROR:services.data_fetcher:Error downloading data for ADITYADB.NS: Instrument token not found for ADITYADB
+ERROR:services.data_fetcher:Error downloading data for SHOPRITE.NS: Instrument token not found for SHOPRITE
+INFO:services.data_fetcher:Added 1002 records for NYKAA.NS
+INFO:services.data_fetcher:Added 1238 records for INDIGO.NS
+ERROR:services.data_fetcher:Error downloading data for SPICEJET.NS: Instrument token not found for SPICEJET
+INFO:services.data_fetcher:Added 1238 records for TCI.NS
+ERROR:services.data_fetcher:Error downloading data for GATI.NS: Instrument token not found for GATI
+INFO:services.data_fetcher:Added 1238 records for AEGISLOG.NS
+INFO:services.data_fetcher:Added 1238 records for BLUEDART.NS
+INFO:services.data_fetcher:Added 1238 records for VTL.NS
+INFO:services.data_fetcher:Added 1238 records for MAHLOG.NS
+INFO:services.data_fetcher:Added 1238 records for HAL.NS
+INFO:services.data_fetcher:Added 1238 records for BEL.NS
+INFO:services.data_fetcher:Added 1238 records for MIDHANI.NS
+ERROR:services.data_fetcher:Error downloading data for ORDNANCEFB.NS: Instrument token not found for ORDNANCEFB
+ERROR:services.data_fetcher:Error downloading data for BHARAT.NS: Instrument token not found for BHARAT
+INFO:services.data_fetcher:Added 1238 records for ENGINERSIN.NS
+ERROR:services.data_fetcher:Error downloading data for MAZAGON.NS: Instrument token not found for MAZAGON
+INFO:services.data_fetcher:Added 1238 records for CENTUM.NS
+INFO:services.data_fetcher:Added 1238 records for ZEEL.NS
+INFO:services.data_fetcher:Added 1238 records for SUNTV.NS
+INFO:services.data_fetcher:Added 1238 records for NETWORK18.NS
+ERROR:services.data_fetcher:Error downloading data for PVR.NS: Instrument token not found for PVR
+ERROR:services.data_fetcher:Error downloading data for INOXLEISUR.NS: Instrument token not found for INOXLEISUR
+ERROR:services.data_fetcher:Error downloading data for TIPS.NS: Instrument token not found for TIPS
+ERROR:services.data_fetcher:Error downloading data for TV18BRDCST.NS: Instrument token not found for TV18BRDCST
+INFO:services.data_fetcher:Added 1238 records for DISHTV.NS
+INFO:services.data_fetcher:Added 1238 records for LTFOODS.NS
+INFO:services.data_fetcher:Added 1238 records for KRBL.NS
+ERROR:services.data_fetcher:Error downloading data for RUCHI.NS: Instrument token not found for RUCHI
+ERROR:services.data_fetcher:Error downloading data for AVANTI.NS: Instrument token not found for AVANTI
+INFO:services.data_fetcher:Added 1238 records for NILKAMAL.NS
+INFO:services.data_fetcher:Added 1238 records for VSTIND.NS
+INFO:services.data_fetcher:Added 1238 records for GARFIBRES.NS
+ERROR:services.data_fetcher:Error downloading data for KAVERI.NS: Instrument token not found for KAVERI
+ERROR:services.data_fetcher:Error downloading data for ADVAIT.NS: Instrument token not found for ADVAIT
+INFO:services.data_fetcher:Added 1238 records for MANGALAM.NS
+ERROR:services.data_fetcher:Error downloading data for IPAPPM.NS: Instrument token not found for IPAPPM
+ERROR:services.data_fetcher:Error downloading data for SESAGOA.NS: Instrument token not found for SESAGOA
+INFO:services.data_fetcher:Added 1238 records for TNPL.NS
+ERROR:services.data_fetcher:Error downloading data for RUCHISOYA.NS: Instrument token not found for RUCHISOYA
+INFO:services.data_fetcher:Added 1209 records for BALKRISHNA.NS
+INFO:services.data_fetcher:Added 1238 records for NAVA.NS
+ERROR:services.data_fetcher:Error downloading data for HINDWARE.NS: Instrument token not found for HINDWARE
+INFO:services.data_fetcher:Added 1238 records for CERA.NS
+ERROR:services.data_fetcher:Error downloading data for HSIL.NS: Instrument token not found for HSIL
+ERROR:services.data_fetcher:Error downloading data for GROMART.NS: Instrument token not found for GROMART
+ERROR:services.data_fetcher:Error downloading data for CERAMIC.NS: Instrument token not found for CERAMIC
+INFO:services.data_fetcher:Added 1238 records for BAJAJHLDNG.NS
+INFO:services.data_fetcher:Added 1238 records for ADANIENT.NS
+INFO:services.data_fetcher:Added 1238 records for GODREJIND.NS
+INFO:services.data_fetcher:Added 1238 records for SIEMENS.NS
+INFO:services.data_fetcher:Added 1238 records for ABB.NS
+ERROR:services.data_fetcher:Error downloading data for CAREER.NS: Instrument token not found for CAREER
+ERROR:services.data_fetcher:Error downloading data for APTECH.NS: Instrument token not found for APTECH
+INFO:services.data_fetcher:Added 1238 records for NIITLTD.NS
+INFO:services.data_fetcher:Added 1076 records for ETERNAL.NS
+ERROR:services.data_fetcher:Error downloading data for STERLITE.NS: Instrument token not found for STERLITE
+INFO:services.data_fetcher:Added 1238 records for GSPL.NS
+INFO:services.data_fetcher:Added 1238 records for HINDCOPPER.NS
+INFO:services.data_fetcher:Added 683 records for NSLNISP.NS
+INFO:services.data_fetcher:Added 1238 records for PGHH.NS
+INFO:services.data_fetcher:Added 1238 records for GILLETTE.NS
+INFO:services.data_fetcher:Added 1238 records for HONAUT.NS
+INFO:services.data_fetcher:Added 1238 records for 3MINDIA.NS
+INFO:services.data_fetcher:Added 1238 records for SCHAEFFLER.NS
+INFO:services.data_fetcher:Added 870 records for DELHIVERY.NS
+INFO:services.data_fetcher:Added 254 records for SWIGGY.NS
+ERROR:services.data_fetcher:Error downloading data for BLINKIT.NS: Instrument token not found for BLINKIT
+INFO:services.data_fetcher:5-year data download completed. 355/431 stocks, 420874 records added.
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:08:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:08:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:08:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:08:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:09:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:09:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:09:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:09:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:08] "GET /socket.io/?EIO=4&transport=websocket&sid=glM1AB4qnGAMmOnQAAAE HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:10] "GET /api/ohlcv/sector-heatmap?duration=1w HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:15] "GET /api/ohlcv/sector-heatmap?duration=1m HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 355 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:20] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 355 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:21] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:23] "GET /api/analysis/chart/INDUSINDBK.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:23] "GET /api/analysis/chart/INDUSINDBK.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:38] "GET /api/kite/status HTTP/1.1" 200 -
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/App.js
+Syntax error: Missing semicolon. (57:22) (57:22)
+WARNING in [eslint] 
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/abhilekh/Documents/stockAnalyzer-1/frontend/src/App.js: Missing semicolon. (57:22)
+
+  55 |       <nav className="App-nav">
+  56 |         <button
+> 57 |           className={`nav - button ${ activeTab === 'heatmap' ? 'active' : '' } `}
+     |                       ^
+  58 |           onClick={() => setActiveTab('heatmap')}
+  59 |         >
+  60 |           Sector Heatmap
+    at constructor (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at FlowParserMixin.raise (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:6624:19)
+    at FlowParserMixin.semicolon (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:6920:10)
+    at FlowParserMixin.parseExpressionStatement (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:13361:10)
+    at FlowParserMixin.parseExpressionStatement (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:2967:18)
+    at FlowParserMixin.parseStatementContent (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:12975:19)
+    at FlowParserMixin.parseStatementLike (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:12843:17)
+    at FlowParserMixin.parseStatementLike (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:2945:24)
+    at FlowParserMixin.parseModuleItem (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:12820:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:13392:36)
+    at FlowParserMixin.parseBlockBody (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:13385:10)
+    at FlowParserMixin.parseProgram (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:12698:10)
+    at FlowParserMixin.parseTopLevel (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:12688:25)
+    at FlowParserMixin.parseTopLevel (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:3714:28)
+    at FlowParserMixin.parse (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:14568:25)
+    at parse (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/parser/lib/index.js:14602:38)
+    at parser (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/gensync/index.js:261:32)
+    at /Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/Users/abhilekh/Documents/stockAnalyzer-1/frontend/node_modules/gensync/index.js:223:11)
+
+ERROR in [eslint] 
+src/App.js
+  Line 57:22:  Parsing error: Missing semicolon. (57:22)
+
+webpack compiled with 2 errors and 1 warning
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:10:49] "GET /api/kite/status HTTP/1.1" 200 -
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/KiteConnectionManager.js
+  Line 13:12:  'loginUrl' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:09] "GET /api/analysis/chart/INDUSINDBK.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:09] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:10] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 355 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:10] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:10] "GET /api/analysis/chart/INDUSINDBK.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:10] "GET /api/analysis/chart/INDUSINDBK.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:39] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:40] "GET /api/kite/status HTTP/1.1" 200 -
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:43] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:43] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:44] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:44] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:45] "GET /api/analysis/chart/SUNTV.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:46] "GET /api/analysis/chart/JKCEMENT.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:11:55] "GET /api/analysis/chart/DEVYANI.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:13] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:15] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:18] "GET /api/analysis/chart/GUJGASLTD.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:24] "GET /api/analysis/chart/DMART.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:37] "GET /api/analysis/chart/LEMONTREE.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:43] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:44] "GET /api/analysis/chart/HAPPSTMNDS.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:45] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:12:54] "GET /api/analysis/chart/HDFCAMC.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:13:05] "GET /api/analysis/chart/JSWSTEEL.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:13:13] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:13:15] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:13:31] "GET /api/analysis/chart/COLPAL.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:13:43] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:13:45] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:14:13] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:14:14] "GET /api/analysis/chart/ENGINERSIN.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:14:15] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:14:43] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:14:45] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:14:47] "GET /api/analysis/chart/KEI.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:15:01] "GET /api/analysis/chart/SUPRAJIT.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:15:13] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:15:16] "GET /api/analysis/chart/LALPATHLAB.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:15:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:15:43] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:16:10] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:16:13] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:16:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:10] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:11] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:17:11] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 9:10:  'connectionStatus' is assigned a value but never used  no-unused-vars
+
+src/components/Analysis.js
+  Line 15:6:  React Hook useEffect has a missing dependency: 'loadAnalysisData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/components/CandlestickChart.js
+  Line 92:9:  'volumes' is assigned a value but never used  no-unused-vars
+
+src/components/DataDownload.js
+  Line 12:12:  'completed' is assigned a value but never used        no-unused-vars
+  Line 57:11:  'handleKiteLogin' is assigned a value but never used  no-unused-vars
+
+src/components/SectorHeatmap.js
+  Line 54:6:   React Hook useEffect has a missing dependency: 'fetchHeatmapData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 70:10:  'isRefreshing' is assigned a value but never used                                                                    no-unused-vars
+
+webpack compiled with 1 warning
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:04] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 355 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:23] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 355 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:24] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:34] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 355 stocks processed out of 431 total stocks
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:20:49] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:21:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:21:09] "GET /api/analysis/chart/BAJAJ-AUTO.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:21:09] "GET /api/analysis/chart/BAJAJ-AUTO.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:21:29] "GET /api/analysis/chart/HCLTECH.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:21:34] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:22:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:22:35] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:23:04] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:23:34] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:24:01] "GET /api/analysis/chart/LTIM.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Nov/2025 00:24:04] "GET /api/kite/status HTTP/1.1" 200 -
