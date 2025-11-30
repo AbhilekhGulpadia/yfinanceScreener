@@ -12,6 +12,9 @@ from routes.nifty500 import nifty500_bp
 from routes.database import database_bp
 from routes.analysis import analysis_bp
 from routes.kite_auth import kite_auth_bp
+from routes.weinstein import weinstein_bp
+from routes.shortlist import shortlist_bp
+from routes.trades import trades_bp
 import logging
 
 # Set up logging
@@ -39,6 +42,9 @@ def create_app():
     app.register_blueprint(database_bp)
     app.register_blueprint(analysis_bp)
     app.register_blueprint(kite_auth_bp)
+    app.register_blueprint(weinstein_bp)
+    app.register_blueprint(shortlist_bp)
+    app.register_blueprint(trades_bp)
     
     # Create tables
     with app.app_context():

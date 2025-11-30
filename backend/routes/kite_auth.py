@@ -46,3 +46,23 @@ def status():
         'connected': is_connected,
         'has_instruments': bool(kite_client.instruments_map)
     })
+
+@kite_auth_bp.route('/api/kite/export-instruments', methods=['POST'])
+def export_instruments():
+    """Export all NSE equity instruments from Kite to JSON file"""
+    try:
+        if not kite_client.access_token:
+            return jsonify({'error': 'Not connected to Kite'}), 401
+        
+        success = kite_client.save_kite_instruments_to_json()
+        
+        if success:
+            return jsonify({
+                'message': 'Instruments exported successfully',
+                'filename': 'kite_instruments.json'
+            })
+        else:
+            return jsonify({'error': 'Failed to export instruments'}), 500
+            
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500

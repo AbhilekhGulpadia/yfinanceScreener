@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import SectorHeatmap from './components/SectorHeatmap';
 import Analysis from './components/Analysis';
+import WiensteinScoring from './components/WiensteinScoring';
+import Shortlist from './components/Shortlist';
 import KiteConnectionManager from './components/KiteConnectionManager';
 
 function App() {
@@ -51,24 +53,38 @@ function App() {
         </div>
       </header>
 
-      <nav className="App-nav">
+      <div className="tabs">
         <button
-          className={`nav-button ${activeTab === 'heatmap' ? 'active' : ''}`}
+          className={`tab ${activeTab === 'heatmap' ? 'active' : ''}`}
           onClick={() => setActiveTab('heatmap')}
         >
           Sector Heatmap
         </button>
         <button
-          className={`nav-button ${activeTab === 'analysis' ? 'active' : ''}`}
+          className={`tab ${activeTab === 'analysis' ? 'active' : ''}`}
           onClick={() => setActiveTab('analysis')}
         >
           Analysis
         </button>
-      </nav>
+        <button
+          className={`tab ${activeTab === 'wienstein' ? 'active' : ''}`}
+          onClick={() => setActiveTab('wienstein')}
+        >
+          Wienstein Scoring
+        </button>
+        <button
+          className={`tab ${activeTab === 'shortlist' ? 'active' : ''}`}
+          onClick={() => setActiveTab('shortlist')}
+        >
+          Shortlist
+        </button>
+      </div>
 
       <main className="App-main">
         {activeTab === 'heatmap' && <SectorHeatmap />}
         {activeTab === 'analysis' && <Analysis />}
+        {activeTab === 'wienstein' && <WiensteinScoring />}
+        {activeTab === 'shortlist' && <Shortlist />}
       </main>
 
       <footer className="App-footer">

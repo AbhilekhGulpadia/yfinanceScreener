@@ -11,19 +11,28 @@ logger = logging.getLogger(__name__)
 
 def download_5year_data():
     """
-    Simple function to download 5 years of daily OHLCV data for all stocks.
-    Clears existing data and downloads fresh data.
+    Download 5 years of daily OHLCV data for Nifty 500 stocks only.
+    Fetches Nifty 500 symbols from Kite to ensure all symbols are valid and current.
     """
-    symbols = get_all_symbols()
+    # Get Nifty 500 symbols from Kite (only symbols that exist in both Kite and Nifty 500 list)
+    logger.info("Fetching Nifty 500 symbols from Kite...")
+    symbols = kite_client.get_nifty500_symbols_from_kite()
+    
+    # Fallback to hardcoded Nifty 500 list if Kite fetch fails
+    if not symbols:
+        logger.warning("Failed to fetch from Kite, falling back to hardcoded Nifty 500 list")
+        from nifty500 import get_nifty500_symbols
+        symbols = get_nifty500_symbols()
+    
     total = len(symbols)
-    logger.info(f"Starting 5-year data download for {total} stocks...")
+    logger.info(f"Starting 5-year data download for {total} Nifty 500 stocks...")
     
     socketio.emit('refresh_progress', {
         'current': 0,
         'total': total,
         'progress': 0,
         'status': 'started',
-        'message': f'Starting 5-year data download for {total} stocks...'
+        'message': f'Starting 5-year data download for {total} Nifty 500 stocks...'
     })
     
     # Clear existing data

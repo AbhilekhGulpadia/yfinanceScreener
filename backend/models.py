@@ -137,3 +137,76 @@ class OHLCV(db.Model):
             'volume': self.volume,
             'last_updated': self.last_updated.isoformat() if self.last_updated else None
         }
+
+class ShortlistedStock(db.Model):
+    """Shortlisted stocks from Weinstein screening"""
+    __tablename__ = 'shortlisted_stocks'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    symbol = db.Column(db.String(20), nullable=False)
+    name = db.Column(db.String(100))
+    sector = db.Column(db.String(50))
+    shortlisted_at = db.Column(db.DateTime, default=get_utc_now)
+    price_at_shortlist = db.Column(db.Float)
+    score = db.Column(db.Integer)
+    stage = db.Column(db.String(20))
+    ma30 = db.Column(db.Float)
+    rs = db.Column(db.Float)
+    notes = db.Column(db.Text)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'symbol': self.symbol,
+            'name': self.name,
+            'sector': self.sector,
+            'shortlisted_at': self.shortlisted_at.isoformat() if self.shortlisted_at else None,
+            'price_at_shortlist': self.price_at_shortlist,
+            'score': self.score,
+            'stage': self.stage,
+            'ma30': self.ma30,
+            'rs': self.rs,
+            'notes': self.notes
+        }
+
+class Trade(db.Model):
+    """Trade records with brokerage and tax calculations"""
+    __tablename__ = 'trades'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    symbol = db.Column(db.String(20), nullable=False, index=True)
+    trade_type = db.Column(db.String(10), nullable=False)  # BUY/SELL
+    quantity = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    trade_date = db.Column(db.DateTime, default=get_utc_now, index=True)
+    
+    # Charges breakdown
+    brokerage = db.Column(db.Float, default=0.0)
+    stt = db.Column(db.Float, default=0.0)
+    exchange_charges = db.Column(db.Float, default=0.0)
+    gst = db.Column(db.Float, default=0.0)
+    sebi_charges = db.Column(db.Float, default=0.0)
+    stamp_duty = db.Column(db.Float, default=0.0)
+    total_charges = db.Column(db.Float, default=0.0)
+    
+    notes = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=get_utc_now)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'symbol': self.symbol,
+            'trade_type': self.trade_type,
+            'quantity': self.quantity,
+            'price': self.price,
+            'trade_date': self.trade_date.isoformat() if self.trade_date else None,
+            'brokerage': self.brokerage,
+            'stt': self.stt,
+            'exchange_charges': self.exchange_charges,
+            'gst': self.gst,
+            'sebi_charges': self.sebi_charges,
+            'stamp_duty': self.stamp_duty,
+            'total_charges': self.total_charges,
+            'notes': self.notes,
+            'created_at': self.created_at.isoformat() if self.created_at else None
+        }

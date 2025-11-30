@@ -114,6 +114,112 @@ class KiteClient:
             logger.error(f"Error getting instruments for {exchange}: {str(e)}")
             raise
 
+    def get_nse_equity_symbols(self):
+        """
+        Get list of all NSE equity trading symbols from Kite
+        Returns list of symbols with .NS suffix for consistency
+        Filters out derivatives, indices, and other non-equity instruments
+        """
+        if not self.kite or not self.access_token:
+            logger.error("Cannot fetch instruments: not logged in")
+            return []
+        
+        try:
+            instruments = self.kite.instruments("NSE")
+            
+            # Filter for equity instruments only (exclude indices, futures, options)
+            equity_symbols = [
+                f"{inst['tradingsymbol']}.NS"
+                for inst in instruments
+                if inst['instrument_type'] == 'EQ' and inst['segment'] == 'NSE'
+            ]
+            
+            logger.info(f"Fetched {len(equity_symbols)} NSE equity symbols from Kite")
+            return sorted(equity_symbols)
+            
+        except Exception as e:
+            logger.error(f"Error fetching NSE equity symbols: {str(e)}")
+            return []
+
+    def get_nifty500_symbols_from_kite(self):
+        """
+        Get Nifty 500 symbols from Kite by matching against nifty500_data.json
+        Returns only symbols that exist in both Kite and Nifty 500 list
+        Uses Kite's current trading symbols to avoid 'instrument token not found' errors
+        """
+        from nifty500 import get_nifty500_symbols
+        
+        # Get all equity symbols from Kite
+        kite_symbols = self.get_nse_equity_symbols()
+        if not kite_symbols:
+            logger.error("Failed to fetch symbols from Kite")
+            return []
+        
+        # Get Nifty 500 symbols from JSON (these may have outdated symbols)
+        nifty500_symbols = get_nifty500_symbols()
+        
+        # Convert to sets for faster lookup (remove .NS suffix for comparison)
+        kite_symbols_set = {s.replace('.NS', '') for s in kite_symbols}
+        nifty500_symbols_set = {s.replace('.NS', '') for s in nifty500_symbols}
+        
+        # Find intersection - symbols that exist in both Kite and Nifty 500
+        valid_symbols = kite_symbols_set.intersection(nifty500_symbols_set)
+        
+        # Add .NS suffix back
+        result = sorted([f"{s}.NS" for s in valid_symbols])
+        
+        logger.info(f"Found {len(result)} Nifty 500 symbols available in Kite (out of {len(nifty500_symbols)} in list)")
+        
+        return result
+
+    def save_kite_instruments_to_json(self, filename='kite_instruments.json'):
+        """
+        Fetch all NSE equity instruments from Kite and save to JSON file
+        Includes: symbol, name, and segment (industry category)
+        """
+        if not self.kite or not self.access_token:
+            logger.error("Cannot fetch instruments: not logged in")
+            return False
+        
+        try:
+            import json
+            import os
+            
+            # Get all NSE instruments
+            instruments = self.kite.instruments("NSE")
+            
+            # Filter for equity instruments and extract relevant info
+            equity_data = []
+            for inst in instruments:
+                if inst['instrument_type'] == 'EQ' and inst['segment'] == 'NSE':
+                    equity_data.append({
+                        'symbol': f"{inst['tradingsymbol']}.NS",
+                        'name': inst['name'],
+                        'tradingsymbol': inst['tradingsymbol'],
+                        'instrument_token': inst['instrument_token'],
+                        'exchange': inst['exchange'],
+                        'segment': inst.get('segment', 'NSE'),
+                        'instrument_type': inst.get('instrument_type', 'EQ')
+                    })
+            
+            # Sort by symbol
+            equity_data.sort(key=lambda x: x['symbol'])
+            
+            # Save to JSON file in backend directory
+            backend_dir = os.path.dirname(os.path.abspath(__file__))
+            backend_dir = os.path.dirname(backend_dir)  # Go up one level to backend/
+            filepath = os.path.join(backend_dir, filename)
+            
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(equity_data, f, indent=2, ensure_ascii=False)
+            
+            logger.info(f"Saved {len(equity_data)} NSE equity instruments to {filepath}")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error saving Kite instruments to JSON: {str(e)}")
+            return False
+
     def get_instrument_token(self, symbol):
         """Get instrument token for a symbol (e.g., RELIANCE)"""
         # Handle Yahoo format (RELIANCE.NS -> RELIANCE)
