@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from extensions import db
 from models import OHLCV
-from nifty500 import get_all_stocks, get_stock_by_symbol
+from nifty500 import get_all_stocks, get_stock_by_symbol, get_stock_classification, is_nifty500_stock
 from datetime import datetime, timedelta, timezone
 import pandas as pd
 import logging
@@ -13,7 +13,7 @@ analysis_bp = Blueprint('analysis', __name__)
 
 @analysis_bp.route('/api/analysis/stocks', methods=['GET'])
 def get_analysis_data():
-    """Get technical analysis data for all stocks with indicators based on 1 year of data"""
+    """Get technical analysis data for Nifty 500 stocks only"""
     try:
         import pandas_ta as ta
         
@@ -28,6 +28,12 @@ def get_analysis_data():
         
         for stock in stocks:
             symbol = stock['symbol']
+            
+            # Filter: Only process Nifty 500 stocks (includes Nifty 50, 200, and 500)
+            if not (stock.get('nifty50', False) or 
+                   stock.get('nifty200', False) or 
+                   stock.get('nifty500', False)):
+                continue
             
             # Get OHLCV data for the symbol (1 year)
             ohlcv_records = OHLCV.query.filter(
@@ -116,6 +122,7 @@ def get_analysis_data():
                     'symbol': symbol,
                     'name': stock['name'],
                     'sector': stock.get('sector', 'N/A'),
+                    'classification': get_stock_classification(symbol),  # NEW: Add classification
                     'rsi': round(float(latest['rsi']), 2) if pd.notna(latest['rsi']) else None,
                     'macd_signal': macd_crossover,  # Changed from macd_crossover
                     'ema_crossover_21_44': ema_21_crossover if ema_21_crossover == 'Yes' else ('Above' if ema_44_crossover == 'Above' or ema_21_crossover == 'Above' else 'No'),  # Combined 21 and 44

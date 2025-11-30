@@ -88,3 +88,45 @@ def search_stocks(query):
         if query in stock['name'].lower() or query in stock['symbol'].lower():
             results.append(stock)
     return results
+
+def get_stock_classification(symbol):
+    """
+    Get Nifty index classification for a symbol
+    Returns: 'Nifty 50', 'Nifty 200', 'Nifty 500', or 'Rest'
+    """
+    stock = get_stock_by_symbol(symbol)
+    if not stock:
+        return 'Rest'
+    
+    # Check in order of specificity
+    if stock.get('nifty50', False):
+        return 'Nifty 50'
+    elif stock.get('nifty200', False):
+        return 'Nifty 200'
+    elif stock.get('nifty500', False):
+        return 'Nifty 500'
+    else:
+        return 'Rest'
+
+def is_nifty500_stock(symbol):
+    """
+    Check if a symbol is in Nifty 500 (includes Nifty 50, 200, and 500)
+    Returns: True if in any Nifty index, False otherwise
+    """
+    stock = get_stock_by_symbol(symbol)
+    if not stock:
+        return False
+    
+    return stock.get('nifty50', False) or \
+           stock.get('nifty200', False) or \
+           stock.get('nifty500', False)
+
+def get_nifty500_symbols():
+    """Get list of all Nifty 500 symbols (includes Nifty 50, 200, and 500)"""
+    return [
+        stock['symbol'] 
+        for stock in NIFTY_500_STOCKS 
+        if stock.get('nifty50', False) or 
+           stock.get('nifty200', False) or 
+           stock.get('nifty500', False)
+    ]

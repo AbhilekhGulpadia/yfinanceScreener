@@ -1,16 +1,16 @@
 .App {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #0f1419;
   display: flex;
   flex-direction: column;
 }
 
 .App-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
   padding: 20px 40px;
   color: white;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,32 +38,71 @@
   justify-content: center;
   gap: 1rem;
   padding: 1.5rem 2rem;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: #1a1f2e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid #2d3748;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: #1a1f2e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #2d3748;
+}
+
+.tab {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #0891b2;
+  background: #1a1f2e;
+  color: #06b6d4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: #2d3748;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(8, 145, 178, 0.3);
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.5);
 }
 
 .nav-button {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid #667eea;
-  background: white;
-  color: #667eea;
+  border: 2px solid #0891b2;
+  background: #1a1f2e;
+  color: #06b6d4;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .nav-button:hover {
-  background: #f0f4ff;
+  background: #2d3748;
   transform: translateY(-2px);
 }
 
 .nav-button.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
   color: white;
   border-color: transparent;
 }
@@ -77,11 +116,12 @@
 }
 
 .App-footer {
-  background: #282c34;
-  color: white;
+  background: #1a1f2e;
+  color: #94a3b8;
   text-align: center;
   padding: 1.5rem;
   margin-top: auto;
+  border-top: 1px solid #2d3748;
 }
 
 .App-footer p {
@@ -92,18 +132,19 @@
 
 .data-section,
 .form-section {
-  background: white;
+  background: #1a1f2e;
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2d3748;
 }
 
 .data-section h2,
 .form-section h2 {
   margin-top: 0;
-  color: #282c34;
-  border-bottom: 2px solid #61dafb;
+  color: #e2e8f0;
+  border-bottom: 2px solid #06b6d4;
   padding-bottom: 0.5rem;
 }
 
@@ -115,8 +156,8 @@
 }
 
 .data-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: #0f1419;
+  border: 1px solid #2d3748;
   border-radius: 6px;
   padding: 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -124,17 +165,18 @@
 
 .data-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(6, 182, 212, 0.3);
+  border-color: #0891b2;
 }
 
 .data-card h3 {
   margin: 0 0 0.5rem 0;
-  color: #282c34;
+  color: #e2e8f0;
 }
 
 .data-card p {
   margin: 0;
-  color: #666;
+  color: #94a3b8;
   font-size: 1.1rem;
 }
 
@@ -149,14 +191,16 @@ form {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #282c34;
+  color: #e2e8f0;
   font-weight: 500;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid #2d3748;
+  background: #0f1419;
+  color: #e2e8f0;
   border-radius: 4px;
   font-size: 1rem;
   box-sizing: border-box;
@@ -164,24 +208,25 @@ form {
 
 .form-group input:focus {
   outline: none;
-  border-color: #61dafb;
-  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.1);
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
 }
 
 button[type="submit"] {
-  background-color: #61dafb;
-  color: #282c34;
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  color: white;
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #4fa8c5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
 }
 
 button[type="submit"]:active {

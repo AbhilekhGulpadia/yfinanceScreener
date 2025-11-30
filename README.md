@@ -1,161 +1,185 @@
-# Stock Analyzer Web App
+# Stock Analyzer
 
-A barebone full-stack web application with Python Flask backend and React frontend.
+A comprehensive stock analysis application with real-time data tracking, technical indicators, and portfolio management.
+
+## Features
+
+- 📊 Real-time stock data tracking
+- 📈 Technical analysis with RSI and MACD indicators
+- 🔥 Market heatmaps for quick insights
+- 💼 Portfolio management
+- 📱 Responsive web interface
+- 🔔 Real-time updates via WebSocket
+
+## Tech Stack
+
+### Backend
+- **Framework**: Flask (Python)
+- **Database**: SQLAlchemy
+- **Real-time**: Socket.IO
+- **API**: Kite Connect for market data
+
+### Frontend
+- **Framework**: React
+- **Charts**: Plotly.js
+- **Real-time**: Socket.IO Client
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Node.js 14 or higher
+- npm or yarn
+- Google Chrome browser
+
+### Automated Setup (Recommended)
+
+Simply run the initialization script:
+
+```bash
+./start.sh
+```
+
+This script will:
+1. ✅ Check all prerequisites
+2. 📦 Set up Python virtual environment
+3. 📦 Install backend dependencies
+4. 🚀 Start the Flask backend server
+5. 📦 Install frontend dependencies
+6. 🚀 Start the React development server
+7. 🌐 Launch Chrome browser automatically
+
+The application will be available at:
+- **Frontend**: http://localhost:3000
+- **Backend**: https://localhost:5000
+
+To stop all servers, press `Ctrl+C` in the terminal.
+
+### Manual Setup
+
+If you prefer to set up manually:
+
+#### Backend Setup
+
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
+
+#### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+## Configuration
+
+### Backend Configuration
+
+Edit `backend/config.py` to configure:
+- Database settings
+- API credentials
+- Server settings
+
+### Kite Connect Setup
+
+1. Create a Kite Connect app at https://developers.kite.trade/
+2. Add your API credentials to `backend/config.py`
+3. Run the authentication flow to generate access tokens
 
 ## Project Structure
 
 ```
-stockAnalyzer/
-├── backend/           # Python Flask API
-│   ├── app.py        # Main Flask application
-│   ├── requirements.txt
-│   └── .gitignore
-└── frontend/         # React application
-    ├── public/
-    │   └── index.html
-    ├── src/
-    │   ├── App.js
-    │   ├── App.css
-    │   ├── index.js
-    │   └── index.css
-    ├── package.json
-    └── .gitignore
+stockAnalyzer-1/
+├── backend/
+│   ├── app.py              # Flask application entry point
+│   ├── config.py           # Configuration settings
+│   ├── models.py           # Database models
+│   ├── routes/             # API routes
+│   ├── services/           # Business logic
+│   └── requirements.txt    # Python dependencies
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── App.js          # Main React component
+│   │   └── index.js        # Entry point
+│   ├── public/             # Static files
+│   └── package.json        # Node dependencies
+├── start.sh                # Initialization script
+└── README.md               # This file
 ```
 
-## Features
+## Available Scripts
 
-### Backend (Flask)
-- Health check endpoint: `GET /api/health`
-- Get data endpoint: `GET /api/data`
-- Create data endpoint: `POST /api/data`
-- CORS enabled for frontend integration
+### Backend
 
-### Frontend (React)
-- Fetches and displays data from backend API
-- Form to submit new data to backend
-- Responsive design
-- Modern React hooks (useState, useEffect)
+- `python app.py` - Start the Flask server with HTTPS
+- `python test_api.py` - Test API endpoints
+- `python export_data.py` - Export OHLCV data
 
-## Setup Instructions
+### Frontend
 
-### Backend Setup
+- `npm start` - Start development server
+- `npm build` - Build for production
+- `npm test` - Run tests
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+## Logs
 
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   ```
+Application logs are written to `startup.log` when using the initialization script.
 
-3. Activate the virtual environment:
-   ```bash
-   # On macOS/Linux:
-   source venv/bin/activate
-   
-   # On Windows:
-   # venv\Scripts\activate
-   ```
+## Troubleshooting
 
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Port Already in Use
 
-5. Run the Flask server:
-   ```bash
-   python app.py
-   ```
+If you get a "port already in use" error:
 
-   The backend will run on `http://localhost:5000`
+```bash
+# Find and kill process on port 5000 (backend)
+lsof -ti:5000 | xargs kill -9
 
-### Frontend Setup
-
-1. Navigate to the frontend directory (in a new terminal):
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the React development server:
-   ```bash
-   npm start
-   ```
-
-   The frontend will run on `http://localhost:3000`
-
-## Usage
-
-1. Start the backend server first (port 5000)
-2. Start the frontend server (port 3000)
-3. Open your browser to `http://localhost:3000`
-4. The app will display data from the backend and allow you to submit new items
-
-## API Endpoints
-
-### GET /api/health
-Health check endpoint to verify the backend is running.
-
-**Response:**
-```json
-{
-  "status": "healthy",
-  "message": "Backend is running"
-}
+# Find and kill process on port 3000 (frontend)
+lsof -ti:3000 | xargs kill -9
 ```
 
-### GET /api/data
-Retrieve sample data.
+### SSL Certificate Warnings
 
-**Response:**
-```json
-{
-  "items": [
-    {"id": 1, "name": "Item 1", "value": 100},
-    {"id": 2, "name": "Item 2", "value": 200},
-    {"id": 3, "name": "Item 3", "value": 300}
-  ]
-}
+The backend uses a self-signed certificate for HTTPS. You may need to accept the security warning in your browser.
+
+### Dependencies Issues
+
+If you encounter dependency issues:
+
+```bash
+# Backend
+cd backend
+rm -rf venv
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Frontend
+cd frontend
+rm -rf node_modules package-lock.json
+npm install
 ```
 
-### POST /api/data
-Submit new data to the backend.
+## Contributing
 
-**Request Body:**
-```json
-{
-  "name": "New Item",
-  "value": 400
-}
-```
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-**Response:**
-```json
-{
-  "message": "Data received successfully",
-  "data": {"name": "New Item", "value": 400}
-}
-```
+## License
 
-## Development
+This project is licensed under the MIT License.
 
-- Backend uses Flask with debug mode enabled
-- Frontend uses React development server with hot reload
-- Proxy configured in frontend to route API calls to backend
+## Support
 
-## Next Steps
-
-To expand this application, you can:
-- Add a database (SQLite, PostgreSQL, etc.)
-- Implement authentication
-- Add more API endpoints
-- Create additional React components
-- Add state management (Redux, Context API)
-- Implement stock analysis features
-- Add data visualization libraries (Chart.js, D3.js)
+For issues and questions, please create an issue in the repository.
