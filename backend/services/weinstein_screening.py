@@ -135,6 +135,16 @@ def compute_indicators(df, index_df):
     rs_rsi = gain / loss
     df['rsi'] = 100 - (100 / (1 + rs_rsi))
     
+    # 11. RSI slope (change in RSI vs previous week)
+    df['rsi_slope'] = df['rsi'].diff()
+    
+    # 12. MACD (12, 26, 9) - weekly
+    ema12 = df['close'].ewm(span=12, adjust=False).mean()
+    ema26 = df['close'].ewm(span=26, adjust=False).mean()
+    df['macd'] = ema12 - ema26
+    df['macd_signal'] = df['macd'].ewm(span=9, adjust=False).mean()
+    df['macd_histogram'] = df['macd'] - df['macd_signal']
+    
     return df
 
 
@@ -152,7 +162,7 @@ def apply_filters(df, liquidity_threshold=1000000):
     if df.empty:
         return df
     
-    # Initialize all condition columns as False
+    # Initialize condition columns
     df['cond_liquidity'] = False
     df['cond_stage2'] = False
     df['cond_breakout'] = False
@@ -161,6 +171,8 @@ def apply_filters(df, liquidity_threshold=1000000):
     df['cond_strong_rs'] = False
     df['cond_low_resistance'] = False
     df['cond_not_overextended'] = False
+    df['cond_rsi_uptrend'] = False
+    df['cond_macd_bullish'] = False
     df['cond_all_passed'] = False
     
     # Need at least 2 rows for previous week comparisons
@@ -192,29 +204,37 @@ def apply_filters(df, liquidity_threshold=1000000):
         if pd.notna(row['rs_slope']) and pd.notna(prev_row['rs']):
             df.loc[i, 'cond_rs_uptrend'] = (row['rs_slope'] > 0) and (row['rs'] > prev_row['rs'])
         
-        # f. Strong RS: RS ≥ 92% of RS 52-week high (stricter: 92% instead of 90%)
+        # f. Strong RS: RS ≤ 50% of RS 52-week high (early in RS uptrend)
         if pd.notna(row['rs']) and pd.notna(row['rs_52w_high']) and row['rs_52w_high'] > 0:
-            df.loc[i, 'cond_strong_rs'] = row['rs'] >= (0.92 * row['rs_52w_high'])
+            df.loc[i, 'cond_strong_rs'] = row['rs'] <= (0.50 * row['rs_52w_high'])
         
         # g. Low overhead resistance: close ≥ 96% of current 52-week high (stricter: 96% instead of 95%)
         if pd.notna(row['high_52w']) and row['high_52w'] > 0:
             df.loc[i, 'cond_low_resistance'] = row['close'] >= (0.96 * row['high_52w'])
         
-        # h. Not overextended: (close - MA30) / MA30 ≤ 0.25 (stricter: 25% instead of 35%)
+        # h. Not overextended: (close - MA30) / MA30 ≤ 0.15 (15% instead of 25%)
         if pd.notna(row['ma30']) and row['ma30'] > 0:
             extension = (row['close'] - row['ma30']) / row['ma30']
-            df.loc[i, 'cond_not_overextended'] = extension <= 0.25
+            df.loc[i, 'cond_not_overextended'] = extension <= 0.15
         
-        # Check if all conditions passed
+        # i. RSI uptrend: RSI slope > 0 (RSI is increasing)
+        if pd.notna(row['rsi_slope']):
+            df.loc[i, 'cond_rsi_uptrend'] = row['rsi_slope'] > 0
+        
+        # j. MACD bullish crossover: MACD > Signal (bullish) and positive histogram
+        if pd.notna(row['macd']) and pd.notna(row['macd_signal']):
+            df.loc[i, 'cond_macd_bullish'] = (row['macd'] > row['macd_signal']) and (row['macd_histogram'] > 0)
+        
+        # Check if all conditions passed (8 conditions)
         df.loc[i, 'cond_all_passed'] = (
             df.loc[i, 'cond_liquidity'] and
             df.loc[i, 'cond_stage2'] and
-            df.loc[i, 'cond_breakout'] and
-            df.loc[i, 'cond_volume_confirm'] and
             df.loc[i, 'cond_rs_uptrend'] and
             df.loc[i, 'cond_strong_rs'] and
             df.loc[i, 'cond_low_resistance'] and
-            df.loc[i, 'cond_not_overextended']
+            df.loc[i, 'cond_not_overextended'] and
+            df.loc[i, 'cond_rsi_uptrend'] and
+            df.loc[i, 'cond_macd_bullish']
         )
     
     return df
@@ -444,58 +464,53 @@ def get_weinstein_scores_for_latest_week(liquidity_threshold=1000000):
     latest_week = processed_df['timestamp'].max()
     latest_data = processed_df[processed_df['timestamp'] == latest_week].copy()
     
-    # Calculate enhanced score (0-100) based on conditions + proximity + RSI
-    condition_cols = [
-        'cond_liquidity', 'cond_stage2', 'cond_breakout', 'cond_volume_confirm',
-        'cond_rs_uptrend', 'cond_strong_rs', 'cond_low_resistance', 'cond_not_overextended'
-    ]
+    # Calculate score (0-100) with weighted conditions + MACD divergence
+    # Priority conditions (50% weight): Not Overextended, RSI Uptrend, MACD Bullish = 15 points each
+    # Regular conditions (50% weight): Others = 9 points each
     
-    # Base score from conditions (8 conditions × 10 points = 80 points max)
-    latest_data['base_score'] = latest_data[condition_cols].sum(axis=1) * 10
+    # Priority conditions (3 × 15 = 45 points)
+    priority_score = (
+        (latest_data['cond_not_overextended'].astype(int) * 15) +
+        (latest_data['cond_rsi_uptrend'].astype(int) * 15) +
+        (latest_data['cond_macd_bullish'].astype(int) * 15)
+    )
     
-    # Bonus points for proximity to breakout (0-10 points)
-    # Closer to 52-week high = higher score
-    def calculate_breakout_bonus(row):
-        if pd.notna(row['close']) and pd.notna(row['high_52w']) and row['high_52w'] > 0:
-            proximity = (row['close'] / row['high_52w']) * 100  # Percentage of 52w high
-            if proximity >= 99:
-                return 10  # Very close to breakout
-            elif proximity >= 97:
-                return 7
-            elif proximity >= 95:
-                return 5
-            elif proximity >= 92:
-                return 3
-            else:
-                return 0
+    # Regular conditions (5 × 9 = 45 points)
+    regular_score = (
+        (latest_data['cond_liquidity'].astype(int) * 9) +
+        (latest_data['cond_stage2'].astype(int) * 9) +
+        (latest_data['cond_rs_uptrend'].astype(int) * 9) +
+        (latest_data['cond_strong_rs'].astype(int) * 9) +
+        (latest_data['cond_low_resistance'].astype(int) * 9)
+    )
+    
+    # Base score = Priority + Regular (max 90 points)
+    latest_data['base_score'] = priority_score + regular_score
+    
+    # Bonus points for MACD divergence (0-10 points)
+    # Higher MACD histogram (divergence from signal) = higher score
+    def calculate_macd_bonus(row):
+        if pd.notna(row['macd_histogram']):
+            # Normalize histogram value as percentage of price
+            if pd.notna(row['close']) and row['close'] > 0:
+                hist_pct = abs(row['macd_histogram'] / row['close']) * 100
+                if hist_pct >= 2.0:
+                    return 10  # Very strong divergence
+                elif hist_pct >= 1.5:
+                    return 8
+                elif hist_pct >= 1.0:
+                    return 6
+                elif hist_pct >= 0.5:
+                    return 4
+                elif hist_pct >= 0.2:
+                    return 2
         return 0
     
-    latest_data['breakout_bonus'] = latest_data.apply(calculate_breakout_bonus, axis=1)
+    latest_data['macd_bonus'] = latest_data.apply(calculate_macd_bonus, axis=1)
     
-    # Bonus points for lower RSI (0-10 points)
-    # Lower RSI = more room to run = higher score
-    def calculate_rsi_bonus(row):
-        if pd.notna(row['rsi']):
-            if row['rsi'] < 30:
-                return 10  # Oversold - excellent
-            elif row['rsi'] < 40:
-                return 8
-            elif row['rsi'] < 50:
-                return 6
-            elif row['rsi'] < 60:
-                return 4
-            elif row['rsi'] < 70:
-                return 2
-            else:
-                return 0  # Overbought - no bonus
-        return 0
-    
-    latest_data['rsi_bonus'] = latest_data.apply(calculate_rsi_bonus, axis=1)
-    
-    # Total score = base + breakout proximity + RSI bonus (max 100)
+    # Total score = base + MACD bonus (max 100)
     latest_data['score'] = (latest_data['base_score'] + 
-                            latest_data['breakout_bonus'] + 
-                            latest_data['rsi_bonus']).clip(upper=100)
+                            latest_data['macd_bonus']).clip(upper=100)
     
     # Determine stage based on conditions (stricter classification)
     def determine_stage(row):
