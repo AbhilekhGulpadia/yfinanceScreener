@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Backend Flask API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: stock-analyzer-backend
+    env_file:
+      - ./backend/.env
+    environment:
+      - FLASK_ENV=production
+      - DB_DIR=/app/data
+    ports:
+      - "5000:5000"
+    volumes:
+      - backend-data:/app/data
+      - ./backend:/app
+    networks:
+      - stock-analyzer-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000/api/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend React App
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=http://localhost:5000
+        - REACT_APP_SOCKET_URL=http://localhost:5000
+    container_name: stock-analyzer-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - stock-analyzer-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  stock-analyzer-network:
+    driver: bridge
+
+volumes:
+  backend-data:
+    driver: local

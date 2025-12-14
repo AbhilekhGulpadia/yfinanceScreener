@@ -10,6 +10,9 @@ ENV/
 .venv
 *.egg-info/
 
+# Environment Variables
+.env
+
 # Database
 *.db
 *.sqlite
