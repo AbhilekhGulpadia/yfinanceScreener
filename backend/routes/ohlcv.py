@@ -349,7 +349,7 @@ def get_sector_heatmap():
                     'stock_count': len(data['stocks']),
                     'avg_price_change': avg_change,
                     'total_volume': total_volume,
-                    'stocks': sorted_stocks[:15]  # Return top 15 stocks instead of 3
+                    'stocks': sorted_stocks[:30]  # Return top 30 stocks for expanded view
                 })
 
         # 2. Sort sectors by market cap or volume (proxy: total_volume) to keep major sectors
@@ -370,8 +370,8 @@ def get_sector_heatmap():
         
         for i, sector_data in enumerate(temp_sector_data):
             if i < MAX_SECTORS:
-                # Keep top 5 movers for display
-                sector_data['stocks'] = sector_data['stocks'][:5]
+                # Keep top 30 movers for expanded display
+                sector_data['stocks'] = sector_data['stocks'][:30]
                 sector_data['avg_price_change'] = round(sector_data['avg_price_change'], 2)
                 final_heatmap_data.append(sector_data)
             else:
@@ -387,9 +387,9 @@ def get_sector_heatmap():
             if all_others_changes:
                 others_sector['avg_price_change'] = round(sum(all_others_changes) / len(all_others_changes), 2)
             
-            # Sort stocks in Others by absolute change and keep top 5
+            # Sort stocks in Others by absolute change and keep top 30
             others_sector['stocks'].sort(key=lambda x: abs(x['price_change']), reverse=True)
-            others_sector['stocks'] = others_sector['stocks'][:5]
+            others_sector['stocks'] = others_sector['stocks'][:30]
             
             final_heatmap_data.append(others_sector)
         

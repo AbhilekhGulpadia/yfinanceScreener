@@ -1,5 +1,5 @@
 """
-Debug script to test Weinstein screening logic and identify filter bottlenecks
+Debug script to test Weinstein screening with 3 core conditions (no volume/liquidity filters)
 """
 
 import sys
@@ -55,12 +55,7 @@ def debug_weinstein_screening():
         filter_stats = {
             'total_processed': 0,
             'insufficient_data': 0,
-            'cond_liquidity': 0,
             'cond_stage2': 0,
-            'cond_breakout': 0,
-            'cond_volume_confirm': 0,
-            'cond_rs_uptrend': 0,
-            'cond_strong_rs': 0,
             'cond_low_resistance': 0,
             'cond_not_overextended': 0,
             'all_passed': 0
@@ -112,8 +107,8 @@ def debug_weinstein_screening():
                 # Compute indicators
                 weekly_df = compute_indicators(weekly_df, index_weekly)
                 
-                # Apply filters
-                weekly_df = apply_filters(weekly_df, liquidity_threshold=1000000)
+                # Apply filters (no liquidity threshold for Nifty 500)
+                weekly_df = apply_filters(weekly_df)
                 
                 filter_stats['total_processed'] += 1
                 
@@ -123,16 +118,15 @@ def debug_weinstein_screening():
                     
                     logger.info(f"  Latest week data:")
                     logger.info(f"    Close: ₹{latest['close']:.2f}")
-                    logger.info(f"    MA30: ₹{latest['ma30']:.2f if pd.notna(latest['ma30']) else 'N/A'}")
-                    logger.info(f"    MA30 Slope: {latest['ma30_slope']:.4f if pd.notna(latest['ma30_slope']) else 'N/A'}")
+                    logger.info(f"    MA30: ₹{latest['ma30']:.2f}" if pd.notna(latest['ma30']) else "    MA30: N/A")
+                    logger.info(f"    MA30 Slope: {latest['ma30_slope']:.4f}" if pd.notna(latest['ma30_slope']) else "    MA30 Slope: N/A")
                     logger.info(f"    Volume: {latest['volume']:,}")
-                    logger.info(f"    Avg Trading Value (20w): ₹{latest['avg_trading_value_20']:,.0f if pd.notna(latest['avg_trading_value_20']) else 'N/A'}")
-                    logger.info(f"    RS: {latest['rs']:.4f if pd.notna(latest['rs']) else 'N/A'}")
-                    logger.info(f"    52w High: ₹{latest['high_52w']:.2f if pd.notna(latest['high_52w']) else 'N/A'}")
+                    logger.info(f"    Avg Trading Value (20w): ₹{latest['avg_trading_value_20']:,.0f}" if pd.notna(latest['avg_trading_value_20']) else "    Avg Trading Value (20w): N/A")
+                    logger.info(f"    RS: {latest['rs']:.4f}" if pd.notna(latest['rs']) else "    RS: N/A")
+                    logger.info(f"    52w High: ₹{latest['high_52w']:.2f}" if pd.notna(latest['high_52w']) else "    52w High: N/A")
                     
                     logger.info(f"  Filter Results:")
-                    for cond in ['cond_liquidity', 'cond_stage2', 'cond_breakout', 'cond_volume_confirm',
-                                'cond_rs_uptrend', 'cond_strong_rs', 'cond_low_resistance', 'cond_not_overextended']:
+                    for cond in ['cond_stage2', 'cond_low_resistance', 'cond_not_overextended']:
                         passed = bool(latest[cond])
                         logger.info(f"    {cond}: {'✓ PASS' if passed else '✗ FAIL'}")
                         if passed:
@@ -156,8 +150,7 @@ def debug_weinstein_screening():
         logger.info(f"Total stocks processed: {filter_stats['total_processed']}")
         logger.info(f"Insufficient data: {filter_stats['insufficient_data']}")
         logger.info(f"\nCondition Pass Rates:")
-        for cond in ['cond_liquidity', 'cond_stage2', 'cond_breakout', 'cond_volume_confirm',
-                    'cond_rs_uptrend', 'cond_strong_rs', 'cond_low_resistance', 'cond_not_overextended']:
+        for cond in ['cond_stage2', 'cond_low_resistance', 'cond_not_overextended']:
             count = filter_stats[cond]
             pct = (count / filter_stats['total_processed'] * 100) if filter_stats['total_processed'] > 0 else 0
             logger.info(f"  {cond}: {count}/{filter_stats['total_processed']} ({pct:.1f}%)")

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get the directory where this app bundle is located
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../" && pwd)"
+
+# Open a new Terminal window and run start.sh
+osascript -e "tell application \"Terminal\"
+    activate
+    do script \"cd '$APP_DIR' && ./start.sh\"
+end tell"
