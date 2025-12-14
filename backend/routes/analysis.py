@@ -78,6 +78,11 @@ def get_analysis_data():
                     df['macd_signal'] = macd[f'MACDs_12_26_9']
                     df['macd_hist'] = macd[f'MACDh_12_26_9']
                 
+                # NEW: Additional indicators for scoring
+                df['ema30'] = ta.ema(df['close'], length=30)
+                df['ema30_slope'] = df['ema30'].diff()
+                df['rsi_slope'] = df['rsi'].diff()
+                
                 # Get latest values
                 latest = df.iloc[-1]
                 prev = df.iloc[-2] if len(df) > 1 else latest
@@ -118,15 +123,78 @@ def get_analysis_data():
                     elif latest['close'] > latest['ema_200']:
                         ema_200_crossover = 'Above'
                 
+                
+                # ==== NEW: CALCULATE SCORE (100 points) ====
+                score = 0
+                
+                # 1. Stage 2 (15 points): Price > EMA30 AND EMA30 slope > 1.0
+                if pd.notna(latest.get('ema30')) and pd.notna(latest.get('ema30_slope')):
+                    if latest['close'] > latest['ema30'] and latest['ema30_slope'] > 1.0:
+                        score += 15
+                
+                # 2. RS Uptrend (15 points): Skip for now (requires index data)
+                # Will implement in future update
+                
+                # 3. RSI Range (20 points): RSI 20-80, lower is better
+                if pd.notna(latest['rsi']):
+                    rsi = latest['rsi']
+                    if 20 <= rsi < 30:
+                        score += 20
+                    elif 30 <= rsi < 40:
+                        score += 15
+                    elif 40 <= rsi < 50:
+                        score += 10
+                    elif 50 <= rsi < 60:
+                        score += 5
+                    elif 60 <= rsi <= 80:
+                        score += 2
+                
+                # 4. Not Overextended (15 points): Price ≤ 15% above EMA30
+                if pd.notna(latest.get('ema30')) and latest['ema30'] > 0:
+                    extension = (latest['close'] - latest['ema30']) / latest['ema30']
+                    if extension <= 0.15:
+                        score += 15
+                
+                # 5. RSI Uptrend (10 points): RSI slope > 0
+                if pd.notna(latest.get('rsi_slope')):
+                    if latest['rsi_slope'] > 0:
+                        score += 10
+                
+                # 6. MACD Bullish (15 points): MACD > Signal
+                if pd.notna(latest['macd']) and pd.notna(latest['macd_signal']):
+                    if latest['macd'] > latest['macd_signal']:
+                        score += 15
+                
+                # 7. Recent MACD Crossover (10 points): Bullish crossover in last 3 sessions
+                crossover_score = 0
+                if len(df) >= 4:
+                    for i in range(1, 4):  # Check last 3 days
+                        curr = df.iloc[-i]
+                        prev_day = df.iloc[-i-1]
+                        
+                        if (pd.notna(curr['macd']) and pd.notna(curr['macd_signal']) and
+                            pd.notna(prev_day['macd']) and pd.notna(prev_day['macd_signal'])):
+                            if (curr['macd'] > curr['macd_signal'] and 
+                                prev_day['macd'] <= prev_day['macd_signal']):
+                                if i == 1:
+                                    crossover_score = 10  # Today
+                                elif i == 2:
+                                    crossover_score = 7   # Yesterday
+                                else:
+                                    crossover_score = 5   # 2 days ago
+                                break
+                score += crossover_score
+                
                 analysis_data.append({
                     'symbol': symbol,
                     'name': stock['name'],
                     'sector': stock.get('sector', 'N/A'),
-                    'classification': get_stock_classification(symbol),  # NEW: Add classification
+                    'classification': get_stock_classification(symbol),
+                    'score': score,  # NEW: Add score
                     'rsi': round(float(latest['rsi']), 2) if pd.notna(latest['rsi']) else None,
-                    'macd_signal': macd_crossover,  # Changed from macd_crossover
-                    'ema_crossover_21_44': ema_21_crossover if ema_21_crossover == 'Yes' else ('Above' if ema_44_crossover == 'Above' or ema_21_crossover == 'Above' else 'No'),  # Combined 21 and 44
-                    'price_above_ema_200': ema_200_crossover,  # Changed from ema_200_crossover
+                    'macd_signal': macd_crossover,
+                    'ema_crossover_21_44': ema_21_crossover if ema_21_crossover == 'Yes' else ('Above' if ema_44_crossover == 'Above' or ema_21_crossover == 'Above' else 'No'),
+                    'price_above_ema_200': ema_200_crossover,
                     'current_price': float(latest['close'])
                 })
                 

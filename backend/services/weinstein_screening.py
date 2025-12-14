@@ -3,7 +3,8 @@ Weinstein Stock Screening Module
 
 Implements Stan Weinstein's Stage Analysis methodology for stock screening.
 Processes daily OHLCV data, converts to weekly timeframes, calculates technical
-indicators, and applies 8 filter conditions to identify Stage 2 breakout candidates.
+indicators, and applies 3 core filter conditions to identify Stage 2 breakout candidates.
+Designed for Nifty 500 stocks (volume and liquidity filters not needed).
 """
 
 import pandas as pd
@@ -148,13 +149,14 @@ def compute_indicators(df, index_df):
     return df
 
 
-def apply_filters(df, liquidity_threshold=1000000):
+def apply_filters(df, liquidity_threshold=None):
     """
     Apply Weinstein filter conditions to weekly data.
+    For Nifty 500 stocks - no volume/liquidity filters needed.
     
     Args:
         df: DataFrame with computed indicators
-        liquidity_threshold: Minimum 20-week avg trading value (default: ₹1,000,000)
+        liquidity_threshold: Unused (kept for backward compatibility)
     
     Returns:
         DataFrame with boolean filter columns
@@ -162,17 +164,10 @@ def apply_filters(df, liquidity_threshold=1000000):
     if df.empty:
         return df
     
-    # Initialize condition columns
-    df['cond_liquidity'] = False
+    # Initialize condition columns (3 core conditions for Nifty 500)
     df['cond_stage2'] = False
-    df['cond_breakout'] = False
-    df['cond_volume_confirm'] = False
-    df['cond_rs_uptrend'] = False
-    df['cond_strong_rs'] = False
     df['cond_low_resistance'] = False
     df['cond_not_overextended'] = False
-    df['cond_rsi_uptrend'] = False
-    df['cond_macd_bullish'] = False
     df['cond_all_passed'] = False
     
     # Need at least 2 rows for previous week comparisons
@@ -184,57 +179,24 @@ def apply_filters(df, liquidity_threshold=1000000):
         row = df.iloc[i]
         prev_row = df.iloc[i - 1]
         
-        # a. Liquidity condition
-        if pd.notna(row['avg_trading_value_20']):
-            df.loc[i, 'cond_liquidity'] = row['avg_trading_value_20'] > liquidity_threshold
-        
-        # b. Stage-2 condition: close > MA30 AND MA30 slope > 0 (stricter: slope must be > 1.0)
+        # 1. Stage-2 condition: close > MA30 AND MA30 slope > 0
         if pd.notna(row['ma30']) and pd.notna(row['ma30_slope']):
-            df.loc[i, 'cond_stage2'] = (row['close'] > row['ma30']) and (row['ma30_slope'] > 1.0)
+            df.loc[i, 'cond_stage2'] = (row['close'] > row['ma30']) and (row['ma30_slope'] > 0)
         
-        # c. Breakout condition: close > previous 52-week high × 1.01 (stricter: 1% instead of 0.5%)
-        if pd.notna(prev_row['high_52w']):
-            df.loc[i, 'cond_breakout'] = row['close'] > (prev_row['high_52w'] * 1.01)
-        
-        # d. Volume confirmation: volume ≥ 1.3 × previous week's avg_vol_10 (stricter: 1.3x instead of 1.2x)
-        if pd.notna(prev_row['avg_vol_10']):
-            df.loc[i, 'cond_volume_confirm'] = row['volume'] >= (1.3 * prev_row['avg_vol_10'])
-        
-        # e. RS uptrend: RS slope > 0 AND RS > previous week's RS
-        if pd.notna(row['rs_slope']) and pd.notna(prev_row['rs']):
-            df.loc[i, 'cond_rs_uptrend'] = (row['rs_slope'] > 0) and (row['rs'] > prev_row['rs'])
-        
-        # f. Strong RS: RS ≤ 50% of RS 52-week high (early in RS uptrend)
-        if pd.notna(row['rs']) and pd.notna(row['rs_52w_high']) and row['rs_52w_high'] > 0:
-            df.loc[i, 'cond_strong_rs'] = row['rs'] <= (0.50 * row['rs_52w_high'])
-        
-        # g. Low overhead resistance: close ≥ 96% of current 52-week high (stricter: 96% instead of 95%)
+        # 2. Low overhead resistance: close ≥ 98% of current 52-week high
         if pd.notna(row['high_52w']) and row['high_52w'] > 0:
-            df.loc[i, 'cond_low_resistance'] = row['close'] >= (0.96 * row['high_52w'])
+            df.loc[i, 'cond_low_resistance'] = row['close'] >= (0.98 * row['high_52w'])
         
-        # h. Not overextended: (close - MA30) / MA30 ≤ 0.15 (15% instead of 25%)
+        # 3. Not overextended: (close - MA30) / MA30 ≤ 0.20 (20% max extension)
         if pd.notna(row['ma30']) and row['ma30'] > 0:
             extension = (row['close'] - row['ma30']) / row['ma30']
-            df.loc[i, 'cond_not_overextended'] = extension <= 0.15
+            df.loc[i, 'cond_not_overextended'] = extension <= 0.20
         
-        # i. RSI uptrend: RSI slope > 0 (RSI is increasing)
-        if pd.notna(row['rsi_slope']):
-            df.loc[i, 'cond_rsi_uptrend'] = row['rsi_slope'] > 0
-        
-        # j. MACD bullish crossover: MACD > Signal (bullish) and positive histogram
-        if pd.notna(row['macd']) and pd.notna(row['macd_signal']):
-            df.loc[i, 'cond_macd_bullish'] = (row['macd'] > row['macd_signal']) and (row['macd_histogram'] > 0)
-        
-        # Check if all conditions passed (8 conditions)
+        # Check if all 3 core conditions passed
         df.loc[i, 'cond_all_passed'] = (
-            df.loc[i, 'cond_liquidity'] and
             df.loc[i, 'cond_stage2'] and
-            df.loc[i, 'cond_rs_uptrend'] and
-            df.loc[i, 'cond_strong_rs'] and
             df.loc[i, 'cond_low_resistance'] and
-            df.loc[i, 'cond_not_overextended'] and
-            df.loc[i, 'cond_rsi_uptrend'] and
-            df.loc[i, 'cond_macd_bullish']
+            df.loc[i, 'cond_not_overextended']
         )
     
     return df
@@ -444,13 +406,13 @@ def run_weinstein_screening(liquidity_threshold=1000000):
     return shortlist, processed_df
 
 
-def get_weinstein_scores_for_latest_week(liquidity_threshold=1000000):
+def get_weinstein_scores_for_latest_week(liquidity_threshold=None):
     """
     Get Weinstein scores and details for all stocks in the latest week.
-    Suitable for API response.
+    Suitable for API response. For Nifty 500 stocks.
     
     Args:
-        liquidity_threshold: Minimum 20-week avg trading value
+        liquidity_threshold: Unused (kept for backward compatibility)
     
     Returns:
         List of dicts with stock details and scores
@@ -464,59 +426,19 @@ def get_weinstein_scores_for_latest_week(liquidity_threshold=1000000):
     latest_week = processed_df['timestamp'].max()
     latest_data = processed_df[processed_df['timestamp'] == latest_week].copy()
     
-    # Calculate score (0-100) with weighted conditions + MACD divergence
-    # Priority conditions (50% weight): Not Overextended, RSI Uptrend, MACD Bullish = 15 points each
-    # Regular conditions (50% weight): Others = 9 points each
+    # Calculate score (0-100) - Each of 3 core conditions worth 33.33 points
+    # Round to ensure we get clean 0, 33, 67, 100 scores
+    latest_data['score'] = (
+        (latest_data['cond_stage2'].astype(int) * 33.33) +
+        (latest_data['cond_low_resistance'].astype(int) * 33.33) +
+        (latest_data['cond_not_overextended'].astype(int) * 33.34)
+    ).round(0).astype(int)
     
-    # Priority conditions (3 × 15 = 45 points)
-    priority_score = (
-        (latest_data['cond_not_overextended'].astype(int) * 15) +
-        (latest_data['cond_rsi_uptrend'].astype(int) * 15) +
-        (latest_data['cond_macd_bullish'].astype(int) * 15)
-    )
-    
-    # Regular conditions (5 × 9 = 45 points)
-    regular_score = (
-        (latest_data['cond_liquidity'].astype(int) * 9) +
-        (latest_data['cond_stage2'].astype(int) * 9) +
-        (latest_data['cond_rs_uptrend'].astype(int) * 9) +
-        (latest_data['cond_strong_rs'].astype(int) * 9) +
-        (latest_data['cond_low_resistance'].astype(int) * 9)
-    )
-    
-    # Base score = Priority + Regular (max 90 points)
-    latest_data['base_score'] = priority_score + regular_score
-    
-    # Bonus points for MACD divergence (0-10 points)
-    # Higher MACD histogram (divergence from signal) = higher score
-    def calculate_macd_bonus(row):
-        if pd.notna(row['macd_histogram']):
-            # Normalize histogram value as percentage of price
-            if pd.notna(row['close']) and row['close'] > 0:
-                hist_pct = abs(row['macd_histogram'] / row['close']) * 100
-                if hist_pct >= 2.0:
-                    return 10  # Very strong divergence
-                elif hist_pct >= 1.5:
-                    return 8
-                elif hist_pct >= 1.0:
-                    return 6
-                elif hist_pct >= 0.5:
-                    return 4
-                elif hist_pct >= 0.2:
-                    return 2
-        return 0
-    
-    latest_data['macd_bonus'] = latest_data.apply(calculate_macd_bonus, axis=1)
-    
-    # Total score = base + MACD bonus (max 100)
-    latest_data['score'] = (latest_data['base_score'] + 
-                            latest_data['macd_bonus']).clip(upper=100)
-    
-    # Determine stage based on conditions (stricter classification)
+    # Determine stage based on conditions
     def determine_stage(row):
         if row['cond_all_passed']:
             return 'Stage 2'
-        elif row['cond_stage2'] and row['cond_rs_uptrend']:
+        elif row['cond_stage2']:
             return 'Stage 2'  # In Stage 2 but not all conditions met
         elif pd.notna(row['ma30']) and row['close'] < row['ma30'] and pd.notna(row['ma30_slope']) and row['ma30_slope'] < -1.0:
             return 'Stage 4'  # Declining with negative slope
@@ -555,12 +477,7 @@ def get_weinstein_scores_for_latest_week(liquidity_threshold=1000000):
             'ma200': None,  # Not calculated in weekly (would need ~200 weeks)
             'rs': round(float(row['rs']), 4) if pd.notna(row['rs']) else None,
             'conditions_passed': {
-                'liquidity': bool(row['cond_liquidity']),
                 'stage2': bool(row['cond_stage2']),
-                'breakout': bool(row['cond_breakout']),
-                'volume_confirm': bool(row['cond_volume_confirm']),
-                'rs_uptrend': bool(row['cond_rs_uptrend']),
-                'strong_rs': bool(row['cond_strong_rs']),
                 'low_resistance': bool(row['cond_low_resistance']),
                 'not_overextended': bool(row['cond_not_overextended'])
             }

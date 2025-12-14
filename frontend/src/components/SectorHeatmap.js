@@ -233,7 +233,7 @@ function SectorHeatmap() {
         <div className="heatmap-grid">
           {heatmapData.map((sector) => {
             const isExpanded = expandedSector === sector.sector;
-            const stocksToShow = isExpanded ? sector.stocks.slice(0, 10) : sector.stocks.slice(0, 3);
+            const stocksToShow = isExpanded ? sector.stocks : sector.stocks.slice(0, 3);
 
             return (
               <div
@@ -279,7 +279,7 @@ function SectorHeatmap() {
                 </div>
 
                 <div className="sector-footer">
-                  {sector.stock_count} stocks {isExpanded ? '(showing 10)' : '(click to expand)'}
+                  {sector.stock_count} stocks {isExpanded ? `(showing ${stocksToShow.length})` : '(click to expand)'}
                 </div>
               </div>
             );

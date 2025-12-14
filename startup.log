@@ -1,12 +1,12 @@
-[2025-12-05 14:50:56] 🔍 Checking prerequisites...
-[2025-12-05 14:50:56] ✓ All prerequisites met
-[2025-12-05 14:50:56] \n📦 Setting up backend...
-[2025-12-05 14:50:56] Installing backend dependencies...
-[2025-12-05 14:50:57] ✓ Backend dependencies installed
-[2025-12-05 14:50:57] \n🚀 Starting backend server...
-[2025-12-05 14:50:57] ✓ Backend server started (PID: 65840)
-[2025-12-05 14:50:57]    Backend running at: https://localhost:5000
-[2025-12-05 14:50:57] ⏳ Waiting for backend to initialize...
+[2025-12-11 12:51:38] 🔍 Checking prerequisites...
+[2025-12-11 12:51:38] ✓ All prerequisites met
+[2025-12-11 12:51:38] \n📦 Setting up backend...
+[2025-12-11 12:51:38] Installing backend dependencies...
+[2025-12-11 12:51:39] ✓ Backend dependencies installed
+[2025-12-11 12:51:39] \n🚀 Starting backend server...
+[2025-12-11 12:51:39] ✓ Backend server started (PID: 12669)
+[2025-12-11 12:51:39]    Backend running at: https://localhost:5000
+[2025-12-11 12:51:39] ⏳ Waiting for backend to initialize...
 INFO:services.scheduler:Scheduler initialized (manual trigger only)
 INFO:apscheduler.scheduler:Scheduler started
 WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
@@ -22,54 +22,751 @@ INFO:apscheduler.scheduler:Scheduler started
 WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 562-014-657
-[2025-12-05 14:51:02] \n📦 Setting up frontend...
-[2025-12-05 14:51:02] ✓ Frontend dependencies already installed
-[2025-12-05 14:51:02] \n🚀 Starting frontend server...
-[2025-12-05 14:51:02] ✓ Frontend server started (PID: 65863)
-[2025-12-05 14:51:02]    Frontend running at: http://localhost:3000
-[2025-12-05 14:51:02] ⏳ Waiting for frontend to initialize...
+[2025-12-11 12:51:44] \n📦 Setting up frontend...
+[2025-12-11 12:51:44] ✓ Frontend dependencies already installed
+[2025-12-11 12:51:44] \n🚀 Starting frontend server...
+[2025-12-11 12:51:44] ✓ Frontend server started (PID: 12691)
+[2025-12-11 12:51:44]    Frontend running at: http://localhost:3000
+[2025-12-11 12:51:44] ⏳ Waiting for frontend to initialize...
 
 > stock-analyzer-frontend@0.1.0 start
 > react-scripts start
 
-Something is already running on port 3000.
-[2025-12-05 14:51:12] \n🌐 Launching Chrome browser...
-[2025-12-05 14:51:12] ✓ Chrome launched
-[2025-12-05 14:51:12] \n✨ Stock Analyzer is ready!
-[2025-12-05 14:51:12] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[2025-12-05 14:51:12] Backend:  http://localhost:5000
-[2025-12-05 14:51:12] Frontend: http://localhost:3000
-[2025-12-05 14:51:12] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[2025-12-05 14:51:12] \n📝 Logs are being written to: /Users/abhilekh/Documents/stockAnalyzer-1/startup.log
-[2025-12-05 14:51:12] Press Ctrl+C to stop all servers and exit
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:12] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:12] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:12] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:12] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:12] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:13] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:19] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:42] "GET /api/kite/status HTTP/1.1" 200 -
+(node:12713) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:12713) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view stock-analyzer-frontend in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.1.6:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:48] "GET /api/kite/status HTTP/1.1" 200 -
+[2025-12-11 12:51:54] \n🌐 Launching Chrome browser...
+[2025-12-11 12:51:54] ✓ Chrome launched
+[2025-12-11 12:51:54] \n✨ Stock Analyzer is ready!
+[2025-12-11 12:51:54] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-12-11 12:51:54] Backend:  http://localhost:5000
+[2025-12-11 12:51:54] Frontend: http://localhost:3000
+[2025-12-11 12:51:54] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-12-11 12:51:54] \n📝 Logs are being written to: /Users/abhilekh/Documents/stockAnalyzer-1/startup.log
+[2025-12-11 12:51:54] Press Ctrl+C to stop all servers and exit
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
+(node:12713) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:19] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:49] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:17] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:17] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:50] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:54:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:54:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:54:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:55:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:55:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:55:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:57:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:57:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:57:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:59:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:59:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:59:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:00:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:00:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:00:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:02:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:02:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:02:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:04:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:04:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:04:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:05:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:05:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:05:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:07:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:07:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:07:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:09:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:09:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:09:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:10:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:10:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:10:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:12:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:12:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:12:55] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:13:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:13:25] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:13:54] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:14:16] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:14:24] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:14:55] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.kite_client:KiteConnect initialized
+INFO:services.kite_client:Loaded access token from file
+INFO:services.kite_client:Fetched 8682 instruments from Kite
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "[32mGET /api/kite/callback?action=login&type=login&status=success&request_token=fD81s2dPupN3YwMuQHlC2Kn790I9TBJG HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:09] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /socket.io/?EIO=4&transport=polling&t=4v618k31 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "POST /socket.io/?EIO=4&transport=polling&t=4v61u0rj&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /socket.io/?EIO=4&transport=polling&t=4v61vjax&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /socket.io/?EIO=4&transport=polling&t=4v622knz&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:14] "[35m[1mPOST /api/ohlcv/refresh HTTP/1.1[0m" 202 -
+INFO:services.data_fetcher:Loaded 502 unique symbols from symbols.csv
+INFO:services.data_fetcher:Starting 5-year data download for 502 stocks...
+INFO:services.data_fetcher:Clearing existing OHLCV data...
+INFO:services.data_fetcher:Existing data cleared
+INFO:services.data_fetcher:Added 1240 records for 360ONE.NS
+INFO:services.data_fetcher:Added 1240 records for 3MINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for ABB.NS
+INFO:services.data_fetcher:Added 1240 records for ACC.NS
+INFO:services.data_fetcher:Added 268 records for ACMESOLAR.NS
+INFO:services.data_fetcher:Added 1240 records for AIAENG.NS
+INFO:services.data_fetcher:Added 1240 records for APLAPOLLO.NS
+INFO:services.data_fetcher:Added 1240 records for AUBANK.NS
+INFO:services.data_fetcher:Added 883 records for AWL.NS
+INFO:services.data_fetcher:Added 394 records for AADHARHFC.NS
+INFO:services.data_fetcher:Added 1240 records for AARTIIND.NS
+INFO:services.data_fetcher:Added 1240 records for AAVAS.NS
+INFO:services.data_fetcher:Added 1240 records for ABBOTINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for ACE.NS
+INFO:services.data_fetcher:Added 1240 records for ADANIENSOL.NS
+INFO:services.data_fetcher:Added 1240 records for ADANIENT.NS
+INFO:services.data_fetcher:Added 1240 records for ADANIGREEN.NS
+INFO:services.data_fetcher:Added 1240 records for ADANIPORTS.NS
+INFO:services.data_fetcher:Added 1240 records for ADANIPOWER.NS
+INFO:services.data_fetcher:Added 1240 records for ATGL.NS
+INFO:services.data_fetcher:Added 1240 records for ABCAPITAL.NS
+INFO:services.data_fetcher:Added 1240 records for ABFRL.NS
+INFO:services.data_fetcher:Added 119 records for ABLBL.NS
+INFO:services.data_fetcher:Added 1240 records for ABREL.NS
+INFO:services.data_fetcher:Added 1036 records for ABSLAMC.NS
+INFO:services.data_fetcher:Added 1240 records for AEGISLOG.NS
+INFO:services.data_fetcher:Added 134 records for AEGISVOPAK.NS
+INFO:services.data_fetcher:Added 275 records for AFCONS.NS
+INFO:services.data_fetcher:Added 1240 records for AFFLE.NS
+INFO:services.data_fetcher:Added 1240 records for AJANTPHARM.NS
+INFO:services.data_fetcher:Added 337 records for AKUMS.NS
+INFO:services.data_fetcher:Added 1240 records for AKZOINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for APLLTD.NS
+INFO:services.data_fetcher:Added 1240 records for ALKEM.NS
+INFO:services.data_fetcher:Added 1240 records for ALKYLAMINE.NS
+INFO:services.data_fetcher:Added 1240 records for ALOKINDS.NS
+INFO:services.data_fetcher:Added 1240 records for ARE&M.NS
+INFO:services.data_fetcher:Added 1240 records for AMBER.NS
+INFO:services.data_fetcher:Added 1240 records for AMBUJACEM.NS
+INFO:services.data_fetcher:Added 993 records for ANANDRATHI.NS
+INFO:services.data_fetcher:Added 1240 records for ANANTRAJ.NS
+INFO:services.data_fetcher:Added 1240 records for ANGELONE.NS
+INFO:services.data_fetcher:Added 1240 records for APARINDS.NS
+INFO:services.data_fetcher:Added 1240 records for APOLLOHOSP.NS
+INFO:services.data_fetcher:Added 1240 records for APOLLOTYRE.NS
+INFO:services.data_fetcher:Added 1069 records for APTUS.NS
+INFO:services.data_fetcher:Added 1240 records for ASAHIINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for ASHOKLEY.NS
+INFO:services.data_fetcher:Added 1240 records for ASIANPAINT.NS
+INFO:services.data_fetcher:Added 1240 records for ASTERDM.NS
+INFO:services.data_fetcher:Added 1240 records for ASTRAZEN.NS
+INFO:services.data_fetcher:Added 1240 records for ASTRAL.NS
+INFO:services.data_fetcher:Added 153 records for ATHERENERG.NS
+INFO:services.data_fetcher:Added 1240 records for ATUL.NS
+INFO:services.data_fetcher:Added 1240 records for AUROPHARMA.NS
+INFO:services.data_fetcher:Added 409 records for AIIL.NS
+INFO:services.data_fetcher:Added 1240 records for DMART.NS
+INFO:services.data_fetcher:Added 1240 records for AXISBANK.NS
+INFO:services.data_fetcher:Added 1240 records for BASF.NS
+INFO:services.data_fetcher:Added 1240 records for BEML.NS
+INFO:services.data_fetcher:Added 1240 records for BLS.NS
+INFO:services.data_fetcher:Added 1240 records for BSE.NS
+INFO:services.data_fetcher:Added 1240 records for BAJAJ-AUTO.NS
+INFO:services.data_fetcher:Added 1240 records for BAJFINANCE.NS
+INFO:services.data_fetcher:Added 1240 records for BAJAJFINSV.NS
+INFO:services.data_fetcher:Added 1240 records for BAJAJHLDNG.NS
+INFO:services.data_fetcher:Added 309 records for BAJAJHFL.NS
+INFO:services.data_fetcher:Added 1240 records for BALKRISIND.NS
+INFO:services.data_fetcher:Added 1240 records for BALRAMCHIN.NS
+INFO:services.data_fetcher:Added 1240 records for BANDHANBNK.NS
+INFO:services.data_fetcher:Added 1240 records for BANKBARODA.NS
+INFO:services.data_fetcher:Added 1240 records for BANKINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for MAHABANK.NS
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:25] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1240 records for BATAINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for BAYERCROP.NS
+INFO:services.data_fetcher:Added 1240 records for BERGEPAINT.NS
+INFO:services.data_fetcher:Added 1240 records for BDL.NS
+INFO:services.data_fetcher:Added 1240 records for BEL.NS
+INFO:services.data_fetcher:Added 1240 records for BHARATFORG.NS
+INFO:services.data_fetcher:Added 1240 records for BHEL.NS
+INFO:services.data_fetcher:Added 1240 records for BPCL.NS
+INFO:services.data_fetcher:Added 1240 records for BHARTIARTL.NS
+INFO:services.data_fetcher:Added 415 records for BHARTIHEXA.NS
+INFO:services.data_fetcher:Added 764 records for BIKAJI.NS
+INFO:services.data_fetcher:Added 1240 records for BIOCON.NS
+INFO:services.data_fetcher:Added 1240 records for BSOFT.NS
+INFO:services.data_fetcher:Added 1240 records for BLUEDART.NS
+INFO:services.data_fetcher:Added 526 records for BLUEJET.NS
+INFO:services.data_fetcher:Added 1240 records for BLUESTARCO.NS
+INFO:services.data_fetcher:Added 1240 records for BBTC.NS
+INFO:services.data_fetcher:Added 1240 records for BOSCHLTD.NS
+INFO:services.data_fetcher:Added 332 records for FIRSTCRY.NS
+INFO:services.data_fetcher:Added 1240 records for BRIGADE.NS
+INFO:services.data_fetcher:Added 1240 records for BRITANNIA.NS
+INFO:services.data_fetcher:Added 988 records for MAPMYINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for CCL.NS
+INFO:services.data_fetcher:Added 1240 records for CESC.NS
+INFO:services.data_fetcher:Added 1240 records for CGPOWER.NS
+INFO:services.data_fetcher:Added 1240 records for CRISIL.NS
+INFO:services.data_fetcher:Added 895 records for CAMPUS.NS
+INFO:services.data_fetcher:Added 1240 records for CANFINHOME.NS
+INFO:services.data_fetcher:Added 1240 records for CANBK.NS
+INFO:services.data_fetcher:Added 1240 records for CAPLIPOINT.NS
+INFO:services.data_fetcher:Added 1240 records for CGCL.NS
+INFO:services.data_fetcher:Added 1240 records for CARBORUNIV.NS
+INFO:services.data_fetcher:Added 1240 records for CASTROLIND.NS
+INFO:services.data_fetcher:Added 1240 records for CEATLTD.NS
+INFO:services.data_fetcher:Added 1240 records for CENTRALBK.NS
+INFO:services.data_fetcher:Added 1240 records for CDSL.NS
+INFO:services.data_fetcher:Added 1240 records for CENTURYPLY.NS
+INFO:services.data_fetcher:Added 1240 records for CERA.NS
+INFO:services.data_fetcher:Added 1240 records for CHALET.NS
+INFO:services.data_fetcher:Added 1240 records for CHAMBLFERT.NS
+INFO:services.data_fetcher:Added 1240 records for CHENNPETRO.NS
+INFO:services.data_fetcher:Added 913 records for CHOICEIN.NS
+INFO:services.data_fetcher:Added 1240 records for CHOLAHLDNG.NS
+INFO:services.data_fetcher:Added 1240 records for CHOLAFIN.NS
+INFO:services.data_fetcher:Added 1240 records for CIPLA.NS
+INFO:services.data_fetcher:Added 1240 records for CUB.NS
+INFO:services.data_fetcher:Added 1093 records for CLEAN.NS
+INFO:services.data_fetcher:Added 1240 records for COALINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for COCHINSHIP.NS
+INFO:services.data_fetcher:Added 1240 records for COFORGE.NS
+INFO:services.data_fetcher:Added 1240 records for COHANCE.NS
+INFO:services.data_fetcher:Added 1240 records for COLPAL.NS
+INFO:services.data_fetcher:Added 1240 records for CAMS.NS
+INFO:services.data_fetcher:Added 576 records for CONCORDBIO.NS
+INFO:services.data_fetcher:Added 1240 records for CONCOR.NS
+INFO:services.data_fetcher:Added 1240 records for COROMANDEL.NS
+INFO:services.data_fetcher:Added 1170 records for CRAFTSMAN.NS
+INFO:services.data_fetcher:Added 1240 records for CREDITACC.NS
+INFO:services.data_fetcher:Added 1240 records for CROMPTON.NS
+INFO:services.data_fetcher:Added 1240 records for CUMMINSIND.NS
+INFO:services.data_fetcher:Added 1240 records for CYIENT.NS
+INFO:services.data_fetcher:Added 1240 records for DCMSHRIRAM.NS
+INFO:services.data_fetcher:Added 1240 records for DLF.NS
+INFO:services.data_fetcher:Added 492 records for DOMS.NS
+INFO:services.data_fetcher:Added 1240 records for DABUR.NS
+INFO:services.data_fetcher:Added 1240 records for DALBHARAT.NS
+INFO:services.data_fetcher:Added 985 records for DATAPATTNS.NS
+INFO:services.data_fetcher:Added 1240 records for DEEPAKFERT.NS
+INFO:services.data_fetcher:Added 1240 records for DEEPAKNTR.NS
+INFO:services.data_fetcher:Added 884 records for DELHIVERY.NS
+INFO:services.data_fetcher:Added 1074 records for DEVYANI.NS
+INFO:services.data_fetcher:Added 1240 records for DIVISLAB.NS
+INFO:services.data_fetcher:Added 1240 records for DIXON.NS
+INFO:services.data_fetcher:Added 211 records for AGARWALEYE.NS
+INFO:services.data_fetcher:Added 1240 records for LALPATHLAB.NS
+INFO:services.data_fetcher:Added 1240 records for DRREDDY.NS
+ERROR:services.data_fetcher:Error downloading data for DUMMYHDLVR.NS: Instrument token not found for DUMMYHDLVR
+INFO:services.data_fetcher:Added 1240 records for EIDPARRY.NS
+INFO:services.data_fetcher:Added 1240 records for EIHOTEL.NS
+INFO:services.data_fetcher:Added 1240 records for EICHERMOT.NS
+INFO:services.data_fetcher:Added 1240 records for ELECON.NS
+INFO:services.data_fetcher:Added 1240 records for ELGIEQUIP.NS
+INFO:services.data_fetcher:Added 1240 records for EMAMILTD.NS
+INFO:services.data_fetcher:Added 355 records for EMCURE.NS
+INFO:services.data_fetcher:Added 1240 records for ENDURANCE.NS
+INFO:services.data_fetcher:Added 1240 records for ENGINERSIN.NS
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1240 records for ERIS.NS
+INFO:services.data_fetcher:Added 1240 records for ESCORTS.NS
+INFO:services.data_fetcher:Added 1090 records for ETERNAL.NS
+INFO:services.data_fetcher:Added 1240 records for EXIDEIND.NS
+INFO:services.data_fetcher:Added 1016 records for NYKAA.NS
+INFO:services.data_fetcher:Added 1240 records for FEDERALBNK.NS
+INFO:services.data_fetcher:Added 1240 records for FACT.NS
+INFO:services.data_fetcher:Added 1240 records for FINCABLES.NS
+INFO:services.data_fetcher:Added 1240 records for FINPIPE.NS
+INFO:services.data_fetcher:Added 1240 records for FSL.NS
+INFO:services.data_fetcher:Added 761 records for FIVESTAR.NS
+INFO:services.data_fetcher:Added 1164 records for FORCEMOT.NS
+INFO:services.data_fetcher:Added 1240 records for FORTIS.NS
+INFO:services.data_fetcher:Added 1240 records for GAIL.NS
+INFO:services.data_fetcher:Added 1240 records for GVT&D.NS
+INFO:services.data_fetcher:Added 1240 records for GMRAIRPORT.NS
+INFO:services.data_fetcher:Added 1240 records for GRSE.NS
+INFO:services.data_fetcher:Added 1240 records for GICRE.NS
+INFO:services.data_fetcher:Added 1240 records for GILLETTE.NS
+INFO:services.data_fetcher:Added 1240 records for GLAND.NS
+INFO:services.data_fetcher:Added 1240 records for GLAXO.NS
+INFO:services.data_fetcher:Added 1240 records for GLENMARK.NS
+INFO:services.data_fetcher:Added 764 records for MEDANTA.NS
+INFO:services.data_fetcher:Added 388 records for GODIGIT.NS
+INFO:services.data_fetcher:Added 1240 records for GPIL.NS
+INFO:services.data_fetcher:Added 1240 records for GODFRYPHLP.NS
+INFO:services.data_fetcher:Added 1240 records for GODREJAGRO.NS
+INFO:services.data_fetcher:Added 1240 records for GODREJCP.NS
+INFO:services.data_fetcher:Added 1240 records for GODREJIND.NS
+INFO:services.data_fetcher:Added 1240 records for GODREJPROP.NS
+INFO:services.data_fetcher:Added 1240 records for GRANULES.NS
+INFO:services.data_fetcher:Added 1240 records for GRAPHITE.NS
+INFO:services.data_fetcher:Added 1240 records for GRASIM.NS
+INFO:services.data_fetcher:Added 1240 records for GRAVITA.NS
+INFO:services.data_fetcher:Added 1240 records for GESHIP.NS
+INFO:services.data_fetcher:Added 1240 records for FLUOROCHEM.NS
+INFO:services.data_fetcher:Added 1240 records for GUJGASLTD.NS
+INFO:services.data_fetcher:Added 1240 records for GMDCLTD.NS
+INFO:services.data_fetcher:Added 1240 records for GSPL.NS
+INFO:services.data_fetcher:Added 1240 records for HEG.NS
+INFO:services.data_fetcher:Added 1240 records for HBLENGINE.NS
+INFO:services.data_fetcher:Added 1240 records for HCLTECH.NS
+INFO:services.data_fetcher:Added 1240 records for HDFCAMC.NS
+INFO:services.data_fetcher:Added 1240 records for HDFCBANK.NS
+INFO:services.data_fetcher:Added 1240 records for HDFCLIFE.NS
+INFO:services.data_fetcher:Added 1240 records for HFCL.NS
+INFO:services.data_fetcher:Added 1240 records for HAPPSTMNDS.NS
+INFO:services.data_fetcher:Added 1240 records for HAVELLS.NS
+INFO:services.data_fetcher:Added 1240 records for HEROMOTOCO.NS
+INFO:services.data_fetcher:Added 200 records for HEXT.NS
+INFO:services.data_fetcher:Added 1240 records for HSCL.NS
+INFO:services.data_fetcher:Added 1240 records for HINDALCO.NS
+INFO:services.data_fetcher:Added 1240 records for HAL.NS
+INFO:services.data_fetcher:Added 1240 records for HINDCOPPER.NS
+INFO:services.data_fetcher:Added 1240 records for HINDPETRO.NS
+INFO:services.data_fetcher:Added 1240 records for HINDUNILVR.NS
+INFO:services.data_fetcher:Added 1240 records for HINDZINC.NS
+INFO:services.data_fetcher:Added 1240 records for POWERINDIA.NS
+INFO:services.data_fetcher:Added 1205 records for HOMEFIRST.NS
+INFO:services.data_fetcher:Added 522 records for HONASA.NS
+INFO:services.data_fetcher:Added 1240 records for HONAUT.NS
+INFO:services.data_fetcher:Added 1240 records for HUDCO.NS
+INFO:services.data_fetcher:Added 284 records for HYUNDAI.NS
+INFO:services.data_fetcher:Added 1240 records for ICICIBANK.NS
+INFO:services.data_fetcher:Added 1240 records for ICICIGI.NS
+INFO:services.data_fetcher:Added 1240 records for ICICIPRULI.NS
+INFO:services.data_fetcher:Added 1240 records for IDBI.NS
+INFO:services.data_fetcher:Added 1240 records for IDFCFIRSTB.NS
+INFO:services.data_fetcher:Added 1240 records for IFCI.NS
+INFO:services.data_fetcher:Added 1240 records for IIFL.NS
+INFO:services.data_fetcher:Added 491 records for INOXINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for IRB.NS
+INFO:services.data_fetcher:Added 1240 records for IRCON.NS
+INFO:services.data_fetcher:Added 216 records for ITCHOTELS.NS
+INFO:services.data_fetcher:Added 1240 records for ITC.NS
+INFO:services.data_fetcher:Added 1240 records for ITI.NS
+INFO:services.data_fetcher:Added 396 records for INDGN.NS
+INFO:services.data_fetcher:Added 1240 records for INDIACEM.NS
+INFO:services.data_fetcher:Added 1240 records for INDIAMART.NS
+INFO:services.data_fetcher:Added 1240 records for INDIANB.NS
+INFO:services.data_fetcher:Added 1240 records for IEX.NS
+INFO:services.data_fetcher:Added 1240 records for INDHOTEL.NS
+INFO:services.data_fetcher:Added 1240 records for IOC.NS
+INFO:services.data_fetcher:Added 1240 records for IOB.NS
+INFO:services.data_fetcher:Added 1240 records for IRCTC.NS
+INFO:services.data_fetcher:Added 1208 records for IRFC.NS
+INFO:services.data_fetcher:Added 507 records for IREDA.NS
+INFO:services.data_fetcher:Added 1240 records for IGL.NS
+INFO:services.data_fetcher:Added 1240 records for INDUSTOWER.NS
+INFO:services.data_fetcher:Added 1240 records for INDUSINDBK.NS
+INFO:services.data_fetcher:Added 1240 records for NAUKRI.NS
+INFO:services.data_fetcher:Added 1240 records for INFY.NS
+INFO:services.data_fetcher:Added 1240 records for INOXWIND.NS
+INFO:services.data_fetcher:Added 1240 records for INTELLECT.NS
+INFO:services.data_fetcher:Added 1240 records for INDIGO.NS
+INFO:services.data_fetcher:Added 243 records for IGIL.NS
+INFO:services.data_fetcher:Added 244 records for IKS.NS
+INFO:services.data_fetcher:Added 1240 records for IPCALAB.NS
+INFO:services.data_fetcher:Added 1240 records for JBCHEPHARM.NS
+INFO:services.data_fetcher:Added 1240 records for JKCEMENT.NS
+INFO:services.data_fetcher:Added 1240 records for JBMA.NS
+INFO:services.data_fetcher:Added 1240 records for JKTYRE.NS
+INFO:services.data_fetcher:Added 1240 records for JMFINANCIL.NS
+INFO:services.data_fetcher:Added 1240 records for JSWENERGY.NS
+INFO:services.data_fetcher:Added 546 records for JSWINFRA.NS
+INFO:services.data_fetcher:Added 1240 records for JSWSTEEL.NS
+INFO:services.data_fetcher:Added 1240 records for JPPOWER.NS
+INFO:services.data_fetcher:Added 1240 records for J&KBANK.NS
+INFO:services.data_fetcher:Added 1240 records for JINDALSAW.NS
+INFO:services.data_fetcher:Added 1240 records for JSL.NS
+INFO:services.data_fetcher:Added 1240 records for JINDALSTEL.NS
+INFO:services.data_fetcher:Added 575 records for JIOFIN.NS
+INFO:services.data_fetcher:Added 1240 records for JUBLFOOD.NS
+INFO:services.data_fetcher:Added 1174 records for JUBLINGREA.NS
+INFO:services.data_fetcher:Added 1240 records for JUBLPHARMA.NS
+INFO:services.data_fetcher:Added 1240 records for JWL.NS
+INFO:services.data_fetcher:Added 1240 records for JYOTHYLAB.NS
+INFO:services.data_fetcher:Added 474 records for JYOTICNC.NS
+INFO:services.data_fetcher:Added 1240 records for KPRMILL.NS
+INFO:services.data_fetcher:Added 1240 records for KEI.NS
+INFO:services.data_fetcher:Added 1240 records for KPITTECH.NS
+INFO:services.data_fetcher:Added 1240 records for KSB.NS
+INFO:services.data_fetcher:Added 1240 records for KAJARIACER.NS
+INFO:services.data_fetcher:Added 1240 records for KPIL.NS
+INFO:services.data_fetcher:Added 1169 records for KALYANKJIL.NS
+INFO:services.data_fetcher:Added 1240 records for KARURVYSYA.NS
+INFO:services.data_fetcher:Added 760 records for KAYNES.NS
+INFO:services.data_fetcher:Added 1240 records for KEC.NS
+INFO:services.data_fetcher:Added 733 records for KFINTECH.NS
+INFO:services.data_fetcher:Added 1240 records for KIRLOSBROS.NS
+INFO:services.data_fetcher:Added 1240 records for KIRLOSENG.NS
+INFO:services.data_fetcher:Added 1240 records for KOTAKBANK.NS
+INFO:services.data_fetcher:Added 1108 records for KIMS.NS
+INFO:services.data_fetcher:Added 1240 records for LTF.NS
+INFO:services.data_fetcher:Added 1240 records for LTTS.NS
+INFO:services.data_fetcher:Added 1240 records for LICHSGFIN.NS
+INFO:services.data_fetcher:Added 1240 records for LTFOODS.NS
+INFO:services.data_fetcher:Added 1240 records for LTIM.NS
+INFO:services.data_fetcher:Added 1240 records for LT.NS
+INFO:services.data_fetcher:Added 1008 records for LATENTVIEW.NS
+INFO:services.data_fetcher:Added 1240 records for LAURUSLABS.NS
+INFO:services.data_fetcher:Added 134 records for THELEELA.NS
+INFO:services.data_fetcher:Added 1240 records for LEMONTREE.NS
+INFO:services.data_fetcher:Added 889 records for LICI.NS
+INFO:services.data_fetcher:Added 1240 records for LINDEINDIA.NS
+INFO:services.data_fetcher:Added 599 records for LLOYDSME.NS
+INFO:services.data_fetcher:Added 1156 records for LODHA.NS
+INFO:services.data_fetcher:Added 1240 records for LUPIN.NS
+INFO:services.data_fetcher:Added 1240 records for MMTC.NS
+INFO:services.data_fetcher:Added 1240 records for MRF.NS
+INFO:services.data_fetcher:Added 1240 records for MGL.NS
+INFO:services.data_fetcher:Added 1237 records for MAHSCOOTER.NS
+INFO:services.data_fetcher:Added 1240 records for MAHSEAMLES.NS
+INFO:services.data_fetcher:Added 1240 records for M&MFIN.NS
+INFO:services.data_fetcher:Added 1240 records for M&M.NS
+INFO:services.data_fetcher:Added 1240 records for MANAPPURAM.NS
+INFO:services.data_fetcher:Added 1240 records for MRPL.NS
+INFO:services.data_fetcher:Added 647 records for MANKIND.NS
+INFO:services.data_fetcher:Added 1240 records for MARICO.NS
+INFO:services.data_fetcher:Added 1240 records for MARUTI.NS
+INFO:services.data_fetcher:Added 1240 records for MFSL.NS
+INFO:services.data_fetcher:Added 1240 records for MAXHEALTH.NS
+INFO:services.data_fetcher:Added 1240 records for MAZDOCK.NS
+INFO:services.data_fetcher:Added 1240 records for METROPOLIS.NS
+INFO:services.data_fetcher:Added 1240 records for MINDACORP.NS
+INFO:services.data_fetcher:Added 922 records for MSUMI.NS
+INFO:services.data_fetcher:Added 1240 records for MOTILALOFS.NS
+INFO:services.data_fetcher:Added 1240 records for MPHASIS.NS
+INFO:services.data_fetcher:Added 1240 records for MCX.NS
+INFO:services.data_fetcher:Added 1240 records for MUTHOOTFIN.NS
+INFO:services.data_fetcher:Added 1240 records for NATCOPHARM.NS
+INFO:services.data_fetcher:Added 1240 records for NBCC.NS
+INFO:services.data_fetcher:Added 1240 records for NCC.NS
+INFO:services.data_fetcher:Added 1240 records for NHPC.NS
+INFO:services.data_fetcher:Added 1240 records for NLCINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for NMDC.NS
+INFO:services.data_fetcher:Added 697 records for NSLNISP.NS
+INFO:services.data_fetcher:Added 260 records for NTPCGREEN.NS
+INFO:services.data_fetcher:Added 1240 records for NTPC.NS
+INFO:services.data_fetcher:Added 1240 records for NH.NS
+INFO:services.data_fetcher:Added 1240 records for NATIONALUM.NS
+INFO:services.data_fetcher:Added 1240 records for NAVA.NS
+INFO:services.data_fetcher:Added 1240 records for NAVINFLUOR.NS
+INFO:services.data_fetcher:Added 1240 records for NESTLEIND.NS
+INFO:services.data_fetcher:Added 591 records for NETWEB.NS
+INFO:services.data_fetcher:Added 1240 records for NEULANDLAB.NS
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1240 records for NEWGEN.NS
+INFO:services.data_fetcher:Added 1240 records for NAM-INDIA.NS
+INFO:services.data_fetcher:Added 267 records for NIVABUPA.NS
+INFO:services.data_fetcher:Added 550 records for NUVAMA.NS
+INFO:services.data_fetcher:Added 1070 records for NUVOCO.NS
+INFO:services.data_fetcher:Added 1240 records for OBEROIRLTY.NS
+INFO:services.data_fetcher:Added 1240 records for ONGC.NS
+INFO:services.data_fetcher:Added 1240 records for OIL.NS
+INFO:services.data_fetcher:Added 334 records for OLAELEC.NS
+INFO:services.data_fetcher:Added 1240 records for OLECTRA.NS
+INFO:services.data_fetcher:Added 1010 records for PAYTM.NS
+INFO:services.data_fetcher:Added 219 records for ONESOURCE.NS
+INFO:services.data_fetcher:Added 1240 records for OFSS.NS
+INFO:services.data_fetcher:Added 1013 records for POLICYBZR.NS
+INFO:services.data_fetcher:Added 1240 records for PCBL.NS
+INFO:services.data_fetcher:Added 1240 records for PGEL.NS
+INFO:services.data_fetcher:Added 1240 records for PIIND.NS
+INFO:services.data_fetcher:Added 1240 records for PNBHOUSING.NS
+INFO:services.data_fetcher:Added 624 records for PTCIL.NS
+INFO:services.data_fetcher:Added 1240 records for PVRINOX.NS
+INFO:services.data_fetcher:Added 1240 records for PAGEIND.NS
+INFO:services.data_fetcher:Added 1240 records for PATANJALI.NS
+INFO:services.data_fetcher:Added 1240 records for PERSISTENT.NS
+INFO:services.data_fetcher:Added 1240 records for PETRONET.NS
+INFO:services.data_fetcher:Added 1240 records for PFIZER.NS
+INFO:services.data_fetcher:Added 1240 records for PHOENIXLTD.NS
+INFO:services.data_fetcher:Added 1240 records for PIDILITIND.NS
+INFO:services.data_fetcher:Added 782 records for PPLPHARMA.NS
+INFO:services.data_fetcher:Added 1240 records for POLYMED.NS
+INFO:services.data_fetcher:Added 1240 records for POLYCAB.NS
+INFO:services.data_fetcher:Added 1240 records for POONAWALLA.NS
+INFO:services.data_fetcher:Added 1240 records for PFC.NS
+INFO:services.data_fetcher:Added 1240 records for POWERGRID.NS
+INFO:services.data_fetcher:Added 1240 records for PRAJIND.NS
+INFO:services.data_fetcher:Added 318 records for PREMIERENE.NS
+INFO:services.data_fetcher:Added 1240 records for PRESTIGE.NS
+INFO:services.data_fetcher:Added 1240 records for PGHH.NS
+INFO:services.data_fetcher:Added 1240 records for PNB.NS
+INFO:services.data_fetcher:Added 554 records for RRKABEL.NS
+INFO:services.data_fetcher:Added 1240 records for RBLBANK.NS
+INFO:services.data_fetcher:Added 1240 records for RECLTD.NS
+INFO:services.data_fetcher:Added 1240 records for RHIM.NS
+INFO:services.data_fetcher:Added 1240 records for RITES.NS
+INFO:services.data_fetcher:Added 1240 records for RADICO.NS
+INFO:services.data_fetcher:Added 1240 records for RVNL.NS
+INFO:services.data_fetcher:Added 1188 records for RAILTEL.NS
+INFO:services.data_fetcher:Added 894 records for RAINBOW.NS
+INFO:services.data_fetcher:Added 1240 records for RKFORGE.NS
+INFO:services.data_fetcher:Added 1240 records for RCF.NS
+INFO:services.data_fetcher:Added 1240 records for REDINGTON.NS
+INFO:services.data_fetcher:Added 1240 records for RELIANCE.NS
+ERROR:services.data_fetcher:Error downloading data for RELINFRA.NS: Instrument token not found for RELINFRA
+INFO:services.data_fetcher:Added 1240 records for RPOWER.NS
+INFO:services.data_fetcher:Added 578 records for SBFC.NS
+INFO:services.data_fetcher:Added 1240 records for SBICARD.NS
+INFO:services.data_fetcher:Added 1240 records for SBILIFE.NS
+INFO:services.data_fetcher:Added 1240 records for SJVN.NS
+ERROR:services.data_fetcher:Error downloading data for SKFINDUS.NS: Instrument token not found for SKFINDUS
+INFO:services.data_fetcher:Added 1240 records for SKFINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for SRF.NS
+INFO:services.data_fetcher:Added 269 records for SAGILITY.NS
+INFO:services.data_fetcher:Added 245 records for SAILIFE.NS
+INFO:services.data_fetcher:Added 1240 records for SAMMAANCAP.NS
+INFO:services.data_fetcher:Added 1240 records for MOTHERSON.NS
+INFO:services.data_fetcher:Added 1010 records for SAPPHIRE.NS
+INFO:services.data_fetcher:Added 1240 records for SARDAEN.NS
+INFO:services.data_fetcher:Added 1240 records for SAREGAMA.NS
+INFO:services.data_fetcher:Added 1240 records for SCHAEFFLER.NS
+INFO:services.data_fetcher:Added 1240 records for SCHNEIDER.NS
+INFO:services.data_fetcher:Added 1240 records for SCI.NS
+INFO:services.data_fetcher:Added 1240 records for SHREECEM.NS
+INFO:services.data_fetcher:Added 1240 records for SHRIRAMFIN.NS
+INFO:services.data_fetcher:Added 1110 records for SHYAMMETL.NS
+INFO:services.data_fetcher:Added 121 records for ENRIN.NS
+INFO:services.data_fetcher:Added 1240 records for SIEMENS.NS
+INFO:services.data_fetcher:Added 549 records for SIGNATURE.NS
+INFO:services.data_fetcher:Added 1240 records for SOBHA.NS
+INFO:services.data_fetcher:Added 1240 records for SOLARINDS.NS
+INFO:services.data_fetcher:Added 1110 records for SONACOMS.NS
+INFO:services.data_fetcher:Added 1240 records for SONATSOFTW.NS
+INFO:services.data_fetcher:Added 995 records for STARHEALTH.NS
+INFO:services.data_fetcher:Added 1240 records for SBIN.NS
+INFO:services.data_fetcher:Added 1240 records for SAIL.NS
+INFO:services.data_fetcher:Added 1240 records for SUMICHEM.NS
+INFO:services.data_fetcher:Added 1240 records for SUNPHARMA.NS
+INFO:services.data_fetcher:Added 1240 records for SUNTV.NS
+INFO:services.data_fetcher:Added 1240 records for SUNDARMFIN.NS
+INFO:services.data_fetcher:Added 1240 records for SUNDRMFAST.NS
+INFO:services.data_fetcher:Added 1240 records for SUPREMEIND.NS
+INFO:services.data_fetcher:Added 1240 records for SUZLON.NS
+INFO:services.data_fetcher:Added 1240 records for SWANCORP.NS
+INFO:services.data_fetcher:Added 268 records for SWIGGY.NS
+INFO:services.data_fetcher:Added 1240 records for SYNGENE.NS
+INFO:services.data_fetcher:Added 818 records for SYRMA.NS
+INFO:services.data_fetcher:Added 394 records for TBOTEK.NS
+INFO:services.data_fetcher:Added 1240 records for TVSMOTOR.NS
+INFO:services.data_fetcher:Added 1240 records for TATACHEM.NS
+INFO:services.data_fetcher:Added 1240 records for TATACOMM.NS
+INFO:services.data_fetcher:Added 1240 records for TCS.NS
+INFO:services.data_fetcher:Added 1240 records for TATACONSUM.NS
+INFO:services.data_fetcher:Added 1240 records for TATAELXSI.NS
+INFO:services.data_fetcher:Added 1240 records for TATAINVEST.NS
+INFO:services.data_fetcher:Added 1240 records for TMPV.NS
+INFO:services.data_fetcher:Added 1240 records for TATAPOWER.NS
+INFO:services.data_fetcher:Added 1240 records for TATASTEEL.NS
+INFO:services.data_fetcher:Added 506 records for TATATECH.NS
+INFO:services.data_fetcher:Added 1240 records for TTML.NS
+INFO:services.data_fetcher:Added 1240 records for TECHM.NS
+INFO:services.data_fetcher:Added 1240 records for TECHNOE.NS
+INFO:services.data_fetcher:Added 1240 records for TEJASNET.NS
+INFO:services.data_fetcher:Added 1240 records for NIACL.NS
+INFO:services.data_fetcher:Added 1240 records for RAMCOCEM.NS
+INFO:services.data_fetcher:Added 1240 records for THERMAX.NS
+INFO:services.data_fetcher:Added 1240 records for TIMKEN.NS
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:26] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1240 records for TITAGARH.NS
+INFO:services.data_fetcher:Added 1240 records for TITAN.NS
+INFO:services.data_fetcher:Added 1240 records for TORNTPHARM.NS
+INFO:services.data_fetcher:Added 1240 records for TORNTPOWER.NS
+INFO:services.data_fetcher:Added 1240 records for TARIL.NS
+INFO:services.data_fetcher:Added 1240 records for TRENT.NS
+INFO:services.data_fetcher:Added 1240 records for TRIDENT.NS
+INFO:services.data_fetcher:Added 1240 records for TRIVENI.NS
+INFO:services.data_fetcher:Added 1240 records for TRITURBINE.NS
+INFO:services.data_fetcher:Added 1240 records for TIINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for UCOBANK.NS
+INFO:services.data_fetcher:Added 1240 records for UNOMINDA.NS
+INFO:services.data_fetcher:Added 1240 records for UPL.NS
+INFO:services.data_fetcher:Added 1240 records for UTIAMC.NS
+INFO:services.data_fetcher:Added 1240 records for ULTRACEMCO.NS
+INFO:services.data_fetcher:Added 1240 records for UNIONBANK.NS
+INFO:services.data_fetcher:Added 1240 records for UBL.NS
+INFO:services.data_fetcher:Added 1240 records for UNITDSPR.NS
+INFO:services.data_fetcher:Added 1240 records for USHAMART.NS
+INFO:services.data_fetcher:Added 1240 records for VGUARD.NS
+INFO:services.data_fetcher:Added 1240 records for DBREALTY.NS
+INFO:services.data_fetcher:Added 1240 records for VTL.NS
+INFO:services.data_fetcher:Added 1240 records for VBL.NS
+INFO:services.data_fetcher:Added 948 records for MANYAVAR.NS
+INFO:services.data_fetcher:Added 1240 records for VEDL.NS
+INFO:services.data_fetcher:Added 238 records for VENTIVE.NS
+INFO:services.data_fetcher:Added 1055 records for VIJAYA.NS
+INFO:services.data_fetcher:Added 245 records for VMM.NS
+INFO:services.data_fetcher:Added 1240 records for IDEA.NS
+INFO:services.data_fetcher:Added 1240 records for VOLTAS.NS
+INFO:services.data_fetcher:Added 280 records for WAAREEENER.NS
+INFO:services.data_fetcher:Added 1240 records for WELCORP.NS
+INFO:services.data_fetcher:Added 1240 records for WELSPUNLIV.NS
+INFO:services.data_fetcher:Added 1240 records for WHIRLPOOL.NS
+INFO:services.data_fetcher:Added 1240 records for WIPRO.NS
+INFO:services.data_fetcher:Added 1240 records for WOCKPHARMA.NS
+INFO:services.data_fetcher:Added 1240 records for YESBANK.NS
+INFO:services.data_fetcher:Added 1240 records for ZFCVINDIA.NS
+INFO:services.data_fetcher:Added 1240 records for ZEEL.NS
+INFO:services.data_fetcher:Added 1240 records for ZENTEC.NS
+INFO:services.data_fetcher:Added 1240 records for ZENSARTECH.NS
+INFO:services.data_fetcher:Added 1240 records for ZYDUSLIFE.NS
+INFO:services.data_fetcher:Added 1240 records for ECLERX.NS
+INFO:services.data_fetcher:5-year data download completed. 499/502 stocks, 562712 records added.
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:38] "GET /socket.io/?EIO=4&transport=websocket&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:40] "GET /api/ohlcv/sector-heatmap?duration=1w HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:52] "GET /api/ohlcv/sector-heatmap?duration=1m HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:54] "GET /api/ohlcv/sector-heatmap?duration=3m HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 499 stocks processed out of 502 total stocks
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:08] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 499 stocks processed out of 502 total stocks
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:09] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:23] "GET /api/analysis/chart/ASTRAZEN.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:23] "GET /api/analysis/chart/ASTRAZEN.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:27] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:54] "GET /api/analysis/chart/DCMSHRIRAM.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:55] "GET /api/analysis/chart/SAILIFE.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:58] "GET /api/analysis/chart/PCBL.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:00] "GET /api/analysis/chart/CENTURYPLY.NS HTTP/1.1" 200 -
 INFO:routes.weinstein:Fetching Weinstein scores with liquidity threshold: ₹1,000,000
 INFO:services.weinstein_screening:Starting Weinstein screening process...
 WARNING:services.weinstein_screening:No index data found in database. Creating synthetic index from available stocks.
 WARNING:services.weinstein_screening:No Nifty 50 stocks found. Using any available stocks for synthetic index.
 INFO:services.weinstein_screening:Created synthetic index from 10 stocks
-INFO:services.weinstein_screening:Processing 431 stocks...
-INFO:routes.analysis:Analysis completed: 357 stocks processed out of 431 total stocks
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:51:51] "GET /api/analysis/stocks HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 50/431 stocks...
-INFO:services.weinstein_screening:Processed 100/431 stocks...
-INFO:routes.analysis:Analysis completed: 357 stocks processed out of 431 total stocks
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:52:01] "GET /api/analysis/stocks HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 150/431 stocks...
+INFO:services.weinstein_screening:Processing 502 stocks...
+INFO:services.weinstein_screening:Processed 50/502 stocks...
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.weinstein_screening:Processed 100/502 stocks...
+INFO:services.weinstein_screening:Processed 150/502 stocks...
+INFO:services.weinstein_screening:Processed 200/502 stocks...
+INFO:services.weinstein_screening:Processed 250/502 stocks...
+INFO:services.weinstein_screening:Processed 300/502 stocks...
+INFO:services.weinstein_screening:Processed 350/502 stocks...
 INFO:routes.weinstein:Fetching Weinstein scores with liquidity threshold: ₹1,000,000
 INFO:services.weinstein_screening:Starting Weinstein screening process...
 WARNING:services.weinstein_screening:No index data found in database. Creating synthetic index from available stocks.
 WARNING:services.weinstein_screening:No Nifty 50 stocks found. Using any available stocks for synthetic index.
 INFO:services.weinstein_screening:Created synthetic index from 10 stocks
-INFO:services.weinstein_screening:Processing 431 stocks...
-INFO:werkzeug:127.0.0.1 - - [05/Dec/2025 14:52:12] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 200/431 stocks...
-INFO:services.weinstein_screening:Processed 50/431 stocks...
-INFO:services.weinstein_screening:Processed 250/431 stocks...
+INFO:services.weinstein_screening:Processing 502 stocks...
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:28] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.weinstein_screening:Processed 400/502 stocks...
+INFO:services.weinstein_screening:Processed 50/502 stocks...
+INFO:services.weinstein_screening:Processed 450/502 stocks...
+INFO:services.weinstein_screening:Processed 100/502 stocks...
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:services.weinstein_screening:Processed 500/502 stocks...
+INFO:services.weinstein_screening:Weinstein screening complete. 3 stocks passed all filters.
+INFO:services.weinstein_screening:Processed 150/502 stocks...
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:45] "GET /api/weinstein-scores HTTP/1.1" 200 -
+INFO:services.weinstein_screening:Processed 200/502 stocks...
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:49] "GET /api/analysis/chart/CUMMINSIND.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:49] "GET /api/analysis/chart/CUMMINSIND.NS HTTP/1.1" 200 -
+INFO:services.weinstein_screening:Processed 250/502 stocks...
+INFO:services.weinstein_screening:Processed 300/502 stocks...
+INFO:services.weinstein_screening:Processed 350/502 stocks...
+INFO:services.weinstein_screening:Processed 400/502 stocks...
+INFO:services.weinstein_screening:Processed 450/502 stocks...
+INFO:services.weinstein_screening:Processed 500/502 stocks...
+INFO:services.weinstein_screening:Weinstein screening complete. 3 stocks passed all filters.
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:06] "GET /api/weinstein-scores HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:25] "GET /api/analysis/chart/EICHERMOT.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:26] "GET /api/analysis/chart/MOTHERSON.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:29] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/pnl HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/shortlist HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/pnl HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/shortlist HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:56] "GET /api/analysis/chart/CHOLAFIN.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:56] "GET /api/analysis/chart/CHOLAFIN.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:08] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:30] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:38] "GET /api/kite/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:54] "GET /api/kite/status HTTP/1.1" 200 -
+[2025-12-14 16:10:42] \n🛑 Shutting down servers...
+[2025-12-14 16:10:42] ✓ Backend server stopped
+[2025-12-14 16:10:42] ✓ Frontend server stopped
+[2025-12-14 16:10:42] 👋 Cleanup complete. Goodbye!
+[2025-12-14 16:10:42] \n🛑 Shutting down servers...
+Exception ignored in: <function Popen.__del__ at 0x102961d00>
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1133, in __del__
+    def __del__(self, _maxsize=sys.maxsize, _warn=warnings.warn):
+  File "/Users/abhilekh/Documents/stockAnalyzer-1/backend/venv/lib/python3.13/site-packages/werkzeug/_reloader.py", line 452, in <lambda>
+[2025-12-14 16:10:42] ✓ Backend server stopped
+    signal.signal(signal.SIGTERM, lambda *args: sys.exit(0))
+SystemExit: 0
+INFO:apscheduler.scheduler:Scheduler has been shut down
+[2025-12-14 16:10:42] ✓ Frontend server stopped
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-qaif8pdz'}
+  warnings.warn(
+[2025-12-14 16:10:42] 👋 Cleanup complete. Goodbye!
