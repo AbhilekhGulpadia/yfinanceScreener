@@ -33,7 +33,7 @@ const KiteConnectionManager = forwardRef(({ compact = false, onStatusChange }, r
 
     const checkConnection = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/kite/status');
+            const response = await fetch('/api/kite/status');
             const data = await response.json();
             setConnectionStatus({
                 connected: data.connected,

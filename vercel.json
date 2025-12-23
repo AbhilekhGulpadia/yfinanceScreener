@@ -1,8 +1,32 @@
 {
-    "rewrites": [
+    "builds": [
         {
-            "source": "/(.*)",
-            "destination": "/"
+            "src": "backend/app.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "frontend/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/backend/app.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/frontend/$1",
+            "headers": {
+                "Cache-Control": "s-maxage=0"
+            }
+        },
+        {
+            "src": "/",
+            "dest": "/frontend/index.html"
         }
     ]
 }
