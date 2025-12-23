@@ -46,6 +46,7 @@ function SectorHeatmap() {
     }
   };
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     fetchHeatmapData();
     // Refresh every 5 minutes
@@ -67,7 +68,9 @@ function SectorHeatmap() {
     }
   };
 
+  /* eslint-disable no-unused-vars */
   const [isRefreshing, setIsRefreshing] = useState(false);
+  /* eslint-enable no-unused-vars */
   const [refreshMessage, setRefreshMessage] = useState('');
 
   // Import triggerRefresh from api service

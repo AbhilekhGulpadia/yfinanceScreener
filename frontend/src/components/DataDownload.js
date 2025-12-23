@@ -9,7 +9,7 @@ function DataDownload() {
     const [progress, setProgress] = useState({ current: 0, total: 0, percentage: 0 });
     const [message, setMessage] = useState('');
     const [recordsInserted, setRecordsInserted] = useState(0);
-    const [completed, setCompleted] = useState(false);
+    // const [completed, setCompleted] = useState(false);
     const [currentSymbol, setCurrentSymbol] = useState('');
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function DataDownload() {
 
                 if (data.status === 'completed') {
                     setDownloading(false);
-                    setCompleted(true);
+                    // setCompleted(true);
                 }
             });
 
@@ -45,7 +45,7 @@ function DataDownload() {
 
     const checkKiteStatus = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/kite/status');
+            const response = await fetch('/api/kite/status');
             const data = await response.json();
             setKiteConnected(data.connected);
         } catch (error) {
@@ -54,9 +54,10 @@ function DataDownload() {
         }
     };
 
+    /*
     const handleKiteLogin = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/kite/login');
+            const response = await fetch('/api/kite/login');
             const data = await response.json();
             window.open(data.login_url, '_blank');
             setMessage('Please complete Kite login in the new window, then click "Start Download" again.');
@@ -64,6 +65,7 @@ function DataDownload() {
             setMessage('Error getting Kite login URL: ' + error.message);
         }
     };
+    */
 
     const handleOpenModal = () => {
         checkKiteStatus();
@@ -82,7 +84,7 @@ function DataDownload() {
         setRecordsInserted(0);
 
         try {
-            const response = await fetch('http://localhost:5000/api/ohlcv/refresh', {
+            const response = await fetch('/api/ohlcv/refresh', {
                 method: 'POST'
             });
 
