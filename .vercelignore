@@ -1,0 +1,23 @@
+# Vercel Ignore
+# Exclude large local files and non-production files
+backend/ohlcv_data_export.xlsx
+backend/nifty500_data.json
+*.db
+backend/*.db
+*.pyc
+__pycache__
+backend/__pycache__
+backend/venv
+backend/env
+.env
+.env.production
+.env.local
+.git
+.github
+docs
+Stock Analyzer.app
+start.sh
+startup.log
+symbols.csv
+DOCKER.md
+README.md
