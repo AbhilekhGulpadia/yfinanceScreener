@@ -89,7 +89,7 @@ function CandlestickChart({ symbol, name }) {
   const highs = chartData.chart_data.map(d => d.high);
   const lows = chartData.chart_data.map(d => d.low);
   const closes = chartData.chart_data.map(d => d.close);
-  const volumes = chartData.chart_data.map(d => d.volume);
+  // const volumes = chartData.chart_data.map(d => d.volume);
   const rsi = chartData.chart_data.map(d => d.rsi);
   const ema21 = chartData.chart_data.map(d => d.ema_21);
   const ema44 = chartData.chart_data.map(d => d.ema_44);

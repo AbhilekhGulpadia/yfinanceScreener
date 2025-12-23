@@ -9,7 +9,7 @@ function DataDownload() {
     const [progress, setProgress] = useState({ current: 0, total: 0, percentage: 0 });
     const [message, setMessage] = useState('');
     const [recordsInserted, setRecordsInserted] = useState(0);
-    const [completed, setCompleted] = useState(false);
+    // const [completed, setCompleted] = useState(false);
     const [currentSymbol, setCurrentSymbol] = useState('');
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function DataDownload() {
 
                 if (data.status === 'completed') {
                     setDownloading(false);
-                    setCompleted(true);
+                    // setCompleted(true);
                 }
             });
 
@@ -54,6 +54,7 @@ function DataDownload() {
         }
     };
 
+    /*
     const handleKiteLogin = async () => {
         try {
             const response = await fetch('/api/kite/login');
@@ -64,6 +65,7 @@ function DataDownload() {
             setMessage('Error getting Kite login URL: ' + error.message);
         }
     };
+    */
 
     const handleOpenModal = () => {
         checkKiteStatus();

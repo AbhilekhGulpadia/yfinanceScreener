@@ -8,12 +8,14 @@ import KiteConnectionManager from './components/KiteConnectionManager';
 
 function App() {
   const [activeTab, setActiveTab] = useState('heatmap');
+  /* eslint-disable no-unused-vars */
   const [connectionStatus, setConnectionStatus] = useState({
     connected: false,
     checking: true,
     error: null,
     needsCertApproval: false
   });
+  /* eslint-enable no-unused-vars */
   const kiteManagerRef = useRef(null);
 
   // Detect Kite auth callback
