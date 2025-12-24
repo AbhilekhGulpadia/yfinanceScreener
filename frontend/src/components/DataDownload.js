@@ -13,7 +13,7 @@ function DataDownload() {
     useEffect(() => {
         if (showModal) {
             // Connect to Socket.IO for progress updates
-            const socket = io('http://localhost:5000');
+            const socket = io();
 
             socket.on('refresh_progress', (data) => {
                 setProgress({
