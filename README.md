@@ -1,10 +1,10 @@
-# Stock Analyzer
+# yfinance Screener
 
-A comprehensive stock analysis application with real-time data tracking, technical indicators, and portfolio management.
+A comprehensive stock analysis application using `yfinance` for market data, with technical indicators and portfolio management.
 
 ## Features
 
-- 📊 Real-time stock data tracking
+- 📊 Stock data tracking via yfinance
 - 📈 Technical analysis with RSI and MACD indicators
 - 🔥 Market heatmaps for quick insights
 - 💼 Portfolio management
@@ -17,7 +17,7 @@ A comprehensive stock analysis application with real-time data tracking, technic
 - **Framework**: Flask (Python)
 - **Database**: SQLAlchemy
 - **Real-time**: Socket.IO
-- **API**: Kite Connect for market data
+- **API**: yfinance for market data
 
 ### Frontend
 - **Framework**: React
@@ -87,11 +87,6 @@ Edit `backend/config.py` to configure:
 - API credentials
 - Server settings
 
-### Kite Connect Setup
-
-1. Create a Kite Connect app at https://developers.kite.trade/
-2. Add your API credentials to `backend/config.py`
-3. Run the authentication flow to generate access tokens
 
 ## Project Structure
 
