@@ -4,18 +4,19 @@ from datetime import datetime, timezone, timedelta
 from extensions import db, socketio
 from models import OHLCV
 from nifty500 import get_all_symbols, get_symbol_without_suffix
-from services.kite_client import kite_client
+# from services.kite_client import kite_client
 
 # Set up logging
 logger = logging.getLogger(__name__)
 
 def download_5year_data():
     """
-    Download 5 years of daily OHLCV data for all stocks in symbols.csv.
+    Download 5 years of daily OHLCV data for all stocks in symbols.csv using yfinance.
     Reads symbol list from services/symbols.csv to ensure all 502+ stocks are downloaded.
     """
     import os
     import csv
+    import yfinance as yf
     
     # Read symbols from symbols.csv file
     symbols_file = os.path.join(os.path.dirname(__file__), 'symbols.csv')
@@ -43,7 +44,7 @@ def download_5year_data():
         symbols = get_all_symbols()
     
     total = len(symbols)
-    logger.info(f"Starting 5-year data download for {total} stocks...")
+    logger.info(f"Starting 5-year data download for {total} stocks using yfinance...")
     
     socketio.emit('refresh_progress', {
         'current': 0,
@@ -64,49 +65,43 @@ def download_5year_data():
         db.session.rollback()
     
     # Download 5 years of data
-    to_date = datetime.now()
-    from_date = to_date - timedelta(days=5*365)
-    
+    # We loop through symbols to provide granular progress updates
     success_count = 0
     total_records = 0
     
     for idx, symbol in enumerate(symbols, 1):
         try:
-            kite_symbol = get_symbol_without_suffix(symbol)
-            
-            # Fetch 5 years of daily data
-            df = kite_client.fetch_historical_data(
-                kite_symbol,
-                from_date,
-                to_date,
-                interval='day'
-            )
+            # Fetch 5 years of daily data using yfinance
+            # yfinance expects symbols like 'RELIANCE.NS'
+            ticker = yf.Ticker(symbol)
+            df = ticker.history(period="5y", interval="1d")
             
             if not df.empty:
                 records_added = 0
-                for _, row in df.iterrows():
-                    # Skip if close price is 0 (market closed)
-                    if float(row['close']) == 0:
+                for index, row in df.iterrows():
+                    # Skip if close price is 0 or NaN (market closed or error)
+                    if pd.isna(row['Close']) or float(row['Close']) == 0:
                         continue
                     
-                    timestamp = row['timestamp']
+                    # index is the Timestamp
+                    timestamp = index
                     if hasattr(timestamp, 'to_pydatetime'):
                         timestamp = timestamp.to_pydatetime()
                     
-                    # Convert to UTC
+                    # Convert to UTC or strip timezone for storage
+                    # Our DB likely expects naive datetime or UTC
                     if timestamp.tzinfo is not None:
                         timestamp = timestamp.astimezone(timezone.utc)
-                    if timestamp.tzinfo is not None:
                         timestamp = timestamp.replace(tzinfo=None)
                     
                     ohlcv = OHLCV(
                         symbol=symbol,
                         timestamp=timestamp,
-                        open=float(row['open']),
-                        high=float(row['high']),
-                        low=float(row['low']),
-                        close=float(row['close']),
-                        volume=int(row['volume'])
+                        open=float(row['Open']),
+                        high=float(row['High']),
+                        low=float(row['Low']),
+                        close=float(row['Close']),
+                        volume=int(row['Volume'])
                     )
                     db.session.add(ohlcv)
                     records_added += 1

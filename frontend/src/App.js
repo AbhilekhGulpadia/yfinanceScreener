@@ -1,43 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import SectorHeatmap from './components/SectorHeatmap';
 import Analysis from './components/Analysis';
 import WiensteinScoring from './components/WiensteinScoring';
 import Shortlist from './components/Shortlist';
-import KiteConnectionManager from './components/KiteConnectionManager';
 
 function App() {
   const [activeTab, setActiveTab] = useState('heatmap');
-  /* eslint-disable no-unused-vars */
-  const [connectionStatus, setConnectionStatus] = useState({
-    connected: false,
-    checking: true,
-    error: null,
-    needsCertApproval: false
-  });
-  /* eslint-enable no-unused-vars */
-  const kiteManagerRef = useRef(null);
-
-  // Detect Kite auth callback
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const kiteAuth = urlParams.get('kite_auth');
-
-    if (kiteAuth) {
-      // Clean up URL
-      window.history.replaceState({}, document.title, window.location.pathname);
-
-      if (kiteAuth === 'success') {
-        // Trigger connection status refresh
-        if (kiteManagerRef.current && kiteManagerRef.current.refreshStatus) {
-          kiteManagerRef.current.refreshStatus();
-        }
-      } else if (kiteAuth === 'error') {
-        const message = urlParams.get('message') || 'Authentication failed';
-        console.error('Kite auth error:', message);
-      }
-    }
-  }, []);
 
   return (
     <div className="App">
@@ -47,11 +16,6 @@ function App() {
           <p>Real-time Nifty 500 Analysis</p>
         </div>
         <div className="header-right">
-          <KiteConnectionManager
-            compact={true}
-            ref={kiteManagerRef}
-            onStatusChange={setConnectionStatus}
-          />
         </div>
       </header>
 
@@ -90,7 +54,7 @@ function App() {
       </main>
 
       <footer className="App-footer">
-        <p>Powered by Kite Connect API | Manual data refresh</p>
+        <p>Powered by Yahoo Finance | Manual data refresh</p>
       </footer>
     </div>
   );
