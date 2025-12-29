@@ -1,12 +1,12 @@
-[2025-12-11 12:51:38] 🔍 Checking prerequisites...
-[2025-12-11 12:51:38] ✓ All prerequisites met
-[2025-12-11 12:51:38] \n📦 Setting up backend...
-[2025-12-11 12:51:38] Installing backend dependencies...
-[2025-12-11 12:51:39] ✓ Backend dependencies installed
-[2025-12-11 12:51:39] \n🚀 Starting backend server...
-[2025-12-11 12:51:39] ✓ Backend server started (PID: 12669)
-[2025-12-11 12:51:39]    Backend running at: https://localhost:5000
-[2025-12-11 12:51:39] ⏳ Waiting for backend to initialize...
+[2025-12-29 12:27:01] 🔍 Checking prerequisites...
+[2025-12-29 12:27:01] ✓ All prerequisites met
+[2025-12-29 12:27:01] \n📦 Setting up backend...
+[2025-12-29 12:27:01] Installing backend dependencies...
+[2025-12-29 12:27:02] ✓ Backend dependencies installed
+[2025-12-29 12:27:02] \n🚀 Starting backend server...
+[2025-12-29 12:27:02] ✓ Backend server started (PID: 52361)
+[2025-12-29 12:27:02]    Backend running at: https://localhost:5000
+[2025-12-29 12:27:02] ⏳ Waiting for backend to initialize...
 INFO:services.scheduler:Scheduler initialized (manual trigger only)
 INFO:apscheduler.scheduler:Scheduler started
 WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
@@ -21,20 +21,20 @@ INFO:services.scheduler:Scheduler initialized (manual trigger only)
 INFO:apscheduler.scheduler:Scheduler started
 WARNING:werkzeug:Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 562-014-657
-[2025-12-11 12:51:44] \n📦 Setting up frontend...
-[2025-12-11 12:51:44] ✓ Frontend dependencies already installed
-[2025-12-11 12:51:44] \n🚀 Starting frontend server...
-[2025-12-11 12:51:44] ✓ Frontend server started (PID: 12691)
-[2025-12-11 12:51:44]    Frontend running at: http://localhost:3000
-[2025-12-11 12:51:44] ⏳ Waiting for frontend to initialize...
+INFO:werkzeug: * Debugger PIN: 815-538-746
+[2025-12-29 12:27:07] \n📦 Setting up frontend...
+[2025-12-29 12:27:07] ✓ Frontend dependencies already installed
+[2025-12-29 12:27:07] \n🚀 Starting frontend server...
+[2025-12-29 12:27:07] ✓ Frontend server started (PID: 52381)
+[2025-12-29 12:27:07]    Frontend running at: http://localhost:3000
+[2025-12-29 12:27:07] ⏳ Waiting for frontend to initialize...
 
 > stock-analyzer-frontend@0.1.0 start
 > react-scripts start
 
-(node:12713) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:52404) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:12713) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:52404) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Compiled successfully!
@@ -42,731 +42,1146 @@ Compiled successfully!
 You can now view stock-analyzer-frontend in the browser.
 
   Local:            http://localhost:3000
-  On Your Network:  http://192.168.1.6:3000
+  On Your Network:  http://192.168.1.10:3000
 
 Note that the development build is not optimized.
 To create a production build, use npm run build.
 
 webpack compiled successfully
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:48] "GET /api/kite/status HTTP/1.1" 200 -
-[2025-12-11 12:51:54] \n🌐 Launching Chrome browser...
-[2025-12-11 12:51:54] ✓ Chrome launched
-[2025-12-11 12:51:54] \n✨ Stock Analyzer is ready!
-[2025-12-11 12:51:54] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[2025-12-11 12:51:54] Backend:  http://localhost:5000
-[2025-12-11 12:51:54] Frontend: http://localhost:3000
-[2025-12-11 12:51:54] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[2025-12-11 12:51:54] \n📝 Logs are being written to: /Users/abhilekh/Documents/stockAnalyzer-1/startup.log
-[2025-12-11 12:51:54] Press Ctrl+C to stop all servers and exit
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:54] "GET /api/kite/status HTTP/1.1" 200 -
-(node:12713) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:51:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:19] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:49] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:52:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:17] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:17] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:50] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:53:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:54:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:54:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:54:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:55:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:55:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:55:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:56:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:57:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:57:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:57:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:58:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:59:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:59:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 12:59:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:00:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:00:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:00:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:01:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:02:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:02:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:02:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:03:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:04:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:04:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:04:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:05:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:05:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:05:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:06:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:07:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:07:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:07:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:08:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:09:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:09:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:09:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:10:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:10:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:10:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:11:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:12:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:12:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:12:55] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:13:17] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:13:25] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:13:54] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:14:16] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:14:24] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:14:55] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.kite_client:KiteConnect initialized
-INFO:services.kite_client:Loaded access token from file
-INFO:services.kite_client:Fetched 8682 instruments from Kite
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "[32mGET /api/kite/callback?action=login&type=login&status=success&request_token=fD81s2dPupN3YwMuQHlC2Kn790I9TBJG HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:08] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:09] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /socket.io/?EIO=4&transport=polling&t=4v618k31 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "POST /socket.io/?EIO=4&transport=polling&t=4v61u0rj&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /socket.io/?EIO=4&transport=polling&t=4v61vjax&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:13] "GET /socket.io/?EIO=4&transport=polling&t=4v622knz&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:14] "[35m[1mPOST /api/ohlcv/refresh HTTP/1.1[0m" 202 -
+[2025-12-29 12:27:17] \n🌐 Launching Chrome browser...
+[2025-12-29 12:27:17] ✓ Chrome launched
+[2025-12-29 12:27:17] \n✨ Stock Analyzer is ready!
+[2025-12-29 12:27:17] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-12-29 12:27:17] Backend:  http://localhost:5000
+[2025-12-29 12:27:17] Frontend: http://localhost:3000
+[2025-12-29 12:27:17] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-12-29 12:27:17] \n📝 Logs are being written to: /Users/abhilekh/Documents/git Projects/yfinanceScreener/startup.log
+[2025-12-29 12:27:17] Press Ctrl+C to stop all servers and exit
+(node:52404) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:27:18] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:27:18] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:27:37] "GET /api/analysis/chart/BHARATFORG.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:27:37] "GET /api/analysis/chart/BHARATFORG.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:28:02] "GET /api/analysis/chart/EICHERMOT.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:28:22] "GET /api/analysis/chart/HINDALCO.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:28:48] "GET /api/analysis/chart/IDFCFIRSTB.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:29:06] "GET /api/analysis/chart/INDIACEM.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:29:16] "GET /api/analysis/chart/INDUSTOWER.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:29:34] "GET /api/analysis/chart/MANAPPURAM.NS HTTP/1.1" 200 -
+INFO:routes.shortlist:Added MANAPPURAM.NS to shortlist
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:30:34] "[35m[1mPOST /api/shortlist HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:30:38] "GET /api/analysis/chart/MARUTI.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:30:47] "GET /api/analysis/chart/NMDC.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:31:09] "GET /api/analysis/chart/PHOENIXLTD.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:31:10] "GET /api/analysis/chart/TATACONSUM.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:32:15] "GET /api/analysis/chart/TITAN.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:32:18] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:32:30] "GET /api/analysis/chart/UPL.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:37:18] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:42:18] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:02] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:02] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:03] "GET /socket.io/?EIO=4&transport=polling&t=toez8f59 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:03] "POST /socket.io/?EIO=4&transport=polling&t=toezpjet&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:03] "GET /socket.io/?EIO=4&transport=polling&t=toezqpjy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:04] "[35m[1mPOST /api/ohlcv/refresh HTTP/1.1[0m" 202 -
 INFO:services.data_fetcher:Loaded 502 unique symbols from symbols.csv
-INFO:services.data_fetcher:Starting 5-year data download for 502 stocks...
+INFO:services.data_fetcher:Starting 5-year data download for 502 stocks using yfinance...
 INFO:services.data_fetcher:Clearing existing OHLCV data...
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:04] "GET /socket.io/?EIO=4&transport=polling&t=tof03f5j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
 INFO:services.data_fetcher:Existing data cleared
-INFO:services.data_fetcher:Added 1240 records for 360ONE.NS
-INFO:services.data_fetcher:Added 1240 records for 3MINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for ABB.NS
-INFO:services.data_fetcher:Added 1240 records for ACC.NS
-INFO:services.data_fetcher:Added 268 records for ACMESOLAR.NS
-INFO:services.data_fetcher:Added 1240 records for AIAENG.NS
-INFO:services.data_fetcher:Added 1240 records for APLAPOLLO.NS
-INFO:services.data_fetcher:Added 1240 records for AUBANK.NS
-INFO:services.data_fetcher:Added 883 records for AWL.NS
-INFO:services.data_fetcher:Added 394 records for AADHARHFC.NS
-INFO:services.data_fetcher:Added 1240 records for AARTIIND.NS
-INFO:services.data_fetcher:Added 1240 records for AAVAS.NS
-INFO:services.data_fetcher:Added 1240 records for ABBOTINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for ACE.NS
-INFO:services.data_fetcher:Added 1240 records for ADANIENSOL.NS
-INFO:services.data_fetcher:Added 1240 records for ADANIENT.NS
-INFO:services.data_fetcher:Added 1240 records for ADANIGREEN.NS
-INFO:services.data_fetcher:Added 1240 records for ADANIPORTS.NS
-INFO:services.data_fetcher:Added 1240 records for ADANIPOWER.NS
-INFO:services.data_fetcher:Added 1240 records for ATGL.NS
-INFO:services.data_fetcher:Added 1240 records for ABCAPITAL.NS
-INFO:services.data_fetcher:Added 1240 records for ABFRL.NS
-INFO:services.data_fetcher:Added 119 records for ABLBL.NS
-INFO:services.data_fetcher:Added 1240 records for ABREL.NS
-INFO:services.data_fetcher:Added 1036 records for ABSLAMC.NS
-INFO:services.data_fetcher:Added 1240 records for AEGISLOG.NS
-INFO:services.data_fetcher:Added 134 records for AEGISVOPAK.NS
-INFO:services.data_fetcher:Added 275 records for AFCONS.NS
-INFO:services.data_fetcher:Added 1240 records for AFFLE.NS
-INFO:services.data_fetcher:Added 1240 records for AJANTPHARM.NS
-INFO:services.data_fetcher:Added 337 records for AKUMS.NS
-INFO:services.data_fetcher:Added 1240 records for AKZOINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for APLLTD.NS
-INFO:services.data_fetcher:Added 1240 records for ALKEM.NS
-INFO:services.data_fetcher:Added 1240 records for ALKYLAMINE.NS
-INFO:services.data_fetcher:Added 1240 records for ALOKINDS.NS
-INFO:services.data_fetcher:Added 1240 records for ARE&M.NS
-INFO:services.data_fetcher:Added 1240 records for AMBER.NS
-INFO:services.data_fetcher:Added 1240 records for AMBUJACEM.NS
-INFO:services.data_fetcher:Added 993 records for ANANDRATHI.NS
-INFO:services.data_fetcher:Added 1240 records for ANANTRAJ.NS
-INFO:services.data_fetcher:Added 1240 records for ANGELONE.NS
-INFO:services.data_fetcher:Added 1240 records for APARINDS.NS
-INFO:services.data_fetcher:Added 1240 records for APOLLOHOSP.NS
-INFO:services.data_fetcher:Added 1240 records for APOLLOTYRE.NS
-INFO:services.data_fetcher:Added 1069 records for APTUS.NS
-INFO:services.data_fetcher:Added 1240 records for ASAHIINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for ASHOKLEY.NS
-INFO:services.data_fetcher:Added 1240 records for ASIANPAINT.NS
-INFO:services.data_fetcher:Added 1240 records for ASTERDM.NS
-INFO:services.data_fetcher:Added 1240 records for ASTRAZEN.NS
-INFO:services.data_fetcher:Added 1240 records for ASTRAL.NS
-INFO:services.data_fetcher:Added 153 records for ATHERENERG.NS
-INFO:services.data_fetcher:Added 1240 records for ATUL.NS
-INFO:services.data_fetcher:Added 1240 records for AUROPHARMA.NS
-INFO:services.data_fetcher:Added 409 records for AIIL.NS
-INFO:services.data_fetcher:Added 1240 records for DMART.NS
-INFO:services.data_fetcher:Added 1240 records for AXISBANK.NS
-INFO:services.data_fetcher:Added 1240 records for BASF.NS
-INFO:services.data_fetcher:Added 1240 records for BEML.NS
-INFO:services.data_fetcher:Added 1240 records for BLS.NS
-INFO:services.data_fetcher:Added 1240 records for BSE.NS
-INFO:services.data_fetcher:Added 1240 records for BAJAJ-AUTO.NS
-INFO:services.data_fetcher:Added 1240 records for BAJFINANCE.NS
-INFO:services.data_fetcher:Added 1240 records for BAJAJFINSV.NS
-INFO:services.data_fetcher:Added 1240 records for BAJAJHLDNG.NS
-INFO:services.data_fetcher:Added 309 records for BAJAJHFL.NS
-INFO:services.data_fetcher:Added 1240 records for BALKRISIND.NS
-INFO:services.data_fetcher:Added 1240 records for BALRAMCHIN.NS
-INFO:services.data_fetcher:Added 1240 records for BANDHANBNK.NS
-INFO:services.data_fetcher:Added 1240 records for BANKBARODA.NS
-INFO:services.data_fetcher:Added 1240 records for BANKINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for MAHABANK.NS
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:25] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.data_fetcher:Added 1240 records for BATAINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for BAYERCROP.NS
-INFO:services.data_fetcher:Added 1240 records for BERGEPAINT.NS
-INFO:services.data_fetcher:Added 1240 records for BDL.NS
-INFO:services.data_fetcher:Added 1240 records for BEL.NS
-INFO:services.data_fetcher:Added 1240 records for BHARATFORG.NS
-INFO:services.data_fetcher:Added 1240 records for BHEL.NS
-INFO:services.data_fetcher:Added 1240 records for BPCL.NS
-INFO:services.data_fetcher:Added 1240 records for BHARTIARTL.NS
-INFO:services.data_fetcher:Added 415 records for BHARTIHEXA.NS
-INFO:services.data_fetcher:Added 764 records for BIKAJI.NS
-INFO:services.data_fetcher:Added 1240 records for BIOCON.NS
-INFO:services.data_fetcher:Added 1240 records for BSOFT.NS
-INFO:services.data_fetcher:Added 1240 records for BLUEDART.NS
-INFO:services.data_fetcher:Added 526 records for BLUEJET.NS
-INFO:services.data_fetcher:Added 1240 records for BLUESTARCO.NS
-INFO:services.data_fetcher:Added 1240 records for BBTC.NS
-INFO:services.data_fetcher:Added 1240 records for BOSCHLTD.NS
-INFO:services.data_fetcher:Added 332 records for FIRSTCRY.NS
-INFO:services.data_fetcher:Added 1240 records for BRIGADE.NS
-INFO:services.data_fetcher:Added 1240 records for BRITANNIA.NS
-INFO:services.data_fetcher:Added 988 records for MAPMYINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for CCL.NS
-INFO:services.data_fetcher:Added 1240 records for CESC.NS
-INFO:services.data_fetcher:Added 1240 records for CGPOWER.NS
-INFO:services.data_fetcher:Added 1240 records for CRISIL.NS
-INFO:services.data_fetcher:Added 895 records for CAMPUS.NS
-INFO:services.data_fetcher:Added 1240 records for CANFINHOME.NS
-INFO:services.data_fetcher:Added 1240 records for CANBK.NS
-INFO:services.data_fetcher:Added 1240 records for CAPLIPOINT.NS
-INFO:services.data_fetcher:Added 1240 records for CGCL.NS
-INFO:services.data_fetcher:Added 1240 records for CARBORUNIV.NS
-INFO:services.data_fetcher:Added 1240 records for CASTROLIND.NS
-INFO:services.data_fetcher:Added 1240 records for CEATLTD.NS
-INFO:services.data_fetcher:Added 1240 records for CENTRALBK.NS
-INFO:services.data_fetcher:Added 1240 records for CDSL.NS
-INFO:services.data_fetcher:Added 1240 records for CENTURYPLY.NS
-INFO:services.data_fetcher:Added 1240 records for CERA.NS
-INFO:services.data_fetcher:Added 1240 records for CHALET.NS
-INFO:services.data_fetcher:Added 1240 records for CHAMBLFERT.NS
-INFO:services.data_fetcher:Added 1240 records for CHENNPETRO.NS
-INFO:services.data_fetcher:Added 913 records for CHOICEIN.NS
-INFO:services.data_fetcher:Added 1240 records for CHOLAHLDNG.NS
-INFO:services.data_fetcher:Added 1240 records for CHOLAFIN.NS
-INFO:services.data_fetcher:Added 1240 records for CIPLA.NS
-INFO:services.data_fetcher:Added 1240 records for CUB.NS
-INFO:services.data_fetcher:Added 1093 records for CLEAN.NS
-INFO:services.data_fetcher:Added 1240 records for COALINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for COCHINSHIP.NS
-INFO:services.data_fetcher:Added 1240 records for COFORGE.NS
-INFO:services.data_fetcher:Added 1240 records for COHANCE.NS
-INFO:services.data_fetcher:Added 1240 records for COLPAL.NS
-INFO:services.data_fetcher:Added 1240 records for CAMS.NS
-INFO:services.data_fetcher:Added 576 records for CONCORDBIO.NS
-INFO:services.data_fetcher:Added 1240 records for CONCOR.NS
-INFO:services.data_fetcher:Added 1240 records for COROMANDEL.NS
-INFO:services.data_fetcher:Added 1170 records for CRAFTSMAN.NS
-INFO:services.data_fetcher:Added 1240 records for CREDITACC.NS
-INFO:services.data_fetcher:Added 1240 records for CROMPTON.NS
-INFO:services.data_fetcher:Added 1240 records for CUMMINSIND.NS
-INFO:services.data_fetcher:Added 1240 records for CYIENT.NS
-INFO:services.data_fetcher:Added 1240 records for DCMSHRIRAM.NS
-INFO:services.data_fetcher:Added 1240 records for DLF.NS
-INFO:services.data_fetcher:Added 492 records for DOMS.NS
-INFO:services.data_fetcher:Added 1240 records for DABUR.NS
-INFO:services.data_fetcher:Added 1240 records for DALBHARAT.NS
-INFO:services.data_fetcher:Added 985 records for DATAPATTNS.NS
-INFO:services.data_fetcher:Added 1240 records for DEEPAKFERT.NS
-INFO:services.data_fetcher:Added 1240 records for DEEPAKNTR.NS
-INFO:services.data_fetcher:Added 884 records for DELHIVERY.NS
-INFO:services.data_fetcher:Added 1074 records for DEVYANI.NS
-INFO:services.data_fetcher:Added 1240 records for DIVISLAB.NS
-INFO:services.data_fetcher:Added 1240 records for DIXON.NS
-INFO:services.data_fetcher:Added 211 records for AGARWALEYE.NS
-INFO:services.data_fetcher:Added 1240 records for LALPATHLAB.NS
-INFO:services.data_fetcher:Added 1240 records for DRREDDY.NS
-ERROR:services.data_fetcher:Error downloading data for DUMMYHDLVR.NS: Instrument token not found for DUMMYHDLVR
-INFO:services.data_fetcher:Added 1240 records for EIDPARRY.NS
-INFO:services.data_fetcher:Added 1240 records for EIHOTEL.NS
-INFO:services.data_fetcher:Added 1240 records for EICHERMOT.NS
-INFO:services.data_fetcher:Added 1240 records for ELECON.NS
-INFO:services.data_fetcher:Added 1240 records for ELGIEQUIP.NS
-INFO:services.data_fetcher:Added 1240 records for EMAMILTD.NS
-INFO:services.data_fetcher:Added 355 records for EMCURE.NS
-INFO:services.data_fetcher:Added 1240 records for ENDURANCE.NS
-INFO:services.data_fetcher:Added 1240 records for ENGINERSIN.NS
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:15:38] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.data_fetcher:Added 1240 records for ERIS.NS
-INFO:services.data_fetcher:Added 1240 records for ESCORTS.NS
-INFO:services.data_fetcher:Added 1090 records for ETERNAL.NS
-INFO:services.data_fetcher:Added 1240 records for EXIDEIND.NS
-INFO:services.data_fetcher:Added 1016 records for NYKAA.NS
-INFO:services.data_fetcher:Added 1240 records for FEDERALBNK.NS
-INFO:services.data_fetcher:Added 1240 records for FACT.NS
-INFO:services.data_fetcher:Added 1240 records for FINCABLES.NS
-INFO:services.data_fetcher:Added 1240 records for FINPIPE.NS
-INFO:services.data_fetcher:Added 1240 records for FSL.NS
-INFO:services.data_fetcher:Added 761 records for FIVESTAR.NS
-INFO:services.data_fetcher:Added 1164 records for FORCEMOT.NS
-INFO:services.data_fetcher:Added 1240 records for FORTIS.NS
-INFO:services.data_fetcher:Added 1240 records for GAIL.NS
-INFO:services.data_fetcher:Added 1240 records for GVT&D.NS
-INFO:services.data_fetcher:Added 1240 records for GMRAIRPORT.NS
-INFO:services.data_fetcher:Added 1240 records for GRSE.NS
-INFO:services.data_fetcher:Added 1240 records for GICRE.NS
-INFO:services.data_fetcher:Added 1240 records for GILLETTE.NS
-INFO:services.data_fetcher:Added 1240 records for GLAND.NS
-INFO:services.data_fetcher:Added 1240 records for GLAXO.NS
-INFO:services.data_fetcher:Added 1240 records for GLENMARK.NS
-INFO:services.data_fetcher:Added 764 records for MEDANTA.NS
-INFO:services.data_fetcher:Added 388 records for GODIGIT.NS
-INFO:services.data_fetcher:Added 1240 records for GPIL.NS
-INFO:services.data_fetcher:Added 1240 records for GODFRYPHLP.NS
-INFO:services.data_fetcher:Added 1240 records for GODREJAGRO.NS
-INFO:services.data_fetcher:Added 1240 records for GODREJCP.NS
-INFO:services.data_fetcher:Added 1240 records for GODREJIND.NS
-INFO:services.data_fetcher:Added 1240 records for GODREJPROP.NS
-INFO:services.data_fetcher:Added 1240 records for GRANULES.NS
-INFO:services.data_fetcher:Added 1240 records for GRAPHITE.NS
-INFO:services.data_fetcher:Added 1240 records for GRASIM.NS
-INFO:services.data_fetcher:Added 1240 records for GRAVITA.NS
-INFO:services.data_fetcher:Added 1240 records for GESHIP.NS
-INFO:services.data_fetcher:Added 1240 records for FLUOROCHEM.NS
-INFO:services.data_fetcher:Added 1240 records for GUJGASLTD.NS
-INFO:services.data_fetcher:Added 1240 records for GMDCLTD.NS
-INFO:services.data_fetcher:Added 1240 records for GSPL.NS
-INFO:services.data_fetcher:Added 1240 records for HEG.NS
-INFO:services.data_fetcher:Added 1240 records for HBLENGINE.NS
-INFO:services.data_fetcher:Added 1240 records for HCLTECH.NS
-INFO:services.data_fetcher:Added 1240 records for HDFCAMC.NS
-INFO:services.data_fetcher:Added 1240 records for HDFCBANK.NS
-INFO:services.data_fetcher:Added 1240 records for HDFCLIFE.NS
-INFO:services.data_fetcher:Added 1240 records for HFCL.NS
-INFO:services.data_fetcher:Added 1240 records for HAPPSTMNDS.NS
-INFO:services.data_fetcher:Added 1240 records for HAVELLS.NS
-INFO:services.data_fetcher:Added 1240 records for HEROMOTOCO.NS
-INFO:services.data_fetcher:Added 200 records for HEXT.NS
-INFO:services.data_fetcher:Added 1240 records for HSCL.NS
-INFO:services.data_fetcher:Added 1240 records for HINDALCO.NS
-INFO:services.data_fetcher:Added 1240 records for HAL.NS
-INFO:services.data_fetcher:Added 1240 records for HINDCOPPER.NS
-INFO:services.data_fetcher:Added 1240 records for HINDPETRO.NS
-INFO:services.data_fetcher:Added 1240 records for HINDUNILVR.NS
-INFO:services.data_fetcher:Added 1240 records for HINDZINC.NS
-INFO:services.data_fetcher:Added 1240 records for POWERINDIA.NS
-INFO:services.data_fetcher:Added 1205 records for HOMEFIRST.NS
-INFO:services.data_fetcher:Added 522 records for HONASA.NS
-INFO:services.data_fetcher:Added 1240 records for HONAUT.NS
-INFO:services.data_fetcher:Added 1240 records for HUDCO.NS
-INFO:services.data_fetcher:Added 284 records for HYUNDAI.NS
-INFO:services.data_fetcher:Added 1240 records for ICICIBANK.NS
-INFO:services.data_fetcher:Added 1240 records for ICICIGI.NS
-INFO:services.data_fetcher:Added 1240 records for ICICIPRULI.NS
-INFO:services.data_fetcher:Added 1240 records for IDBI.NS
-INFO:services.data_fetcher:Added 1240 records for IDFCFIRSTB.NS
-INFO:services.data_fetcher:Added 1240 records for IFCI.NS
-INFO:services.data_fetcher:Added 1240 records for IIFL.NS
-INFO:services.data_fetcher:Added 491 records for INOXINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for IRB.NS
-INFO:services.data_fetcher:Added 1240 records for IRCON.NS
-INFO:services.data_fetcher:Added 216 records for ITCHOTELS.NS
-INFO:services.data_fetcher:Added 1240 records for ITC.NS
-INFO:services.data_fetcher:Added 1240 records for ITI.NS
-INFO:services.data_fetcher:Added 396 records for INDGN.NS
-INFO:services.data_fetcher:Added 1240 records for INDIACEM.NS
-INFO:services.data_fetcher:Added 1240 records for INDIAMART.NS
-INFO:services.data_fetcher:Added 1240 records for INDIANB.NS
-INFO:services.data_fetcher:Added 1240 records for IEX.NS
-INFO:services.data_fetcher:Added 1240 records for INDHOTEL.NS
-INFO:services.data_fetcher:Added 1240 records for IOC.NS
-INFO:services.data_fetcher:Added 1240 records for IOB.NS
-INFO:services.data_fetcher:Added 1240 records for IRCTC.NS
-INFO:services.data_fetcher:Added 1208 records for IRFC.NS
-INFO:services.data_fetcher:Added 507 records for IREDA.NS
-INFO:services.data_fetcher:Added 1240 records for IGL.NS
-INFO:services.data_fetcher:Added 1240 records for INDUSTOWER.NS
-INFO:services.data_fetcher:Added 1240 records for INDUSINDBK.NS
-INFO:services.data_fetcher:Added 1240 records for NAUKRI.NS
-INFO:services.data_fetcher:Added 1240 records for INFY.NS
-INFO:services.data_fetcher:Added 1240 records for INOXWIND.NS
-INFO:services.data_fetcher:Added 1240 records for INTELLECT.NS
-INFO:services.data_fetcher:Added 1240 records for INDIGO.NS
-INFO:services.data_fetcher:Added 243 records for IGIL.NS
-INFO:services.data_fetcher:Added 244 records for IKS.NS
-INFO:services.data_fetcher:Added 1240 records for IPCALAB.NS
-INFO:services.data_fetcher:Added 1240 records for JBCHEPHARM.NS
-INFO:services.data_fetcher:Added 1240 records for JKCEMENT.NS
-INFO:services.data_fetcher:Added 1240 records for JBMA.NS
-INFO:services.data_fetcher:Added 1240 records for JKTYRE.NS
-INFO:services.data_fetcher:Added 1240 records for JMFINANCIL.NS
-INFO:services.data_fetcher:Added 1240 records for JSWENERGY.NS
-INFO:services.data_fetcher:Added 546 records for JSWINFRA.NS
-INFO:services.data_fetcher:Added 1240 records for JSWSTEEL.NS
-INFO:services.data_fetcher:Added 1240 records for JPPOWER.NS
-INFO:services.data_fetcher:Added 1240 records for J&KBANK.NS
-INFO:services.data_fetcher:Added 1240 records for JINDALSAW.NS
-INFO:services.data_fetcher:Added 1240 records for JSL.NS
-INFO:services.data_fetcher:Added 1240 records for JINDALSTEL.NS
-INFO:services.data_fetcher:Added 575 records for JIOFIN.NS
-INFO:services.data_fetcher:Added 1240 records for JUBLFOOD.NS
-INFO:services.data_fetcher:Added 1174 records for JUBLINGREA.NS
-INFO:services.data_fetcher:Added 1240 records for JUBLPHARMA.NS
-INFO:services.data_fetcher:Added 1240 records for JWL.NS
-INFO:services.data_fetcher:Added 1240 records for JYOTHYLAB.NS
-INFO:services.data_fetcher:Added 474 records for JYOTICNC.NS
-INFO:services.data_fetcher:Added 1240 records for KPRMILL.NS
-INFO:services.data_fetcher:Added 1240 records for KEI.NS
-INFO:services.data_fetcher:Added 1240 records for KPITTECH.NS
-INFO:services.data_fetcher:Added 1240 records for KSB.NS
-INFO:services.data_fetcher:Added 1240 records for KAJARIACER.NS
-INFO:services.data_fetcher:Added 1240 records for KPIL.NS
-INFO:services.data_fetcher:Added 1169 records for KALYANKJIL.NS
-INFO:services.data_fetcher:Added 1240 records for KARURVYSYA.NS
-INFO:services.data_fetcher:Added 760 records for KAYNES.NS
-INFO:services.data_fetcher:Added 1240 records for KEC.NS
-INFO:services.data_fetcher:Added 733 records for KFINTECH.NS
-INFO:services.data_fetcher:Added 1240 records for KIRLOSBROS.NS
-INFO:services.data_fetcher:Added 1240 records for KIRLOSENG.NS
-INFO:services.data_fetcher:Added 1240 records for KOTAKBANK.NS
-INFO:services.data_fetcher:Added 1108 records for KIMS.NS
-INFO:services.data_fetcher:Added 1240 records for LTF.NS
-INFO:services.data_fetcher:Added 1240 records for LTTS.NS
-INFO:services.data_fetcher:Added 1240 records for LICHSGFIN.NS
-INFO:services.data_fetcher:Added 1240 records for LTFOODS.NS
-INFO:services.data_fetcher:Added 1240 records for LTIM.NS
-INFO:services.data_fetcher:Added 1240 records for LT.NS
-INFO:services.data_fetcher:Added 1008 records for LATENTVIEW.NS
-INFO:services.data_fetcher:Added 1240 records for LAURUSLABS.NS
-INFO:services.data_fetcher:Added 134 records for THELEELA.NS
-INFO:services.data_fetcher:Added 1240 records for LEMONTREE.NS
-INFO:services.data_fetcher:Added 889 records for LICI.NS
-INFO:services.data_fetcher:Added 1240 records for LINDEINDIA.NS
-INFO:services.data_fetcher:Added 599 records for LLOYDSME.NS
-INFO:services.data_fetcher:Added 1156 records for LODHA.NS
-INFO:services.data_fetcher:Added 1240 records for LUPIN.NS
-INFO:services.data_fetcher:Added 1240 records for MMTC.NS
-INFO:services.data_fetcher:Added 1240 records for MRF.NS
-INFO:services.data_fetcher:Added 1240 records for MGL.NS
+INFO:services.data_fetcher:Added 1237 records for 360ONE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:05] "GET /socket.io/?EIO=4&transport=polling&t=tofyqoth&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for 3MINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:05] "GET /socket.io/?EIO=4&transport=polling&t=togjocoz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ABB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:05] "GET /socket.io/?EIO=4&transport=polling&t=togq3ot6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ACC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:05] "GET /socket.io/?EIO=4&transport=polling&t=togwzl9a&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 280 records for ACMESOLAR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:05] "GET /socket.io/?EIO=4&transport=polling&t=toh493t6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AIAENG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:06] "GET /socket.io/?EIO=4&transport=polling&t=toh7wy5y&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for APLAPOLLO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:06] "GET /socket.io/?EIO=4&transport=polling&t=tohg2dhw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AUBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:06] "GET /socket.io/?EIO=4&transport=polling&t=toho49pm&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 962 records for AWL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:07] "GET /socket.io/?EIO=4&transport=polling&t=tohwg5in&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 405 records for AADHARHFC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:07] "GET /socket.io/?EIO=4&transport=polling&t=toi48wbj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AARTIIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:07] "GET /socket.io/?EIO=4&transport=polling&t=toi8kp2c&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for AAVAS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:07] "GET /socket.io/?EIO=4&transport=polling&t=toig9x0l&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ABBOTINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:08] "GET /socket.io/?EIO=4&transport=polling&t=toimhuaf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ACE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:08] "GET /socket.io/?EIO=4&transport=polling&t=toiseca8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 581 records for ADANIENSOL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:08] "GET /socket.io/?EIO=4&transport=polling&t=toiz7heo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ADANIENT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:08] "GET /socket.io/?EIO=4&transport=polling&t=toj4szzg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ADANIGREEN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:09] "GET /socket.io/?EIO=4&transport=polling&t=tojdbcjl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ADANIPORTS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:09] "GET /socket.io/?EIO=4&transport=polling&t=tojjrmne&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ADANIPOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:09] "GET /socket.io/?EIO=4&transport=polling&t=tojr1wz6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ATGL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:09] "GET /socket.io/?EIO=4&transport=polling&t=tojvslpa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ABCAPITAL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:09] "GET /socket.io/?EIO=4&transport=polling&t=tok0q9ws&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ABFRL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:10] "GET /socket.io/?EIO=4&transport=polling&t=tok6sipd&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 129 records for ABLBL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:10] "GET /socket.io/?EIO=4&transport=polling&t=tokdna56&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ABREL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:10] "GET /socket.io/?EIO=4&transport=polling&t=tokh8d6z&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1044 records for ABSLAMC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:10] "GET /socket.io/?EIO=4&transport=polling&t=tokotwqw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 1-25 of 502
+INFO:services.data_fetcher:Added 391 records for AEGISLOG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:10] "GET /socket.io/?EIO=4&transport=polling&t=toku0c68&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 146 records for AEGISVOPAK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:10] "GET /socket.io/?EIO=4&transport=polling&t=tokxhwzm&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 287 records for AFCONS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:11] "GET /socket.io/?EIO=4&transport=polling&t=tol0zqg4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AFFLE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:11] "GET /socket.io/?EIO=4&transport=polling&t=tol5390e&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for AJANTPHARM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:11] "GET /socket.io/?EIO=4&transport=polling&t=tolegsae&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 344 records for AKUMS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:11] "GET /socket.io/?EIO=4&transport=polling&t=tollukpd&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for AKZOINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:12] "GET /socket.io/?EIO=4&transport=polling&t=tolpdptx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for APLLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:12] "GET /socket.io/?EIO=4&transport=polling&t=tolzy37b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ALKEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:12] "GET /socket.io/?EIO=4&transport=polling&t=tom5kv79&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for ALKYLAMINE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:12] "GET /socket.io/?EIO=4&transport=polling&t=tomaui3b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ALOKINDS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:13] "GET /socket.io/?EIO=4&transport=polling&t=tomgq4ab&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 538 records for ARE&M.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:13] "GET /socket.io/?EIO=4&transport=polling&t=tomnqtnb&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AMBER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:13] "GET /socket.io/?EIO=4&transport=polling&t=tomt61i4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AMBUJACEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:13] "GET /socket.io/?EIO=4&transport=polling&t=ton2uew3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1001 records for ANANDRATHI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:14] "GET /socket.io/?EIO=4&transport=polling&t=ton8ffny&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ANANTRAJ.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:14] "GET /socket.io/?EIO=4&transport=polling&t=tones7h6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ANGELONE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:14] "GET /socket.io/?EIO=4&transport=polling&t=tonpb9xi&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for APARINDS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:15] "GET /socket.io/?EIO=4&transport=polling&t=tonz62y0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for APOLLOHOSP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:15] "GET /socket.io/?EIO=4&transport=polling&t=too6qazw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for APOLLOTYRE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:15] "GET /socket.io/?EIO=4&transport=polling&t=tooeaxtm&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1077 records for APTUS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:15] "GET /socket.io/?EIO=4&transport=polling&t=toom0opa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for ASAHIINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:16] "GET /socket.io/?EIO=4&transport=polling&t=toovghgh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ASHOKLEY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:16] "GET /socket.io/?EIO=4&transport=polling&t=top39091&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ASIANPAINT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:16] "GET /socket.io/?EIO=4&transport=polling&t=topap0jg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ASTERDM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:17] "GET /socket.io/?EIO=4&transport=polling&t=topi82e0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 26-50 of 502
+INFO:services.data_fetcher:Added 1237 records for ASTRAZEN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:17] "GET /socket.io/?EIO=4&transport=polling&t=toppm52c&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ASTRAL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:17] "GET /socket.io/?EIO=4&transport=polling&t=topuzgjt&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 165 records for ATHERENERG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:17] "GET /socket.io/?EIO=4&transport=polling&t=toq2fxor&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ATUL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:18] "GET /socket.io/?EIO=4&transport=polling&t=toq6mzxz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AUROPHARMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:18] "GET /socket.io/?EIO=4&transport=polling&t=toqhwjg5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 416 records for AIIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:18] "GET /socket.io/?EIO=4&transport=polling&t=toqpznk1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DMART.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:18] "GET /socket.io/?EIO=4&transport=polling&t=toqtg6vy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for AXISBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:18] "GET /socket.io/?EIO=4&transport=polling&t=toqyqio5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BASF.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:19] "GET /socket.io/?EIO=4&transport=polling&t=tor5z6iv&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BEML.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:19] "GET /socket.io/?EIO=4&transport=polling&t=torhrlxo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BLS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:19] "GET /socket.io/?EIO=4&transport=polling&t=torq6eow&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BSE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:20] "GET /socket.io/?EIO=4&transport=polling&t=torwsf8j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BAJAJ-AUTO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:20] "GET /socket.io/?EIO=4&transport=polling&t=tos2an7s&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BAJFINANCE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:20] "GET /socket.io/?EIO=4&transport=polling&t=tos9bxl0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BAJAJFINSV.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:20] "GET /socket.io/?EIO=4&transport=polling&t=tosge0cz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BAJAJHLDNG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:21] "GET /socket.io/?EIO=4&transport=polling&t=toso7en3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 321 records for BAJAJHFL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:21] "GET /socket.io/?EIO=4&transport=polling&t=tosys7ws&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BALKRISIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:21] "GET /socket.io/?EIO=4&transport=polling&t=tot28gjr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BALRAMCHIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:21] "GET /socket.io/?EIO=4&transport=polling&t=tot9xybh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BANDHANBNK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:22] "GET /socket.io/?EIO=4&transport=polling&t=toti4xp0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BANKBARODA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:22] "GET /socket.io/?EIO=4&transport=polling&t=totpmq3w&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BANKINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:22] "GET /socket.io/?EIO=4&transport=polling&t=totwyev4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MAHABANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:23] "GET /socket.io/?EIO=4&transport=polling&t=tou56v2f&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BATAINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:23] "GET /socket.io/?EIO=4&transport=polling&t=toucgetd&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BAYERCROP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:23] "GET /socket.io/?EIO=4&transport=polling&t=toujn0e2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 51-75 of 502
+INFO:services.data_fetcher:Added 1238 records for BERGEPAINT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:23] "GET /socket.io/?EIO=4&transport=polling&t=touq80ah&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BDL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:24] "GET /socket.io/?EIO=4&transport=polling&t=touxool8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:24] "GET /socket.io/?EIO=4&transport=polling&t=tov5jwr8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BHARATFORG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:24] "GET /socket.io/?EIO=4&transport=polling&t=tovh4a9w&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BHEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:25] "GET /socket.io/?EIO=4&transport=polling&t=tovpotpk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BPCL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:25] "GET /socket.io/?EIO=4&transport=polling&t=tovxmb3b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BHARTIARTL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:25] "GET /socket.io/?EIO=4&transport=polling&t=tow4r6l9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 425 records for BHARTIHEXA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:25] "GET /socket.io/?EIO=4&transport=polling&t=towc4hdq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 772 records for BIKAJI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:25] "GET /socket.io/?EIO=4&transport=polling&t=towg15k3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BIOCON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:26] "GET /socket.io/?EIO=4&transport=polling&t=towmww4n&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BSOFT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:26] "GET /socket.io/?EIO=4&transport=polling&t=towszrg1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for BLUEDART.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:26] "GET /socket.io/?EIO=4&transport=polling&t=tox0rboh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 534 records for BLUEJET.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:26] "GET /socket.io/?EIO=4&transport=polling&t=tox8pptl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for BLUESTARCO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:27] "GET /socket.io/?EIO=4&transport=polling&t=toxen0wa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BBTC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:27] "GET /socket.io/?EIO=4&transport=polling&t=toxmb37i&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:28] "GET /socket.io/?EIO=4&transport=polling&t=toxzr5yh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:28] "POST /socket.io/?EIO=4&transport=polling&t=toyazckf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for BOSCHLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:28] "GET /socket.io/?EIO=4&transport=polling&t=toyazx57&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 343 records for FIRSTCRY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:28] "GET /socket.io/?EIO=4&transport=polling&t=toyc7ol9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BRIGADE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:28] "GET /socket.io/?EIO=4&transport=polling&t=toyg0281&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for BRITANNIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:29] "GET /socket.io/?EIO=4&transport=polling&t=toynzpul&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 996 records for MAPMYINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:29] "GET /socket.io/?EIO=4&transport=polling&t=toyz935e&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CCL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:29] "GET /socket.io/?EIO=4&transport=polling&t=toz6rnuv&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CESC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:29] "GET /socket.io/?EIO=4&transport=polling&t=tozh6m6j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CGPOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:30] "GET /socket.io/?EIO=4&transport=polling&t=toznbub6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for CRISIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:30] "GET /socket.io/?EIO=4&transport=polling&t=tozvrbcx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 903 records for CAMPUS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:30] "GET /socket.io/?EIO=4&transport=polling&t=tp03mp17&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 76-100 of 502
+INFO:services.data_fetcher:Added 1238 records for CANFINHOME.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:31] "GET /socket.io/?EIO=4&transport=polling&t=tp0b2vta&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CANBK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:31] "GET /socket.io/?EIO=4&transport=polling&t=tp0im5z2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CAPLIPOINT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:31] "GET /socket.io/?EIO=4&transport=polling&t=tp0p5h5r&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CGCL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:31] "GET /socket.io/?EIO=4&transport=polling&t=tp0x1fdn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for CARBORUNIV.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:32] "GET /socket.io/?EIO=4&transport=polling&t=tp148ljg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CASTROLIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:32] "GET /socket.io/?EIO=4&transport=polling&t=tp1bz9ai&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CEATLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:32] "GET /socket.io/?EIO=4&transport=polling&t=tp1kf77t&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CENTRALBK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:32] "GET /socket.io/?EIO=4&transport=polling&t=tp1rw3pd&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CDSL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:33] "GET /socket.io/?EIO=4&transport=polling&t=tp1y2g9m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CENTURYPLY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:33] "GET /socket.io/?EIO=4&transport=polling&t=tp25jsw7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CERA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:33] "GET /socket.io/?EIO=4&transport=polling&t=tp2bysgo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CHALET.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:33] "GET /socket.io/?EIO=4&transport=polling&t=tp2jqsjh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CHAMBLFERT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:34] "GET /socket.io/?EIO=4&transport=polling&t=tp2s47vf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CHENNPETRO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:34] "GET /socket.io/?EIO=4&transport=polling&t=tp2yapba&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 921 records for CHOICEIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:34] "GET /socket.io/?EIO=4&transport=polling&t=tp39msgw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for CHOLAHLDNG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:35] "GET /socket.io/?EIO=4&transport=polling&t=tp3ftdem&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CHOLAFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:35] "GET /socket.io/?EIO=4&transport=polling&t=tp3nxtw9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CIPLA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:35] "GET /socket.io/?EIO=4&transport=polling&t=tp3wfyeh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CUB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:35] "GET /socket.io/?EIO=4&transport=polling&t=tp43zzj8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1101 records for CLEAN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:36] "GET /socket.io/?EIO=4&transport=polling&t=tp4bmpld&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for COALINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:36] "GET /socket.io/?EIO=4&transport=polling&t=tp4illi3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for COCHINSHIP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:36] "GET /socket.io/?EIO=4&transport=polling&t=tp4tn7ia&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for COFORGE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:37] "GET /socket.io/?EIO=4&transport=polling&t=tp54pbry&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 162 records for COHANCE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:37] "GET /socket.io/?EIO=4&transport=polling&t=tp5birmu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for COLPAL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:37] "GET /socket.io/?EIO=4&transport=polling&t=tp5epclu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 101-125 of 502
+INFO:services.data_fetcher:Added 1238 records for CAMS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:37] "GET /socket.io/?EIO=4&transport=polling&t=tp5n7t1v&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 584 records for CONCORDBIO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:38] "GET /socket.io/?EIO=4&transport=polling&t=tp5uczu7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CONCOR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:38] "GET /socket.io/?EIO=4&transport=polling&t=tp5yndpe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for COROMANDEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:38] "GET /socket.io/?EIO=4&transport=polling&t=tp66jgiz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1178 records for CRAFTSMAN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:38] "GET /socket.io/?EIO=4&transport=polling&t=tp6dky2d&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CREDITACC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:39] "GET /socket.io/?EIO=4&transport=polling&t=tp6iomoj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CROMPTON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:39] "GET /socket.io/?EIO=4&transport=polling&t=tp6q1ddi&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CUMMINSIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:39] "GET /socket.io/?EIO=4&transport=polling&t=tp6xg2xa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for CYIENT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:39] "GET /socket.io/?EIO=4&transport=polling&t=tp75fpsb&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for DCMSHRIRAM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:40] "GET /socket.io/?EIO=4&transport=polling&t=tp7d7xa8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DLF.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:40] "GET /socket.io/?EIO=4&transport=polling&t=tp7nw5y2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 501 records for DOMS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:40] "GET /socket.io/?EIO=4&transport=polling&t=tp7tu21m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DABUR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:40] "GET /socket.io/?EIO=4&transport=polling&t=tp7y1i8t&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for DALBHARAT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:41] "GET /socket.io/?EIO=4&transport=polling&t=tp84mt4s&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 993 records for DATAPATTNS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:41] "GET /socket.io/?EIO=4&transport=polling&t=tp8a8ap1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DEEPAKFERT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:41] "GET /socket.io/?EIO=4&transport=polling&t=tp8fs8a3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DEEPAKNTR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:41] "GET /socket.io/?EIO=4&transport=polling&t=tp8oprns&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 892 records for DELHIVERY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:42] "GET /socket.io/?EIO=4&transport=polling&t=tp8wivo1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1082 records for DEVYANI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:42] "GET /socket.io/?EIO=4&transport=polling&t=tp91c1rr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DIVISLAB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:42] "GET /socket.io/?EIO=4&transport=polling&t=tp98eaqt&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DIXON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:42] "GET /socket.io/?EIO=4&transport=polling&t=tp9ek22b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 223 records for AGARWALEYE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:43] "GET /socket.io/?EIO=4&transport=polling&t=tp9ponhx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LALPATHLAB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:43] "GET /socket.io/?EIO=4&transport=polling&t=tp9t7cxn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DRREDDY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:43] "GET /socket.io/?EIO=4&transport=polling&t=tpa29eim&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+ERROR:yfinance:HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: DUMMYHDLVR.NS"}}}
+ERROR:yfinance:$DUMMYHDLVR.NS: possibly delisted; no price data found  (period=5y) (Yahoo error = "No data found, symbol may be delisted")
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:45] "GET /socket.io/?EIO=4&transport=polling&t=tpaablr5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 126-150 of 502
+INFO:services.data_fetcher:Added 1238 records for EIDPARRY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:45] "GET /socket.io/?EIO=4&transport=polling&t=tpbt28qq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for EIHOTEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:46] "GET /socket.io/?EIO=4&transport=polling&t=tpc19ho1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for EICHERMOT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:46] "GET /socket.io/?EIO=4&transport=polling&t=tpc9s07b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ELECON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:46] "GET /socket.io/?EIO=4&transport=polling&t=tpchhlec&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ELGIEQUIP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:47] "GET /socket.io/?EIO=4&transport=polling&t=tpcp35jt&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for EMAMILTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:47] "GET /socket.io/?EIO=4&transport=polling&t=tpcv2qu4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 362 records for EMCURE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:47] "GET /socket.io/?EIO=4&transport=polling&t=tpd47v0i&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ENDURANCE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:47] "GET /socket.io/?EIO=4&transport=polling&t=tpd8nqow&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ENGINERSIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:48] "GET /socket.io/?EIO=4&transport=polling&t=tpdg6eef&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ERIS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:48] "GET /socket.io/?EIO=4&transport=polling&t=tpdnd9k3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ESCORTS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:48] "GET /socket.io/?EIO=4&transport=polling&t=tpduwr3v&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1076 records for ETERNAL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:48] "GET /socket.io/?EIO=4&transport=polling&t=tpe346pl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for EXIDEIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:49] "GET /socket.io/?EIO=4&transport=polling&t=tpe9rk77&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1024 records for NYKAA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:49] "GET /socket.io/?EIO=4&transport=polling&t=tpekuod9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for FEDERALBNK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:49] "GET /socket.io/?EIO=4&transport=polling&t=tpepmelp&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for FACT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:50] "GET /socket.io/?EIO=4&transport=polling&t=tpf179ih&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for FINCABLES.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:50] "GET /socket.io/?EIO=4&transport=polling&t=tpf9d5o6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for FINPIPE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:50] "GET /socket.io/?EIO=4&transport=polling&t=tpfgrrpa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for FSL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:51] "GET /socket.io/?EIO=4&transport=polling&t=tpfs1e83&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 769 records for FIVESTAR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:51] "GET /socket.io/?EIO=4&transport=polling&t=tpfzts1g&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1197 records for FORCEMOT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:51] "GET /socket.io/?EIO=4&transport=polling&t=tpg54wlg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for FORTIS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:51] "GET /socket.io/?EIO=4&transport=polling&t=tpgfqjpe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GAIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:52] "GET /socket.io/?EIO=4&transport=polling&t=tpgmwcip&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GVT&D.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:52] "GET /socket.io/?EIO=4&transport=polling&t=tpgt94sy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GMRAIRPORT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:52] "GET /socket.io/?EIO=4&transport=polling&t=tph4ps15&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 151-175 of 502
+INFO:services.data_fetcher:Added 1238 records for GRSE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:53] "GET /socket.io/?EIO=4&transport=polling&t=tphdgsyn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:53] "GET /socket.io/?EIO=4&transport=polling&t=tphkry8l&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:53] "POST /socket.io/?EIO=4&transport=polling&t=tphlv36s&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GICRE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:53] "GET /socket.io/?EIO=4&transport=polling&t=tphlw1j1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GILLETTE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:53] "GET /socket.io/?EIO=4&transport=polling&t=tphqfdkx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GLAND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:53] "GET /socket.io/?EIO=4&transport=polling&t=tphwskf4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GLAXO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:54] "GET /socket.io/?EIO=4&transport=polling&t=tpi4tzox&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GLENMARK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:54] "GET /socket.io/?EIO=4&transport=polling&t=tpicuqts&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 769 records for MEDANTA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:54] "GET /socket.io/?EIO=4&transport=polling&t=tpikbu2w&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 399 records for GODIGIT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:55] "GET /socket.io/?EIO=4&transport=polling&t=tpive4ne&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GPIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:55] "GET /socket.io/?EIO=4&transport=polling&t=tpj4paxk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GODFRYPHLP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:55] "GET /socket.io/?EIO=4&transport=polling&t=tpjdodz1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GODREJAGRO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:55] "GET /socket.io/?EIO=4&transport=polling&t=tpjlio1d&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GODREJCP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:56] "GET /socket.io/?EIO=4&transport=polling&t=tpjsqu9e&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GODREJIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:56] "GET /socket.io/?EIO=4&transport=polling&t=tpjzpl7g&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GODREJPROP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:56] "GET /socket.io/?EIO=4&transport=polling&t=tpk81erf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GRANULES.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:57] "GET /socket.io/?EIO=4&transport=polling&t=tpkfflpe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GRAPHITE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:57] "GET /socket.io/?EIO=4&transport=polling&t=tpkn4az9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GRASIM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:57] "GET /socket.io/?EIO=4&transport=polling&t=tpkubo91&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GRAVITA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:58] "GET /socket.io/?EIO=4&transport=polling&t=tpl7bgw3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GESHIP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:58] "GET /socket.io/?EIO=4&transport=polling&t=tplewclb&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for FLUOROCHEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:58] "GET /socket.io/?EIO=4&transport=polling&t=tplmu2ea&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for GUJGASLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:58] "GET /socket.io/?EIO=4&transport=polling&t=tplu9ll0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GMDCLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:59] "GET /socket.io/?EIO=4&transport=polling&t=tpm22ngy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for GSPL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:59] "GET /socket.io/?EIO=4&transport=polling&t=tpm9x2c4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HEG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:59] "GET /socket.io/?EIO=4&transport=polling&t=tpmh6mak&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 260 records for HBLENGINE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:44:59] "GET /socket.io/?EIO=4&transport=polling&t=tpmnncrz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 176-200 of 502
+INFO:services.data_fetcher:Added 1238 records for HCLTECH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:00] "GET /socket.io/?EIO=4&transport=polling&t=tpmvumqj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HDFCAMC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:00] "GET /socket.io/?EIO=4&transport=polling&t=tpn4j9hl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HDFCBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:00] "GET /socket.io/?EIO=4&transport=polling&t=tpnbww3m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HDFCLIFE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:01] "GET /socket.io/?EIO=4&transport=polling&t=tpnkf9w5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HFCL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:01] "GET /socket.io/?EIO=4&transport=polling&t=tpnv5bcf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HAPPSTMNDS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:01] "GET /socket.io/?EIO=4&transport=polling&t=tpo12vyy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HAVELLS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:01] "GET /socket.io/?EIO=4&transport=polling&t=tpo8xv3n&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HEROMOTOCO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:02] "GET /socket.io/?EIO=4&transport=polling&t=tpofjlw2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 210 records for HEXT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:02] "GET /socket.io/?EIO=4&transport=polling&t=tponisfr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HSCL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:02] "GET /socket.io/?EIO=4&transport=polling&t=tporagn1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HINDALCO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:03] "GET /socket.io/?EIO=4&transport=polling&t=tpozescx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HAL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:03] "GET /socket.io/?EIO=4&transport=polling&t=tpp8sdeo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HINDCOPPER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:03] "GET /socket.io/?EIO=4&transport=polling&t=tppfz0kg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HINDPETRO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:03] "GET /socket.io/?EIO=4&transport=polling&t=tppp1x95&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HINDUNILVR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:04] "GET /socket.io/?EIO=4&transport=polling&t=tppymzfk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HINDZINC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:04] "GET /socket.io/?EIO=4&transport=polling&t=tpq62qd0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for POWERINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:04] "GET /socket.io/?EIO=4&transport=polling&t=tpqen0d6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1213 records for HOMEFIRST.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:05] "GET /socket.io/?EIO=4&transport=polling&t=tpqk6ug1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 529 records for HONASA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:05] "GET /socket.io/?EIO=4&transport=polling&t=tpqrnou6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HONAUT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:05] "GET /socket.io/?EIO=4&transport=polling&t=tpqw3pwq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for HUDCO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:05] "GET /socket.io/?EIO=4&transport=polling&t=tpr41sy6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 296 records for HYUNDAI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:05] "GET /socket.io/?EIO=4&transport=polling&t=tprbhv4k&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ICICIBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:06] "GET /socket.io/?EIO=4&transport=polling&t=tprfawpe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ICICIGI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:06] "GET /socket.io/?EIO=4&transport=polling&t=tprnsez0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ICICIPRULI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:06] "GET /socket.io/?EIO=4&transport=polling&t=tprtdkq7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 201-225 of 502
+INFO:services.data_fetcher:Added 1238 records for IDBI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:06] "GET /socket.io/?EIO=4&transport=polling&t=tps1yogv&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IDFCFIRSTB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:07] "GET /socket.io/?EIO=4&transport=polling&t=tpsagniq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IFCI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:07] "GET /socket.io/?EIO=4&transport=polling&t=tpshqkla&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IIFL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:07] "GET /socket.io/?EIO=4&transport=polling&t=tpsp6iib&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 500 records for INOXINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:08] "GET /socket.io/?EIO=4&transport=polling&t=tpt07ww2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IRB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:08] "GET /socket.io/?EIO=4&transport=polling&t=tpt4kg9g&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IRCON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:08] "GET /socket.io/?EIO=4&transport=polling&t=tptcm6l9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 226 records for ITCHOTELS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:08] "GET /socket.io/?EIO=4&transport=polling&t=tptkmz3w&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ITC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:09] "GET /socket.io/?EIO=4&transport=polling&t=tptrmtub&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ITI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:09] "GET /socket.io/?EIO=4&transport=polling&t=tpu1n4pk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 407 records for INDGN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:09] "GET /socket.io/?EIO=4&transport=polling&t=tpu71his&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for INDIACEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:10] "GET /socket.io/?EIO=4&transport=polling&t=tpufsbl7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INDIAMART.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:10] "GET /socket.io/?EIO=4&transport=polling&t=tpuoecit&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INDIANB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:10] "GET /socket.io/?EIO=4&transport=polling&t=tpuvfqxe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IEX.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:10] "GET /socket.io/?EIO=4&transport=polling&t=tpv6u1b3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INDHOTEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:11] "GET /socket.io/?EIO=4&transport=polling&t=tpvcq2s4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IOC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:11] "GET /socket.io/?EIO=4&transport=polling&t=tpvmfgc5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IOB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:12] "GET /socket.io/?EIO=4&transport=polling&t=tpvus89g&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IRCTC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:12] "GET /socket.io/?EIO=4&transport=polling&t=tpw5lows&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1216 records for IRFC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:12] "GET /socket.io/?EIO=4&transport=polling&t=tpwdoxit&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 516 records for IREDA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:12] "GET /socket.io/?EIO=4&transport=polling&t=tpwl7bta&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IGL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:13] "GET /socket.io/?EIO=4&transport=polling&t=tpwtbntm&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INDUSTOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:13] "GET /socket.io/?EIO=4&transport=polling&t=tpx1g5r3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INDUSINDBK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:13] "GET /socket.io/?EIO=4&transport=polling&t=tpxccpf3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NAUKRI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:14] "GET /socket.io/?EIO=4&transport=polling&t=tpxkc4f0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 226-250 of 502
+INFO:services.data_fetcher:Added 1238 records for INFY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:14] "GET /socket.io/?EIO=4&transport=polling&t=tpxszjt4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INOXWIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:14] "GET /socket.io/?EIO=4&transport=polling&t=tpy0k0ju&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INTELLECT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:14] "GET /socket.io/?EIO=4&transport=polling&t=tpy8inf4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for INDIGO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:15] "GET /socket.io/?EIO=4&transport=polling&t=tpyedkpn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 253 records for IGIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:15] "GET /socket.io/?EIO=4&transport=polling&t=tpyllz96&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 255 records for IKS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:15] "GET /socket.io/?EIO=4&transport=polling&t=tpypgb7x&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IPCALAB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:15] "GET /socket.io/?EIO=4&transport=polling&t=tpyt9ep0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JBCHEPHARM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:16] "GET /socket.io/?EIO=4&transport=polling&t=tpz3im8a&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for JKCEMENT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:16] "GET /socket.io/?EIO=4&transport=polling&t=tpzbejda&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JBMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:16] "GET /socket.io/?EIO=4&transport=polling&t=tpzjmjrr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JKTYRE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:16] "GET /socket.io/?EIO=4&transport=polling&t=tpzqpdxx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JMFINANCIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:17] "GET /socket.io/?EIO=4&transport=polling&t=tpzwichx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JSWENERGY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:17] "GET /socket.io/?EIO=4&transport=polling&t=tq02wrz5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 549 records for JSWINFRA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:17] "GET /socket.io/?EIO=4&transport=polling&t=tq0ee0jr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JSWSTEEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:18] "GET /socket.io/?EIO=4&transport=polling&t=tq0kbv95&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:18] "GET /socket.io/?EIO=4&transport=polling&t=tq0si6nu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:18] "POST /socket.io/?EIO=4&transport=polling&t=tq0wlcgv&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JPPOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:18] "GET /socket.io/?EIO=4&transport=polling&t=tq0wmqff&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for J&KBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:18] "GET /socket.io/?EIO=4&transport=polling&t=tq0zqxh4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JINDALSAW.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:18] "GET /socket.io/?EIO=4&transport=polling&t=tq17mawr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JSL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:19] "GET /socket.io/?EIO=4&transport=polling&t=tq1fqj9p&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JINDALSTEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:19] "GET /socket.io/?EIO=4&transport=polling&t=tq1ne51w&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 578 records for JIOFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:19] "GET /socket.io/?EIO=4&transport=polling&t=tq1vwu66&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JUBLFOOD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:19] "GET /socket.io/?EIO=4&transport=polling&t=tq20q9nx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1182 records for JUBLINGREA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:20] "GET /socket.io/?EIO=4&transport=polling&t=tq26cg9g&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JUBLPHARMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:20] "GET /socket.io/?EIO=4&transport=polling&t=tq2ef4rj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for JWL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:20] "GET /socket.io/?EIO=4&transport=polling&t=tq2mjtaz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 251-275 of 502
+INFO:services.data_fetcher:Added 1238 records for JYOTHYLAB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:21] "GET /socket.io/?EIO=4&transport=polling&t=tq2ujs17&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 483 records for JYOTICNC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:21] "GET /socket.io/?EIO=4&transport=polling&t=tq35sb5h&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KPRMILL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:21] "GET /socket.io/?EIO=4&transport=polling&t=tq39utnl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KEI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:21] "GET /socket.io/?EIO=4&transport=polling&t=tq3lwxzh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KPITTECH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:22] "GET /socket.io/?EIO=4&transport=polling&t=tq3tz5vo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KSB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:22] "GET /socket.io/?EIO=4&transport=polling&t=tq41yxw2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for KAJARIACER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:22] "GET /socket.io/?EIO=4&transport=polling&t=tq4aog3b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 622 records for KPIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:23] "GET /socket.io/?EIO=4&transport=polling&t=tq4invoo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1177 records for KALYANKJIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:23] "GET /socket.io/?EIO=4&transport=polling&t=tq4obgk4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KARURVYSYA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:23] "GET /socket.io/?EIO=4&transport=polling&t=tq4yymxt&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 768 records for KAYNES.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:23] "GET /socket.io/?EIO=4&transport=polling&t=tq57som4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KEC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:24] "GET /socket.io/?EIO=4&transport=polling&t=tq5dnrge&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 741 records for KFINTECH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:24] "GET /socket.io/?EIO=4&transport=polling&t=tq5mes1m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KIRLOSBROS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:24] "GET /socket.io/?EIO=4&transport=polling&t=tq5tlcai&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KIRLOSENG.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:25] "GET /socket.io/?EIO=4&transport=polling&t=tq5zj7rr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for KOTAKBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:25] "GET /socket.io/?EIO=4&transport=polling&t=tq674pun&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1115 records for KIMS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:25] "GET /socket.io/?EIO=4&transport=polling&t=tq6hym1f&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LTF.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:26] "GET /socket.io/?EIO=4&transport=polling&t=tq6nzrsj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LTTS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:26] "GET /socket.io/?EIO=4&transport=polling&t=tq707omv&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LICHSGFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:26] "GET /socket.io/?EIO=4&transport=polling&t=tq77hc39&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 531 records for LTFOODS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:26] "GET /socket.io/?EIO=4&transport=polling&t=tq7dapwf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LTIM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:26] "GET /socket.io/?EIO=4&transport=polling&t=tq7hvbuf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:27] "GET /socket.io/?EIO=4&transport=polling&t=tq7oa6m3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1016 records for LATENTVIEW.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:27] "GET /socket.io/?EIO=4&transport=polling&t=tq7vy99h&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LAURUSLABS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:27] "GET /socket.io/?EIO=4&transport=polling&t=tq8635wd&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 276-300 of 502
+INFO:services.data_fetcher:Added 144 records for THELEELA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:28] "GET /socket.io/?EIO=4&transport=polling&t=tq8ex80b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LEMONTREE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:28] "GET /socket.io/?EIO=4&transport=polling&t=tq8i98rl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 897 records for LICI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:28] "GET /socket.io/?EIO=4&transport=polling&t=tq8otxxr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LINDEINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:28] "GET /socket.io/?EIO=4&transport=polling&t=tq8vwzq5&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 607 records for LLOYDSME.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:28] "GET /socket.io/?EIO=4&transport=polling&t=tq93ncj4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1164 records for LODHA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:29] "GET /socket.io/?EIO=4&transport=polling&t=tq98ey0b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for LUPIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:29] "GET /socket.io/?EIO=4&transport=polling&t=tq9fx2ug&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MMTC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:29] "GET /socket.io/?EIO=4&transport=polling&t=tq9t49al&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MRF.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:30] "GET /socket.io/?EIO=4&transport=polling&t=tqa0fywg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MGL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:30] "GET /socket.io/?EIO=4&transport=polling&t=tqac6vwf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
 INFO:services.data_fetcher:Added 1237 records for MAHSCOOTER.NS
-INFO:services.data_fetcher:Added 1240 records for MAHSEAMLES.NS
-INFO:services.data_fetcher:Added 1240 records for M&MFIN.NS
-INFO:services.data_fetcher:Added 1240 records for M&M.NS
-INFO:services.data_fetcher:Added 1240 records for MANAPPURAM.NS
-INFO:services.data_fetcher:Added 1240 records for MRPL.NS
-INFO:services.data_fetcher:Added 647 records for MANKIND.NS
-INFO:services.data_fetcher:Added 1240 records for MARICO.NS
-INFO:services.data_fetcher:Added 1240 records for MARUTI.NS
-INFO:services.data_fetcher:Added 1240 records for MFSL.NS
-INFO:services.data_fetcher:Added 1240 records for MAXHEALTH.NS
-INFO:services.data_fetcher:Added 1240 records for MAZDOCK.NS
-INFO:services.data_fetcher:Added 1240 records for METROPOLIS.NS
-INFO:services.data_fetcher:Added 1240 records for MINDACORP.NS
-INFO:services.data_fetcher:Added 922 records for MSUMI.NS
-INFO:services.data_fetcher:Added 1240 records for MOTILALOFS.NS
-INFO:services.data_fetcher:Added 1240 records for MPHASIS.NS
-INFO:services.data_fetcher:Added 1240 records for MCX.NS
-INFO:services.data_fetcher:Added 1240 records for MUTHOOTFIN.NS
-INFO:services.data_fetcher:Added 1240 records for NATCOPHARM.NS
-INFO:services.data_fetcher:Added 1240 records for NBCC.NS
-INFO:services.data_fetcher:Added 1240 records for NCC.NS
-INFO:services.data_fetcher:Added 1240 records for NHPC.NS
-INFO:services.data_fetcher:Added 1240 records for NLCINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for NMDC.NS
-INFO:services.data_fetcher:Added 697 records for NSLNISP.NS
-INFO:services.data_fetcher:Added 260 records for NTPCGREEN.NS
-INFO:services.data_fetcher:Added 1240 records for NTPC.NS
-INFO:services.data_fetcher:Added 1240 records for NH.NS
-INFO:services.data_fetcher:Added 1240 records for NATIONALUM.NS
-INFO:services.data_fetcher:Added 1240 records for NAVA.NS
-INFO:services.data_fetcher:Added 1240 records for NAVINFLUOR.NS
-INFO:services.data_fetcher:Added 1240 records for NESTLEIND.NS
-INFO:services.data_fetcher:Added 591 records for NETWEB.NS
-INFO:services.data_fetcher:Added 1240 records for NEULANDLAB.NS
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.data_fetcher:Added 1240 records for NEWGEN.NS
-INFO:services.data_fetcher:Added 1240 records for NAM-INDIA.NS
-INFO:services.data_fetcher:Added 267 records for NIVABUPA.NS
-INFO:services.data_fetcher:Added 550 records for NUVAMA.NS
-INFO:services.data_fetcher:Added 1070 records for NUVOCO.NS
-INFO:services.data_fetcher:Added 1240 records for OBEROIRLTY.NS
-INFO:services.data_fetcher:Added 1240 records for ONGC.NS
-INFO:services.data_fetcher:Added 1240 records for OIL.NS
-INFO:services.data_fetcher:Added 334 records for OLAELEC.NS
-INFO:services.data_fetcher:Added 1240 records for OLECTRA.NS
-INFO:services.data_fetcher:Added 1010 records for PAYTM.NS
-INFO:services.data_fetcher:Added 219 records for ONESOURCE.NS
-INFO:services.data_fetcher:Added 1240 records for OFSS.NS
-INFO:services.data_fetcher:Added 1013 records for POLICYBZR.NS
-INFO:services.data_fetcher:Added 1240 records for PCBL.NS
-INFO:services.data_fetcher:Added 1240 records for PGEL.NS
-INFO:services.data_fetcher:Added 1240 records for PIIND.NS
-INFO:services.data_fetcher:Added 1240 records for PNBHOUSING.NS
-INFO:services.data_fetcher:Added 624 records for PTCIL.NS
-INFO:services.data_fetcher:Added 1240 records for PVRINOX.NS
-INFO:services.data_fetcher:Added 1240 records for PAGEIND.NS
-INFO:services.data_fetcher:Added 1240 records for PATANJALI.NS
-INFO:services.data_fetcher:Added 1240 records for PERSISTENT.NS
-INFO:services.data_fetcher:Added 1240 records for PETRONET.NS
-INFO:services.data_fetcher:Added 1240 records for PFIZER.NS
-INFO:services.data_fetcher:Added 1240 records for PHOENIXLTD.NS
-INFO:services.data_fetcher:Added 1240 records for PIDILITIND.NS
-INFO:services.data_fetcher:Added 782 records for PPLPHARMA.NS
-INFO:services.data_fetcher:Added 1240 records for POLYMED.NS
-INFO:services.data_fetcher:Added 1240 records for POLYCAB.NS
-INFO:services.data_fetcher:Added 1240 records for POONAWALLA.NS
-INFO:services.data_fetcher:Added 1240 records for PFC.NS
-INFO:services.data_fetcher:Added 1240 records for POWERGRID.NS
-INFO:services.data_fetcher:Added 1240 records for PRAJIND.NS
-INFO:services.data_fetcher:Added 318 records for PREMIERENE.NS
-INFO:services.data_fetcher:Added 1240 records for PRESTIGE.NS
-INFO:services.data_fetcher:Added 1240 records for PGHH.NS
-INFO:services.data_fetcher:Added 1240 records for PNB.NS
-INFO:services.data_fetcher:Added 554 records for RRKABEL.NS
-INFO:services.data_fetcher:Added 1240 records for RBLBANK.NS
-INFO:services.data_fetcher:Added 1240 records for RECLTD.NS
-INFO:services.data_fetcher:Added 1240 records for RHIM.NS
-INFO:services.data_fetcher:Added 1240 records for RITES.NS
-INFO:services.data_fetcher:Added 1240 records for RADICO.NS
-INFO:services.data_fetcher:Added 1240 records for RVNL.NS
-INFO:services.data_fetcher:Added 1188 records for RAILTEL.NS
-INFO:services.data_fetcher:Added 894 records for RAINBOW.NS
-INFO:services.data_fetcher:Added 1240 records for RKFORGE.NS
-INFO:services.data_fetcher:Added 1240 records for RCF.NS
-INFO:services.data_fetcher:Added 1240 records for REDINGTON.NS
-INFO:services.data_fetcher:Added 1240 records for RELIANCE.NS
-ERROR:services.data_fetcher:Error downloading data for RELINFRA.NS: Instrument token not found for RELINFRA
-INFO:services.data_fetcher:Added 1240 records for RPOWER.NS
-INFO:services.data_fetcher:Added 578 records for SBFC.NS
-INFO:services.data_fetcher:Added 1240 records for SBICARD.NS
-INFO:services.data_fetcher:Added 1240 records for SBILIFE.NS
-INFO:services.data_fetcher:Added 1240 records for SJVN.NS
-ERROR:services.data_fetcher:Error downloading data for SKFINDUS.NS: Instrument token not found for SKFINDUS
-INFO:services.data_fetcher:Added 1240 records for SKFINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for SRF.NS
-INFO:services.data_fetcher:Added 269 records for SAGILITY.NS
-INFO:services.data_fetcher:Added 245 records for SAILIFE.NS
-INFO:services.data_fetcher:Added 1240 records for SAMMAANCAP.NS
-INFO:services.data_fetcher:Added 1240 records for MOTHERSON.NS
-INFO:services.data_fetcher:Added 1010 records for SAPPHIRE.NS
-INFO:services.data_fetcher:Added 1240 records for SARDAEN.NS
-INFO:services.data_fetcher:Added 1240 records for SAREGAMA.NS
-INFO:services.data_fetcher:Added 1240 records for SCHAEFFLER.NS
-INFO:services.data_fetcher:Added 1240 records for SCHNEIDER.NS
-INFO:services.data_fetcher:Added 1240 records for SCI.NS
-INFO:services.data_fetcher:Added 1240 records for SHREECEM.NS
-INFO:services.data_fetcher:Added 1240 records for SHRIRAMFIN.NS
-INFO:services.data_fetcher:Added 1110 records for SHYAMMETL.NS
-INFO:services.data_fetcher:Added 121 records for ENRIN.NS
-INFO:services.data_fetcher:Added 1240 records for SIEMENS.NS
-INFO:services.data_fetcher:Added 549 records for SIGNATURE.NS
-INFO:services.data_fetcher:Added 1240 records for SOBHA.NS
-INFO:services.data_fetcher:Added 1240 records for SOLARINDS.NS
-INFO:services.data_fetcher:Added 1110 records for SONACOMS.NS
-INFO:services.data_fetcher:Added 1240 records for SONATSOFTW.NS
-INFO:services.data_fetcher:Added 995 records for STARHEALTH.NS
-INFO:services.data_fetcher:Added 1240 records for SBIN.NS
-INFO:services.data_fetcher:Added 1240 records for SAIL.NS
-INFO:services.data_fetcher:Added 1240 records for SUMICHEM.NS
-INFO:services.data_fetcher:Added 1240 records for SUNPHARMA.NS
-INFO:services.data_fetcher:Added 1240 records for SUNTV.NS
-INFO:services.data_fetcher:Added 1240 records for SUNDARMFIN.NS
-INFO:services.data_fetcher:Added 1240 records for SUNDRMFAST.NS
-INFO:services.data_fetcher:Added 1240 records for SUPREMEIND.NS
-INFO:services.data_fetcher:Added 1240 records for SUZLON.NS
-INFO:services.data_fetcher:Added 1240 records for SWANCORP.NS
-INFO:services.data_fetcher:Added 268 records for SWIGGY.NS
-INFO:services.data_fetcher:Added 1240 records for SYNGENE.NS
-INFO:services.data_fetcher:Added 818 records for SYRMA.NS
-INFO:services.data_fetcher:Added 394 records for TBOTEK.NS
-INFO:services.data_fetcher:Added 1240 records for TVSMOTOR.NS
-INFO:services.data_fetcher:Added 1240 records for TATACHEM.NS
-INFO:services.data_fetcher:Added 1240 records for TATACOMM.NS
-INFO:services.data_fetcher:Added 1240 records for TCS.NS
-INFO:services.data_fetcher:Added 1240 records for TATACONSUM.NS
-INFO:services.data_fetcher:Added 1240 records for TATAELXSI.NS
-INFO:services.data_fetcher:Added 1240 records for TATAINVEST.NS
-INFO:services.data_fetcher:Added 1240 records for TMPV.NS
-INFO:services.data_fetcher:Added 1240 records for TATAPOWER.NS
-INFO:services.data_fetcher:Added 1240 records for TATASTEEL.NS
-INFO:services.data_fetcher:Added 506 records for TATATECH.NS
-INFO:services.data_fetcher:Added 1240 records for TTML.NS
-INFO:services.data_fetcher:Added 1240 records for TECHM.NS
-INFO:services.data_fetcher:Added 1240 records for TECHNOE.NS
-INFO:services.data_fetcher:Added 1240 records for TEJASNET.NS
-INFO:services.data_fetcher:Added 1240 records for NIACL.NS
-INFO:services.data_fetcher:Added 1240 records for RAMCOCEM.NS
-INFO:services.data_fetcher:Added 1240 records for THERMAX.NS
-INFO:services.data_fetcher:Added 1240 records for TIMKEN.NS
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:26] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.data_fetcher:Added 1240 records for TITAGARH.NS
-INFO:services.data_fetcher:Added 1240 records for TITAN.NS
-INFO:services.data_fetcher:Added 1240 records for TORNTPHARM.NS
-INFO:services.data_fetcher:Added 1240 records for TORNTPOWER.NS
-INFO:services.data_fetcher:Added 1240 records for TARIL.NS
-INFO:services.data_fetcher:Added 1240 records for TRENT.NS
-INFO:services.data_fetcher:Added 1240 records for TRIDENT.NS
-INFO:services.data_fetcher:Added 1240 records for TRIVENI.NS
-INFO:services.data_fetcher:Added 1240 records for TRITURBINE.NS
-INFO:services.data_fetcher:Added 1240 records for TIINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for UCOBANK.NS
-INFO:services.data_fetcher:Added 1240 records for UNOMINDA.NS
-INFO:services.data_fetcher:Added 1240 records for UPL.NS
-INFO:services.data_fetcher:Added 1240 records for UTIAMC.NS
-INFO:services.data_fetcher:Added 1240 records for ULTRACEMCO.NS
-INFO:services.data_fetcher:Added 1240 records for UNIONBANK.NS
-INFO:services.data_fetcher:Added 1240 records for UBL.NS
-INFO:services.data_fetcher:Added 1240 records for UNITDSPR.NS
-INFO:services.data_fetcher:Added 1240 records for USHAMART.NS
-INFO:services.data_fetcher:Added 1240 records for VGUARD.NS
-INFO:services.data_fetcher:Added 1240 records for DBREALTY.NS
-INFO:services.data_fetcher:Added 1240 records for VTL.NS
-INFO:services.data_fetcher:Added 1240 records for VBL.NS
-INFO:services.data_fetcher:Added 948 records for MANYAVAR.NS
-INFO:services.data_fetcher:Added 1240 records for VEDL.NS
-INFO:services.data_fetcher:Added 238 records for VENTIVE.NS
-INFO:services.data_fetcher:Added 1055 records for VIJAYA.NS
-INFO:services.data_fetcher:Added 245 records for VMM.NS
-INFO:services.data_fetcher:Added 1240 records for IDEA.NS
-INFO:services.data_fetcher:Added 1240 records for VOLTAS.NS
-INFO:services.data_fetcher:Added 280 records for WAAREEENER.NS
-INFO:services.data_fetcher:Added 1240 records for WELCORP.NS
-INFO:services.data_fetcher:Added 1240 records for WELSPUNLIV.NS
-INFO:services.data_fetcher:Added 1240 records for WHIRLPOOL.NS
-INFO:services.data_fetcher:Added 1240 records for WIPRO.NS
-INFO:services.data_fetcher:Added 1240 records for WOCKPHARMA.NS
-INFO:services.data_fetcher:Added 1240 records for YESBANK.NS
-INFO:services.data_fetcher:Added 1240 records for ZFCVINDIA.NS
-INFO:services.data_fetcher:Added 1240 records for ZEEL.NS
-INFO:services.data_fetcher:Added 1240 records for ZENTEC.NS
-INFO:services.data_fetcher:Added 1240 records for ZENSARTECH.NS
-INFO:services.data_fetcher:Added 1240 records for ZYDUSLIFE.NS
-INFO:services.data_fetcher:Added 1240 records for ECLERX.NS
-INFO:services.data_fetcher:5-year data download completed. 499/502 stocks, 562712 records added.
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:38] "GET /socket.io/?EIO=4&transport=websocket&sid=qw-8gw1Of7GNXXmHAAAA HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:38] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:40] "GET /api/ohlcv/sector-heatmap?duration=1w HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:52] "GET /api/ohlcv/sector-heatmap?duration=1m HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:54] "GET /api/ohlcv/sector-heatmap?duration=3m HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:16:55] "GET /api/ohlcv/sector-heatmap?duration=1d HTTP/1.1" 200 -
-INFO:routes.analysis:Analysis completed: 499 stocks processed out of 502 total stocks
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:08] "GET /api/analysis/stocks HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:routes.analysis:Analysis completed: 499 stocks processed out of 502 total stocks
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:09] "GET /api/analysis/stocks HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:23] "GET /api/analysis/chart/ASTRAZEN.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:23] "GET /api/analysis/chart/ASTRAZEN.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:27] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:38] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:54] "GET /api/analysis/chart/DCMSHRIRAM.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:55] "GET /api/analysis/chart/SAILIFE.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:17:58] "GET /api/analysis/chart/PCBL.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:00] "GET /api/analysis/chart/CENTURYPLY.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:31] "GET /socket.io/?EIO=4&transport=polling&t=tqajupsj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MAHSEAMLES.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:31] "GET /socket.io/?EIO=4&transport=polling&t=tqaunagx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for M&MFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:31] "GET /socket.io/?EIO=4&transport=polling&t=tqb36t2i&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for M&M.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:31] "GET /socket.io/?EIO=4&transport=polling&t=tqbaysja&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MANAPPURAM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:32] "GET /socket.io/?EIO=4&transport=polling&t=tqbifolu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MRPL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:32] "GET /socket.io/?EIO=4&transport=polling&t=tqbqrszx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 655 records for MANKIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:32] "GET /socket.io/?EIO=4&transport=polling&t=tqby8fga&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MARICO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:32] "GET /socket.io/?EIO=4&transport=polling&t=tqc2sysn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MARUTI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:33] "GET /socket.io/?EIO=4&transport=polling&t=tqcb6o1i&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MFSL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:33] "GET /socket.io/?EIO=4&transport=polling&t=tqcm318n&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MAXHEALTH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:33] "GET /socket.io/?EIO=4&transport=polling&t=tqct0jlw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MAZDOCK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:34] "GET /socket.io/?EIO=4&transport=polling&t=tqd0dty0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for METROPOLIS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:34] "GET /socket.io/?EIO=4&transport=polling&t=tqdc1bkg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MINDACORP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:34] "GET /socket.io/?EIO=4&transport=polling&t=tqdjv2o8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 930 records for MSUMI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:35] "GET /socket.io/?EIO=4&transport=polling&t=tqdsr24d&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 301-325 of 502
+INFO:services.data_fetcher:Added 1238 records for MOTILALOFS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:35] "GET /socket.io/?EIO=4&transport=polling&t=tqe0127m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MPHASIS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:35] "GET /socket.io/?EIO=4&transport=polling&t=tqe78tu1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MCX.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:35] "GET /socket.io/?EIO=4&transport=polling&t=tqeenng7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MUTHOOTFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:36] "GET /socket.io/?EIO=4&transport=polling&t=tqemg2m8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NATCOPHARM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:36] "GET /socket.io/?EIO=4&transport=polling&t=tqeu9wsj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NBCC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:36] "GET /socket.io/?EIO=4&transport=polling&t=tqf2irrj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NCC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:37] "GET /socket.io/?EIO=4&transport=polling&t=tqf8etqk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NHPC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:37] "GET /socket.io/?EIO=4&transport=polling&t=tqfgepk7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NLCINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:37] "GET /socket.io/?EIO=4&transport=polling&t=tqfob8sr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NMDC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:38] "GET /socket.io/?EIO=4&transport=polling&t=tqfvpo2b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 705 records for NSLNISP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:38] "GET /socket.io/?EIO=4&transport=polling&t=tqg7vx07&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 272 records for NTPCGREEN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:38] "GET /socket.io/?EIO=4&transport=polling&t=tqgcie0h&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NTPC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:38] "GET /socket.io/?EIO=4&transport=polling&t=tqgjm1i3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:39] "GET /socket.io/?EIO=4&transport=polling&t=tqgv8tvu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NATIONALUM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:39] "GET /socket.io/?EIO=4&transport=polling&t=tqh2rvl1&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NAVA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:39] "GET /socket.io/?EIO=4&transport=polling&t=tqharx4z&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NAVINFLUOR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:40] "GET /socket.io/?EIO=4&transport=polling&t=tqhj90di&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NESTLEIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:40] "GET /socket.io/?EIO=4&transport=polling&t=tqhr7mck&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 599 records for NETWEB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:40] "GET /socket.io/?EIO=4&transport=polling&t=tqhz4qoa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NEULANDLAB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:40] "GET /socket.io/?EIO=4&transport=polling&t=tqi3m3c0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NEWGEN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:40] "GET /socket.io/?EIO=4&transport=polling&t=tqiageda&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NAM-INDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:41] "GET /socket.io/?EIO=4&transport=polling&t=tqii4wcf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 279 records for NIVABUPA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:41] "GET /socket.io/?EIO=4&transport=polling&t=tqiq0o4t&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 557 records for NUVAMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:41] "GET /socket.io/?EIO=4&transport=polling&t=tqitikqw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1077 records for NUVOCO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:42] "GET /socket.io/?EIO=4&transport=polling&t=tqj04cbg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 326-350 of 502
+INFO:services.data_fetcher:Added 1238 records for OBEROIRLTY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:42] "GET /socket.io/?EIO=4&transport=polling&t=tqjb89hj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ONGC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:42] "GET /socket.io/?EIO=4&transport=polling&t=tqjjfduj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for OIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:42] "GET /socket.io/?EIO=4&transport=polling&t=tqjs79sc&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 346 records for OLAELEC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "GET /socket.io/?EIO=4&transport=polling&t=tqjzyvny&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "GET /socket.io/?EIO=4&transport=polling&t=tqk3pa26&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "POST /socket.io/?EIO=4&transport=polling&t=tqk7n26j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for OLECTRA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "GET /socket.io/?EIO=4&transport=polling&t=tqk7obne&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1018 records for PAYTM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "GET /socket.io/?EIO=4&transport=polling&t=tqk9p700&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 231 records for ONESOURCE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "GET /socket.io/?EIO=4&transport=polling&t=tqkfjdk8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for OFSS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:43] "GET /socket.io/?EIO=4&transport=polling&t=tqkiq682&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1021 records for POLICYBZR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:44] "GET /socket.io/?EIO=4&transport=polling&t=tqkqhf3b&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PCBL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:44] "GET /socket.io/?EIO=4&transport=polling&t=tqkx2zhe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PGEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:44] "GET /socket.io/?EIO=4&transport=polling&t=tql8kvk7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PIIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:45] "GET /socket.io/?EIO=4&transport=polling&t=tqlfkhjr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PNBHOUSING.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:45] "GET /socket.io/?EIO=4&transport=polling&t=tqlnc770&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 632 records for PTCIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:45] "GET /socket.io/?EIO=4&transport=polling&t=tqlwx7md&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 756 records for PVRINOX.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:45] "GET /socket.io/?EIO=4&transport=polling&t=tqm18bih&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for PAGEIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:45] "GET /socket.io/?EIO=4&transport=polling&t=tqm5udqv&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PATANJALI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:46] "GET /socket.io/?EIO=4&transport=polling&t=tqmbl3wc&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PERSISTENT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:46] "GET /socket.io/?EIO=4&transport=polling&t=tqmk1ueq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PETRONET.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:46] "GET /socket.io/?EIO=4&transport=polling&t=tqmrhowt&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PFIZER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:47] "GET /socket.io/?EIO=4&transport=polling&t=tqmz4xhg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PHOENIXLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:47] "GET /socket.io/?EIO=4&transport=polling&t=tqn6tynp&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PIDILITIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:47] "GET /socket.io/?EIO=4&transport=polling&t=tqneqgfn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 790 records for PPLPHARMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:47] "GET /socket.io/?EIO=4&transport=polling&t=tqnmx9j3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for POLYMED.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:48] "GET /socket.io/?EIO=4&transport=polling&t=tqnt1qtb&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for POLYCAB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:48] "GET /socket.io/?EIO=4&transport=polling&t=tqo0sf3k&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 351-375 of 502
+INFO:services.data_fetcher:Added 1238 records for POONAWALLA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:48] "GET /socket.io/?EIO=4&transport=polling&t=tqo8vpxz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PFC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:48] "GET /socket.io/?EIO=4&transport=polling&t=tqoh3faq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for POWERGRID.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:49] "GET /socket.io/?EIO=4&transport=polling&t=tqop2v61&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PRAJIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:49] "GET /socket.io/?EIO=4&transport=polling&t=tqox87ge&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 330 records for PREMIERENE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:49] "GET /socket.io/?EIO=4&transport=polling&t=tqp5p337&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PRESTIGE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:50] "GET /socket.io/?EIO=4&transport=polling&t=tqpcqims&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PGHH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:50] "GET /socket.io/?EIO=4&transport=polling&t=tqpkfzhs&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for PNB.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:50] "GET /socket.io/?EIO=4&transport=polling&t=tqpqbuhw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 558 records for RRKABEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:50] "GET /socket.io/?EIO=4&transport=polling&t=tqpy9sk6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RBLBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:51] "GET /socket.io/?EIO=4&transport=polling&t=tqq321xy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RECLTD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:51] "GET /socket.io/?EIO=4&transport=polling&t=tqqaesm9&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RHIM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:51] "GET /socket.io/?EIO=4&transport=polling&t=tqqjyokk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RITES.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:52] "GET /socket.io/?EIO=4&transport=polling&t=tqqvcv8j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RADICO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:52] "GET /socket.io/?EIO=4&transport=polling&t=tqr2kh2c&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RVNL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:52] "GET /socket.io/?EIO=4&transport=polling&t=tqrasi00&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1196 records for RAILTEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:53] "GET /socket.io/?EIO=4&transport=polling&t=tqrid6ic&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 901 records for RAINBOW.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:53] "GET /socket.io/?EIO=4&transport=polling&t=tqrtlpmo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RKFORGE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:53] "GET /socket.io/?EIO=4&transport=polling&t=tqs35kwg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RCF.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:53] "GET /socket.io/?EIO=4&transport=polling&t=tqs9bd0m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for REDINGTON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:54] "GET /socket.io/?EIO=4&transport=polling&t=tqsi44os&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RELIANCE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:54] "GET /socket.io/?EIO=4&transport=polling&t=tqspvoqa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RELINFRA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:54] "GET /socket.io/?EIO=4&transport=polling&t=tqszfiru&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for RPOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:55] "GET /socket.io/?EIO=4&transport=polling&t=tqt7x04c&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 581 records for SBFC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:55] "GET /socket.io/?EIO=4&transport=polling&t=tqtdan5r&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SBICARD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:55] "GET /socket.io/?EIO=4&transport=polling&t=tqtj3hxx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 376-400 of 502
+INFO:services.data_fetcher:Added 1238 records for SBILIFE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:55] "GET /socket.io/?EIO=4&transport=polling&t=tqtrvero&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SJVN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:56] "GET /socket.io/?EIO=4&transport=polling&t=tqu0c8qe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 16 records for SKFINDUS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:56] "GET /socket.io/?EIO=4&transport=polling&t=tqu86xva&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SKFINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:56] "GET /socket.io/?EIO=4&transport=polling&t=tqubaory&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for SRF.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:56] "GET /socket.io/?EIO=4&transport=polling&t=tqumse5a&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 281 records for SAGILITY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:57] "GET /socket.io/?EIO=4&transport=polling&t=tquv4zs7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 257 records for SAILIFE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:57] "GET /socket.io/?EIO=4&transport=polling&t=tquylrtj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SAMMAANCAP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:57] "GET /socket.io/?EIO=4&transport=polling&t=tqv2s1g2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for MOTHERSON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:58] "GET /socket.io/?EIO=4&transport=polling&t=tqvdyp1a&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1017 records for SAPPHIRE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:58] "GET /socket.io/?EIO=4&transport=polling&t=tqvpa2vp&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SARDAEN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:58] "GET /socket.io/?EIO=4&transport=polling&t=tqvw13es&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SAREGAMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:58] "GET /socket.io/?EIO=4&transport=polling&t=tqw4gapd&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SCHAEFFLER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:59] "GET /socket.io/?EIO=4&transport=polling&t=tqwdqw0s&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SCHNEIDER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:59] "GET /socket.io/?EIO=4&transport=polling&t=tqwkb53s&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SCI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:59] "GET /socket.io/?EIO=4&transport=polling&t=tqwr9cak&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for SHREECEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:45:59] "GET /socket.io/?EIO=4&transport=polling&t=tqwxrhaw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SHRIRAMFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:00] "GET /socket.io/?EIO=4&transport=polling&t=tqx5oq73&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1117 records for SHYAMMETL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:00] "GET /socket.io/?EIO=4&transport=polling&t=tqxdih2c&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 131 records for ENRIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:00] "GET /socket.io/?EIO=4&transport=polling&t=tqxiyzd3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SIEMENS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:00] "GET /socket.io/?EIO=4&transport=polling&t=tqxmcqct&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 556 records for SIGNATURE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:01] "GET /socket.io/?EIO=4&transport=polling&t=tqxvx3kg&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for SOBHA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:01] "GET /socket.io/?EIO=4&transport=polling&t=tqy1qq42&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SOLARINDS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:01] "GET /socket.io/?EIO=4&transport=polling&t=tqy9uo2d&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1118 records for SONACOMS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:01] "GET /socket.io/?EIO=4&transport=polling&t=tqyhwx16&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SONATSOFTW.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:02] "GET /socket.io/?EIO=4&transport=polling&t=tqyp2ezc&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 401-425 of 502
+INFO:services.data_fetcher:Added 1002 records for STARHEALTH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:02] "GET /socket.io/?EIO=4&transport=polling&t=tqyye4fc&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SBIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:02] "GET /socket.io/?EIO=4&transport=polling&t=tqz5jjyf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SAIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:03] "GET /socket.io/?EIO=4&transport=polling&t=tqzeabo4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SUMICHEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:03] "GET /socket.io/?EIO=4&transport=polling&t=tqzndrdk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SUNPHARMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:03] "GET /socket.io/?EIO=4&transport=polling&t=tqzshixz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SUNTV.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:03] "GET /socket.io/?EIO=4&transport=polling&t=tr00sb95&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SUNDARMFIN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:04] "GET /socket.io/?EIO=4&transport=polling&t=tr09gg1a&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for SUNDRMFAST.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:04] "GET /socket.io/?EIO=4&transport=polling&t=tr0hyend&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SUPREMEIND.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:04] "GET /socket.io/?EIO=4&transport=polling&t=tr0pug51&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SUZLON.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:05] "GET /socket.io/?EIO=4&transport=polling&t=tr0ymot2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SWANCORP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:05] "GET /socket.io/?EIO=4&transport=polling&t=tr195p0m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 280 records for SWIGGY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:05] "GET /socket.io/?EIO=4&transport=polling&t=tr1h5b1z&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for SYNGENE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:05] "GET /socket.io/?EIO=4&transport=polling&t=tr1lcs7v&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 826 records for SYRMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:06] "GET /socket.io/?EIO=4&transport=polling&t=tr1t6v4h&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 404 records for TBOTEK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:06] "GET /socket.io/?EIO=4&transport=polling&t=tr1xvhuz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TVSMOTOR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:06] "GET /socket.io/?EIO=4&transport=polling&t=tr21wc5v&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TATACHEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:06] "GET /socket.io/?EIO=4&transport=polling&t=tr28kg65&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for TATACOMM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:07] "GET /socket.io/?EIO=4&transport=polling&t=tr2fw2l8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TCS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:07] "GET /socket.io/?EIO=4&transport=polling&t=tr2nqs4d&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TATACONSUM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:07] "GET /socket.io/?EIO=4&transport=polling&t=tr2u7xu4&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TATAELXSI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:07] "GET /socket.io/?EIO=4&transport=polling&t=tr324l18&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TATAINVEST.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:08] "GET /socket.io/?EIO=4&transport=polling&t=tr39yrau&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:08] "GET /socket.io/?EIO=4&transport=polling&t=tr3hz4zh&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:08] "POST /socket.io/?EIO=4&transport=polling&t=tr3j4prr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 51 records for TMPV.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:08] "GET /socket.io/?EIO=4&transport=polling&t=tr3j4z0r&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TATAPOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:08] "GET /socket.io/?EIO=4&transport=polling&t=tr3l9r2i&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TATASTEEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:09] "GET /socket.io/?EIO=4&transport=polling&t=tr3v08ys&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 426-450 of 502
+INFO:services.data_fetcher:Added 510 records for TATATECH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:09] "GET /socket.io/?EIO=4&transport=polling&t=tr46w861&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TTML.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:09] "GET /socket.io/?EIO=4&transport=polling&t=tr4b7rju&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TECHM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:09] "GET /socket.io/?EIO=4&transport=polling&t=tr4i3hju&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TECHNOE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:10] "GET /socket.io/?EIO=4&transport=polling&t=tr4pbuo3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TEJASNET.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:10] "GET /socket.io/?EIO=4&transport=polling&t=tr4x37ww&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for NIACL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:10] "GET /socket.io/?EIO=4&transport=polling&t=tr54f8mk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for RAMCOCEM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:10] "GET /socket.io/?EIO=4&transport=polling&t=tr5bevdx&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for THERMAX.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:11] "GET /socket.io/?EIO=4&transport=polling&t=tr5jj5xf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TIMKEN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:11] "GET /socket.io/?EIO=4&transport=polling&t=tr5sm0ld&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TITAGARH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:11] "GET /socket.io/?EIO=4&transport=polling&t=tr5yfwdo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TITAN.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:11] "GET /socket.io/?EIO=4&transport=polling&t=tr664ff8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TORNTPHARM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:12] "GET /socket.io/?EIO=4&transport=polling&t=tr6dshdo&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TORNTPOWER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:12] "GET /socket.io/?EIO=4&transport=polling&t=tr6mjcsa&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1237 records for TARIL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:12] "GET /socket.io/?EIO=4&transport=polling&t=tr6v4smn&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TRENT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:13] "GET /socket.io/?EIO=4&transport=polling&t=tr75jx4s&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TRIDENT.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:13] "GET /socket.io/?EIO=4&transport=polling&t=tr7eqm82&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TRIVENI.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:13] "GET /socket.io/?EIO=4&transport=polling&t=tr7p2pmt&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TRITURBINE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:14] "GET /socket.io/?EIO=4&transport=polling&t=tr7xozow&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for TIINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:14] "GET /socket.io/?EIO=4&transport=polling&t=tr88rdl3&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for UCOBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:14] "GET /socket.io/?EIO=4&transport=polling&t=tr8g8v76&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for UNOMINDA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:15] "GET /socket.io/?EIO=4&transport=polling&t=tr8r5ypk&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for UPL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:15] "GET /socket.io/?EIO=4&transport=polling&t=tr8yx6c8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for UTIAMC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:15] "GET /socket.io/?EIO=4&transport=polling&t=tr9531l7&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ULTRACEMCO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:15] "GET /socket.io/?EIO=4&transport=polling&t=tr9ak1j2&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for UNIONBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:16] "GET /socket.io/?EIO=4&transport=polling&t=tr9iknzu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 451-475 of 502
+INFO:services.data_fetcher:Added 1238 records for UBL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:16] "GET /socket.io/?EIO=4&transport=polling&t=tr9r0v02&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 391 records for UNITDSPR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:16] "GET /socket.io/?EIO=4&transport=polling&t=tr9yhfou&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for USHAMART.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:17] "GET /socket.io/?EIO=4&transport=polling&t=tra27wpe&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for VGUARD.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:17] "GET /socket.io/?EIO=4&transport=polling&t=trae6561&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for DBREALTY.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:17] "GET /socket.io/?EIO=4&transport=polling&t=tramycd6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for VTL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:17] "GET /socket.io/?EIO=4&transport=polling&t=trasc5it&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for VBL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:18] "GET /socket.io/?EIO=4&transport=polling&t=trb07a88&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 956 records for MANYAVAR.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:18] "GET /socket.io/?EIO=4&transport=polling&t=trb5wu7m&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for VEDL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:18] "GET /socket.io/?EIO=4&transport=polling&t=trbarglu&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 249 records for VENTIVE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:18] "GET /socket.io/?EIO=4&transport=polling&t=trbj1tjr&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1063 records for VIJAYA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:19] "GET /socket.io/?EIO=4&transport=polling&t=trbplyw8&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 257 records for VMM.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:19] "GET /socket.io/?EIO=4&transport=polling&t=trbwt83j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for IDEA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:19] "GET /socket.io/?EIO=4&transport=polling&t=trc0a5a6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for VOLTAS.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:19] "GET /socket.io/?EIO=4&transport=polling&t=trcbj64x&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 292 records for WAAREEENER.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:20] "GET /socket.io/?EIO=4&transport=polling&t=trcjt84k&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for WELCORP.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:20] "GET /socket.io/?EIO=4&transport=polling&t=trcrt53a&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for WELSPUNLIV.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:20] "GET /socket.io/?EIO=4&transport=polling&t=trcz9gwf&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for WHIRLPOOL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:21] "GET /socket.io/?EIO=4&transport=polling&t=trd6pl1x&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for WIPRO.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:21] "GET /socket.io/?EIO=4&transport=polling&t=trde93oy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for WOCKPHARMA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:21] "GET /socket.io/?EIO=4&transport=polling&t=trdki24j&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for YESBANK.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:21] "GET /socket.io/?EIO=4&transport=polling&t=trdq55zl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ZFCVINDIA.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:21] "GET /socket.io/?EIO=4&transport=polling&t=trdxqnfy&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ZEEL.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:22] "GET /socket.io/?EIO=4&transport=polling&t=tre4tri6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ZENTEC.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:22] "GET /socket.io/?EIO=4&transport=polling&t=trecpg32&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ZENSARTECH.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:22] "GET /socket.io/?EIO=4&transport=polling&t=trenkvoz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 476-500 of 502
+INFO:services.data_fetcher:Added 1238 records for ZYDUSLIFE.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:23] "GET /socket.io/?EIO=4&transport=polling&t=treuu6rj&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Added 1238 records for ECLERX.NS
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:23] "GET /socket.io/?EIO=4&transport=polling&t=trf33g7q&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:services.data_fetcher:Completed batch 501-502 of 502
+INFO:services.data_fetcher:5-year data download completed. 501/502 stocks, 555936 records added.
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:23] "GET /socket.io/?EIO=4&transport=polling&t=trfeovid&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:33] "GET /socket.io/?EIO=4&transport=polling&t=trfet5pz&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:33] "POST /socket.io/?EIO=4&transport=polling&t=trmtt9m6&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:58] "GET /socket.io/?EIO=4&transport=polling&t=trmtuc12&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:46:58] "POST /socket.io/?EIO=4&transport=polling&t=ts64nmcm&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:23] "GET /socket.io/?EIO=4&transport=polling&t=ts64nrcl&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:23] "POST /socket.io/?EIO=4&transport=polling&t=tspfn1k0&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:48] "GET /socket.io/?EIO=4&transport=polling&t=tspfndue&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:48] "POST /socket.io/?EIO=4&transport=polling&t=tt8qf4zw&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:53] "POST /socket.io/?EIO=4&transport=polling&t=ttcn1nvq&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:53] "POST /socket.io/?EIO=4&transport=polling&t=ttcn9a87&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:47:53] "GET /socket.io/?EIO=4&transport=polling&t=tt8qg884&sid=4pgtOjtrNBRBhYS-AAAA HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 500 stocks processed out of 502 total stocks
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:48:11] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:routes.analysis:Analysis completed: 500 stocks processed out of 502 total stocks
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:48:13] "GET /api/analysis/stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:48:21] "GET /api/analysis/chart/LALPATHLAB.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:48:21] "GET /api/analysis/chart/LALPATHLAB.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:48:24] "GET /api/analysis/chart/ESCORTS.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 12:51:57] "GET /api/analysis/chart/HINDUNILVR.NS HTTP/1.1" 200 -
 INFO:routes.weinstein:Fetching Weinstein scores with liquidity threshold: ₹1,000,000
 INFO:services.weinstein_screening:Starting Weinstein screening process...
-WARNING:services.weinstein_screening:No index data found in database. Creating synthetic index from available stocks.
-WARNING:services.weinstein_screening:No Nifty 50 stocks found. Using any available stocks for synthetic index.
+WARNING:services.weinstein_screening:No index data found. Creating synthetic index from available stocks.
 INFO:services.weinstein_screening:Created synthetic index from 10 stocks
-INFO:services.weinstein_screening:Processing 502 stocks...
-INFO:services.weinstein_screening:Processed 50/502 stocks...
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 100/502 stocks...
-INFO:services.weinstein_screening:Processed 150/502 stocks...
-INFO:services.weinstein_screening:Processed 200/502 stocks...
-INFO:services.weinstein_screening:Processed 250/502 stocks...
-INFO:services.weinstein_screening:Processed 300/502 stocks...
-INFO:services.weinstein_screening:Processed 350/502 stocks...
+INFO:services.weinstein_screening:Processing 502 stocks in batches of 50...
+INFO:services.weinstein_screening:Processing batch 1-50 of 502...
+INFO:services.weinstein_screening:Processing batch 51-100 of 502...
+INFO:services.weinstein_screening:Processing batch 101-150 of 502...
+INFO:services.weinstein_screening:Processing batch 151-200 of 502...
+INFO:services.weinstein_screening:Processing batch 201-250 of 502...
+INFO:services.weinstein_screening:Processing batch 251-300 of 502...
+INFO:services.weinstein_screening:Processing batch 301-350 of 502...
+INFO:services.weinstein_screening:Processing batch 351-400 of 502...
 INFO:routes.weinstein:Fetching Weinstein scores with liquidity threshold: ₹1,000,000
 INFO:services.weinstein_screening:Starting Weinstein screening process...
-WARNING:services.weinstein_screening:No index data found in database. Creating synthetic index from available stocks.
-WARNING:services.weinstein_screening:No Nifty 50 stocks found. Using any available stocks for synthetic index.
+WARNING:services.weinstein_screening:No index data found. Creating synthetic index from available stocks.
+INFO:services.weinstein_screening:Processing batch 401-450 of 502...
 INFO:services.weinstein_screening:Created synthetic index from 10 stocks
-INFO:services.weinstein_screening:Processing 502 stocks...
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:28] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 400/502 stocks...
-INFO:services.weinstein_screening:Processed 50/502 stocks...
-INFO:services.weinstein_screening:Processed 450/502 stocks...
-INFO:services.weinstein_screening:Processed 100/502 stocks...
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:38] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 500/502 stocks...
-INFO:services.weinstein_screening:Weinstein screening complete. 3 stocks passed all filters.
-INFO:services.weinstein_screening:Processed 150/502 stocks...
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:45] "GET /api/weinstein-scores HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 200/502 stocks...
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:49] "GET /api/analysis/chart/CUMMINSIND.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:18:49] "GET /api/analysis/chart/CUMMINSIND.NS HTTP/1.1" 200 -
-INFO:services.weinstein_screening:Processed 250/502 stocks...
-INFO:services.weinstein_screening:Processed 300/502 stocks...
-INFO:services.weinstein_screening:Processed 350/502 stocks...
-INFO:services.weinstein_screening:Processed 400/502 stocks...
-INFO:services.weinstein_screening:Processed 450/502 stocks...
-INFO:services.weinstein_screening:Processed 500/502 stocks...
-INFO:services.weinstein_screening:Weinstein screening complete. 3 stocks passed all filters.
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:06] "GET /api/weinstein-scores HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:25] "GET /api/analysis/chart/EICHERMOT.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:26] "GET /api/analysis/chart/MOTHERSON.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:29] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:38] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/portfolio HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/pnl HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/shortlist HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/portfolio HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/trades/pnl HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:53] "GET /api/shortlist HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:56] "GET /api/analysis/chart/CHOLAFIN.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:19:56] "GET /api/analysis/chart/CHOLAFIN.NS HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:08] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:30] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:38] "GET /api/kite/status HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Dec/2025 13:20:54] "GET /api/kite/status HTTP/1.1" 200 -
-[2025-12-14 16:10:42] \n🛑 Shutting down servers...
-[2025-12-14 16:10:42] ✓ Backend server stopped
-[2025-12-14 16:10:42] ✓ Frontend server stopped
-[2025-12-14 16:10:42] 👋 Cleanup complete. Goodbye!
-[2025-12-14 16:10:42] \n🛑 Shutting down servers...
-Exception ignored in: <function Popen.__del__ at 0x102961d00>
-Traceback (most recent call last):
-  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1133, in __del__
-    def __del__(self, _maxsize=sys.maxsize, _warn=warnings.warn):
-  File "/Users/abhilekh/Documents/stockAnalyzer-1/backend/venv/lib/python3.13/site-packages/werkzeug/_reloader.py", line 452, in <lambda>
-[2025-12-14 16:10:42] ✓ Backend server stopped
-    signal.signal(signal.SIGTERM, lambda *args: sys.exit(0))
-SystemExit: 0
-INFO:apscheduler.scheduler:Scheduler has been shut down
-[2025-12-14 16:10:42] ✓ Frontend server stopped
-/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-qaif8pdz'}
-  warnings.warn(
-[2025-12-14 16:10:42] 👋 Cleanup complete. Goodbye!
+INFO:services.weinstein_screening:Processing 502 stocks in batches of 50...
+INFO:services.weinstein_screening:Processing batch 1-50 of 502...
+INFO:services.weinstein_screening:Processing batch 51-100 of 502...
+INFO:services.weinstein_screening:Processing batch 451-500 of 502...
+INFO:services.weinstein_screening:Processing batch 101-150 of 502...
+INFO:services.weinstein_screening:Processing batch 501-502 of 502...
+INFO:services.weinstein_screening:Weinstein screening complete. 11 stocks passed all filters.
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 13:01:04] "GET /api/weinstein-scores HTTP/1.1" 200 -
+INFO:services.weinstein_screening:Processing batch 151-200 of 502...
+INFO:services.weinstein_screening:Processing batch 201-250 of 502...
+INFO:services.weinstein_screening:Processing batch 251-300 of 502...
+INFO:services.weinstein_screening:Processing batch 301-350 of 502...
+INFO:services.weinstein_screening:Processing batch 351-400 of 502...
+INFO:services.weinstein_screening:Processing batch 401-450 of 502...
+INFO:services.weinstein_screening:Processing batch 451-500 of 502...
+INFO:services.weinstein_screening:Processing batch 501-502 of 502...
+INFO:services.weinstein_screening:Weinstein screening complete. 11 stocks passed all filters.
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 13:01:25] "GET /api/weinstein-scores HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 13:01:51] "GET /api/analysis/chart/BHARATFORG.NS HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2025 13:01:51] "GET /api/analysis/chart/BHARATFORG.NS HTTP/1.1" 200 -

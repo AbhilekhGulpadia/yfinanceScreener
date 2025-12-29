@@ -8,6 +8,7 @@ from services.data_fetcher import (
 from nifty500 import get_all_stocks
 from datetime import datetime, timedelta, timezone
 import threading
+import gc
 import logging
 
 # Set up logging
@@ -105,8 +106,6 @@ def get_available_symbols():
 def trigger_fetch():
     """Manually trigger OHLCV data fetch"""
     try:
-        # Run in background or sync? App.py did it sync but it might timeout.
-        # App.py: fetch_ohlcv_data() directly.
         fetch_ohlcv_data()
         return jsonify({'message': 'OHLCV data fetch triggered successfully'}), 200
     except Exception as e:
@@ -203,27 +202,28 @@ def trigger_refresh():
 
 @ohlcv_bp.route('/api/ohlcv/sector-heatmap', methods=['GET'])
 def get_sector_heatmap():
-    """Get sector-wise performance data for heatmap with date range filters"""
+    """
+    Get sector-wise performance data for heatmap with date range filters.
+    Optimized to avoid N+1 queries.
+    """
     try:
         from sqlalchemy import func
         
         # Get filter parameters
-        duration = request.args.get('duration', '1d')  # 1d, 1w, 1m, 3m, 6m, 1y, ytd
+        duration = request.args.get('duration', '1d')
         start_date = request.args.get('start_date')
         end_date = request.args.get('end_date')
         
-        # Calculate date range based on duration or custom dates
+        # Calculate date range
         end_datetime = datetime.now(timezone.utc)
         
         if start_date and end_date:
-            # Use custom date range
             try:
                 start_datetime = datetime.fromisoformat(start_date)
                 end_datetime = datetime.fromisoformat(end_date)
             except ValueError:
                 return jsonify({'error': 'Invalid date format. Use ISO format (YYYY-MM-DD)'}), 400
         else:
-            # Use preset duration
             duration_map = {
                 '1d': timedelta(days=1),
                 '1w': timedelta(weeks=1),
@@ -231,11 +231,10 @@ def get_sector_heatmap():
                 '3m': timedelta(days=90),
                 '6m': timedelta(days=180),
                 '1y': timedelta(days=365),
-                'ytd': None  # Year to date - special handling
+                'ytd': None
             }
             
             if duration == 'ytd':
-                # Year to date
                 start_datetime = datetime(end_datetime.year, 1, 1, tzinfo=timezone.utc)
             elif duration in duration_map:
                 start_datetime = end_datetime - duration_map[duration]
@@ -271,9 +270,24 @@ def get_sector_heatmap():
             (OHLCV.timestamp == earliest_subquery.c.min_timestamp)
         ).all()
         
-        # Create mapping for latest prices
+        # OPTIMIZED: Get all volume sums in a single query instead of N+1
+        volume_subquery = db.session.query(
+            OHLCV.symbol,
+            func.sum(OHLCV.volume).label('total_volume')
+        ).filter(
+            OHLCV.timestamp >= start_datetime,
+            OHLCV.timestamp <= end_datetime
+        ).group_by(OHLCV.symbol).all()
+        
+        # Create mappings
         latest_prices = {item.symbol: item for item in latest_data}
         earliest_prices = {item.symbol: item for item in earliest_data}
+        volume_map = {symbol: total_vol for symbol, total_vol in volume_subquery}
+        
+        # Clean up
+        del latest_data
+        del earliest_data
+        del volume_subquery
         
         # Calculate price changes
         stock_data = {}
@@ -282,27 +296,22 @@ def get_sector_heatmap():
                 latest = latest_prices[symbol]
                 earliest = earliest_prices[symbol]
                 
-                # Calculate percentage change
                 if earliest.open != 0:
                     price_change = ((latest.close - earliest.open) / earliest.open * 100)
                 else:
                     price_change = 0
                 
-                # Calculate total volume for the period
-                volume_query = db.session.query(func.sum(OHLCV.volume)).filter(
-                    OHLCV.symbol == symbol,
-                    OHLCV.timestamp >= start_datetime,
-                    OHLCV.timestamp <= end_datetime
-                ).scalar()
-                
                 stock_data[symbol] = {
                     'current_price': latest.close,
                     'start_price': earliest.open,
                     'price_change_percent': price_change,
-                    'volume': volume_query or 0,
+                    'volume': volume_map.get(symbol, 0),
                     'high': latest.high,
                     'low': latest.low
                 }
+        
+        del latest_prices
+        del earliest_prices
         
         # Group by sector
         all_stocks = get_all_stocks()
@@ -333,15 +342,15 @@ def get_sector_heatmap():
                     'low': stock_data[symbol]['low']
                 })
         
-        # Consolidate sectors logic
-        # 1. Calculate average change for each sector first
+        del stock_data
+        
+        # Process sectors
         temp_sector_data = []
         for sector, data in sector_performance.items():
             if data['stocks']:
                 avg_change = sum(s['price_change'] for s in data['stocks']) / len(data['stocks'])
                 total_volume = sum(s['volume'] for s in data['stocks'])
                 
-                # Sort stocks by absolute price change (biggest movers)
                 sorted_stocks = sorted(data['stocks'], key=lambda x: abs(x['price_change']), reverse=True)
                 
                 temp_sector_data.append({
@@ -349,11 +358,12 @@ def get_sector_heatmap():
                     'stock_count': len(data['stocks']),
                     'avg_price_change': avg_change,
                     'total_volume': total_volume,
-                    'stocks': sorted_stocks[:30]  # Return top 30 stocks for expanded view
+                    'stocks': sorted_stocks[:30]
                 })
-
-        # 2. Sort sectors by market cap or volume (proxy: total_volume) to keep major sectors
-        # For now, let's keep top 12 sectors by volume, and group others
+        
+        del sector_performance
+        
+        # Sort and consolidate
         temp_sector_data.sort(key=lambda x: x['total_volume'], reverse=True)
         
         final_heatmap_data = []
@@ -365,36 +375,31 @@ def get_sector_heatmap():
             'stocks': []
         }
         
-        # Keep top 15 sectors, consolidate the rest
         MAX_SECTORS = 15
         
         for i, sector_data in enumerate(temp_sector_data):
             if i < MAX_SECTORS:
-                # Keep top 30 movers for expanded display
                 sector_data['stocks'] = sector_data['stocks'][:30]
                 sector_data['avg_price_change'] = round(sector_data['avg_price_change'], 2)
                 final_heatmap_data.append(sector_data)
             else:
-                # Add to Others
                 others_sector['stock_count'] += sector_data['stock_count']
                 others_sector['total_volume'] += sector_data['total_volume']
                 others_sector['stocks'].extend(sector_data['stocks'])
         
-        # Process Others sector if it has data
         if others_sector['stock_count'] > 0:
-            # Recalculate average for Others
             all_others_changes = [s['price_change'] for s in others_sector['stocks']]
             if all_others_changes:
                 others_sector['avg_price_change'] = round(sum(all_others_changes) / len(all_others_changes), 2)
             
-            # Sort stocks in Others by absolute change and keep top 30
             others_sector['stocks'].sort(key=lambda x: abs(x['price_change']), reverse=True)
             others_sector['stocks'] = others_sector['stocks'][:30]
             
             final_heatmap_data.append(others_sector)
         
-        # Sort final data by average price change for visualization
         final_heatmap_data.sort(key=lambda x: x['avg_price_change'], reverse=True)
+        
+        gc.collect()
         
         return jsonify({
             'heatmap_data': final_heatmap_data,
